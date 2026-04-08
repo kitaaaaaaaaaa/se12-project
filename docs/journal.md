@@ -83,8 +83,9 @@ Added files from the project template into my own documentation to give myself s
 **Challenges Faced:**
 Was signed into multiple accounts on VSCode, which lead to wrongly authored commits. This was fixed by removing unneccesary accounts and modifying commit history to indicate the correct author.
 
+Using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email) and the Gemini summary provided at the top of Google search pages, I used interactive rebasing to edit the author.
+
 **Reflection:**
 
 
 **Aims for next week:**
-Properly get started on 
