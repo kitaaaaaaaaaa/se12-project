@@ -59,10 +59,10 @@ Example:
 **Aims:**
 I aim to get a start on the SEP by setting the foundation for documentation structure. This will save time in the long run, so I don't have to worry about documentation formatting.
 
-**Tasks Accomplished:**
+**Progress:**
 Downloaded and read the project notification, and created the structure of the ePortfolio. Also set up the neccessary software (GitHub Desktop) and links between GitLab and VSCode. I also started the project journal.
 
-**Challenges Faced:**
+**Challenges and solutions:**
 There were no challenges faced with creating the structure of the ePortfolio.
 
 **Reflection:**
@@ -71,19 +71,21 @@ I aimed to set up the structure of the documentation so that I do not have to wo
 **Aims for next week:**
 Starting on the project itself by generating potential ideas and scenarios.
 
-## 8/4/2026
+## 6/4/2026
 **Aims:** Brainstorm some ideas and scenarios using a mindmap, and with the help of Gemini to create a wide range of ideas.
 
-**Tasks Accomplished:**
+**Progress:**
 Created a set of GitLab commit conventions to adhere to, ensuring consistency and allowing the commit history to be more accessible. Every commit from now on will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
 ![](assets/2026-04-08-11-59-31.png)
 
 Added files from the project template into my own documentation to give myself starting points for when I commence future phases of the project.
 
-**Challenges Faced:**
+I also created my detailed scenario this week, taking inspiration from my own experience helping out backstage during a concert. I wanted to ground the project in something I knew well, which makes it easier to create software requirements.
+
+**Challenges and solutions:**
 Was signed into multiple accounts on VSCode, which lead to wrongly authored commits. This was fixed by removing unneccesary accounts and modifying commit history to indicate the correct author.
 
-Using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email) and the Gemini summary provided at the top of Google search pages, I used interactive rebasing to edit the author.
+Using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email) and the Gemini summary provided at the top of Google search pages, I used interactive rebasing to edit the author of the previous commits.
 
 **Reflection:**
 
