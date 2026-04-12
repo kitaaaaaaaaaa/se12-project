@@ -71,14 +71,17 @@ I aimed to set up the structure of the documentation so that I do not have to wo
 **Aims for next week:**
 Starting on the project itself by generating potential ideas and scenarios.
 
-## 6/4/2026
+## 8/4/2026
 **Aims:** Brainstorm some ideas and scenarios using a mindmap, and with the help of Gemini to create a wide range of ideas.
 
 **Progress:**
 Created a set of GitLab commit conventions to adhere to, ensuring consistency and allowing the commit history to be more accessible. Every commit from now on will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-![](assets/2026-04-08-11-59-31.png)
+![](Assets/2026-04-08-11-59-31.png)
 
 Added files from the project template into my own documentation to give myself starting points for when I commence future phases of the project.
+
+Made a mindmap to brainstorm potential ideas and technical requirements:
+![](Assets/2026-04-12-08-19-31.png)
 
 I also created my detailed scenario this week, taking inspiration from my own experience helping out backstage during a concert. I wanted to ground the project in something I knew well, which makes it easier to create software requirements.
 
@@ -88,6 +91,7 @@ Was signed into multiple accounts on VSCode, which lead to wrongly authored comm
 Using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email) and the Gemini summary provided at the top of Google search pages, I used interactive rebasing to edit the author of the previous commits.
 
 **Reflection:**
-
+I successfully familiarsed myself with markdown this week, but I didn't think that brainstorming ideas would take so long. Next week, I have to keep my writing concise.
 
 **Aims for next week:**
+Develop a project proposal and hopefully start the research & planning phase.

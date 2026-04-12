@@ -21,9 +21,10 @@ I will do .............
     - current situation/existing methods to address problem
     - desired outcome for the software
 
+---
 
 # Digital AV Crew Run Sheet
-A small backstage and audio crew at my school struggles to organise the necessary gear and equipment for each performance during a school concert. Paper run sheets and stage plans are hard to read in the dark and become outdated when it needs to change. The run sheets have too much information, forcing crew memebers to waste precious time and effort in filtering, processing and taking in  information.
+A small backstage and audio crew at a school struggles to organise the necessary gear and equipment for each performance during a school concert. Paper run sheets and stage plans are hard to read in the dark and become outdated when it needs to change. The run sheets have too much information, forcing crew memebers to waste precious time and effort in filtering, processing and taking in  information.
 
 Members are split into roles, sometimes taking on multiple: backstage, curtains, visuals, sound, camera and lighting. The run sheet has instructions for all teams, making it harder for specific roles specific roles to follow their cues.
 
@@ -50,23 +51,36 @@ The software will only be used in Australia. It will be used during concerts and
                 <li>Function to 'play' the run sheet during the event and progress it forward</li>
                 <li>Function for members to view the live/digital run sheet according to their specific role</li>
                 <li>Authentication system to distinguish an administrator and a crew member</li>
-                <li>App must be able to cache run sheets to enable offline functionality</li>
             </ul>
         </td>
         <td>
-            <ul>
+            <ol>
                 <li>Ability for admin to jump to a specific step for rehearsals</li>
                 <li>Toggle between light and dark mode</li>
+                <li>Support for mobile devices</li>
                 <li>Quickly accessible glossary of key terms (e.g. L, C, R, FL, FC, FR etc.) with diagrams</li>
-            </ul>
+            </ol>
         </td>
     </tr>
 </table>
 
-<u>Inputs:</u> Information for each step in the run sheet, user credentials and user roles/responsibilities
+<u>Inputs:</u> 
+Information for each step in the run sheet, user credentials and user roles/responsibilities
 <br>
-<u>Outputs:</u> Filtered run sheets with each step, including performance title, action, role and notes
+<u>Outputs:</u> 
+Filtered run sheets with each step, including performance title, action, role and notes
 <br>
 <u>User Interface:</u>
+Users must be able to interact with the software on a desktop or laptop, which would be placed in a highly visible area for crew members to view. The user interface should be minimal and not cluttered.
 <br>
 <u>Types of data required:</u>
+String, boolean, integer
+<br>
+<u>Technical requirements:</u>
+App must be able to cache run sheets to enable offline functionality, app must be compatible with desktops and laptops, but mobile devices are not as important
+
+**Constraints:**
+Limited budget and time for software development and maintenence. Must be completed in roughly 12 weeks.
+
+**Assumptions:**
+Every user will have access to the Internet and users are proficient in navigating technology.
