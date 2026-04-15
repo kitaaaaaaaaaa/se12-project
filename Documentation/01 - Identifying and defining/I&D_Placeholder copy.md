@@ -2,8 +2,6 @@
 
 1. Define the problem it is being created to solve.
 
-I will do .............
-
 2. What is the software you have decided to create?
 
 3. Define its scope/boundaries - what it will and will not do.
@@ -14,12 +12,44 @@ I will do .............
 
 6. What assumptions are being made about the scenario and/or users?
 
+---
+# Chosen Scenario
+This page provides information about the scenario chosen for this project.
+
+## Context
+A small backstage/audio crew at my school struggles to organise the necessary gear and equipment for each performance during a school concert, which takes place in a dark environment. On average there are 18-20 distinct performances with varying tech configurations and equipment layouts needed. Members are split into several responsibilities to seamlessly run the event: backstage hands, curtains, visuals, sound, camera, lighting. Some tasks include lighting changes, microphone handoffs and visual transitions.
+
+Crew members currently follow along using paper run sheets, which are hard to read in the dark and become quickly outdated. The run sheets also have an overwhelming amount of information and it is harder to juggle multiple responsibilities in a time sensitive environment, especially with limited communication between crew.
+
+These responsibilities are exacerbated by the fact that crew members have to accomodate for students who do not know stage ettique, correct microphone handling and effective on-stage positioning.
+
+There is reliable Internet access throughout the concert venue, but the software must account for any connection errors.
+
+## User roles
+Since the audio crew has senior members, the software will support two types of users:
+
+| Administrator | Crew Member |
+| - | - |
+| This could include teachers, stage members or leaders within the crew. They are responsible for planning and managing the event, as well as overseeing the event. They will be allowed to create, edit and delete run sheets, progress the run sheet forward/backward during pre-show rehearsals or the concert itself. | Crew members carry out the tasks assigned to them, as displayed by the software solution. They also need to be able to prepare for upcoming tasks and performances |
 
 
-- what is the problem?
-    - description of users and their roles & skills
-    - current situation/existing methods to address problem
-    - desired outcome for the software
+
+## Current situation
+Run sheets are currently created in Google Sheets, then printed off hours before the show. It contains information on: the performance name, the performers, the type of performance, its estimated run time, people on stage and technical requirements. It provides rather vague instructions to crew memebers and they must follow along themselves in the dark, which can be difficult with the limited amount of time and lack of communication. There is no viable means of communication.
+
+Also, details are often changed last minute to accomodate for absent people or equipment failures. This is currently mitigated by displaying the program on Google Sheets, using laptops/desktops placed in key areas. This does not solve the issue that the run sheet contains mostly irrelevant information - a lot of time is spent reading and re-reading the run sheet to ensure the event runs smoothly. By making it simpler to read, members can focus on performing their tasks, reducing hiccups and forgotten equipment.
+
+## Desired outcome
+Ideally, the following improvements should occur:
+- Crew members are less confused as to what their responsibilities are, reducing incorrect and forgotten technical steps
+- Less time is spent deciphering run sheets, allowing members to focus their efforts into troubleshooting unpredictable issues
+- Run sheets are easier to read in the dark, reducing cognitive load
+
+## Scope and scale
+- The software will be used by 8-12 crew members concurrently. 
+- The most often that the software will be used is around every month. 
+- The software will only be used in Australia. 
+- It will be used during concerts and events.
 
 ---
 

@@ -95,3 +95,20 @@ I successfully familiarsed myself with markdown this week, but I didn't think th
 
 **Aims for next week:**
 Develop a project proposal and hopefully start the research & planning phase.
+
+## 15/4/2026
+**Aims:**
+**Progress:**
+**Challenges and solutions:**
+The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed.
+**Reflection:**
+**Aims for next week:**
+
+
+---
+## DD/MM/YYY
+**Aims:**
+**Progress:**
+**Challenges and solutions:**
+**Reflection:**
+**Aims for next week:**
