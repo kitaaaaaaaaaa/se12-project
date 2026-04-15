@@ -99,9 +99,12 @@ Develop a project proposal and hopefully start the research & planning phase.
 ## 15/4/2026
 **Aims:**
 **Progress:**
+- work on project proposal and identifying and defining phase
+- worries about its feasibility in the timeframe
 **Challenges and solutions:**
 The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed.
 **Reflection:**
+- glad that took time to flesh out the scenario. grounding it in something i know and experiences has really helped
 **Aims for next week:**
 
 
