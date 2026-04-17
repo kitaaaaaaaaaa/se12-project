@@ -98,13 +98,17 @@ Develop a project proposal and hopefully start the research & planning phase.
 
 ## 15/4/2026
 **Aims:**
+This week, I aim to finish the Identifying and Defining phase and start work on the Research and Planning phase.
+
 **Progress:**
-- work on project proposal and identifying and defining phase
-- worries about its feasibility in the timeframe
+This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet).
+
 **Challenges and solutions:**
 The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed.
+
 **Reflection:**
-- glad that took time to flesh out the scenario. grounding it in something i know and experiences has really helped
+I believe I still need to cut down the amount I write for future phases, but I will have to check with my teachers. I have fleshed out my scenario, which will serve as the foundation for the rest of the project. I am glad that I grounded the scenario in something I know and have experience in - 3 years of live sound/backstage inspired this project.
+
 **Aims for next week:**
 
 
