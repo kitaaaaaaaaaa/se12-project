@@ -103,11 +103,19 @@ This week, I aim to finish the Identifying and Defining phase and start work on 
 **Progress:**
 This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet).
 
+I also listed all the entities that will be represented in the software (thus starting the R&P phase):
+- Events as an object from an event class
+- Users as an array of records or a database
+- Run sheet steps as an array of objects
+    - Each step would be an object with: step number (integer), step instruction (string), performance title (string), assigned role (string), notes (string)
+
 **Challenges and solutions:**
-The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed.
+The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed. I may have to reorganise my I&D phase later on, but I know that all of the required information is in there.
 
 **Reflection:**
-I believe I still need to cut down the amount I write for future phases, but I will have to check with my teachers. I have fleshed out my scenario, which will serve as the foundation for the rest of the project. I am glad that I grounded the scenario in something I know and have experience in - 3 years of live sound/backstage inspired this project.
+I believe I still need to cut down the amount I write for future phases, but I will have to check with my teachers. I have fleshed out my scenario, which will serve as the foundation for the rest of the project. I am glad that I grounded the scenario in something I know and have experience in - 3 years of live sound/backstage inspired this project. 
+
+Writing rough plans for what I am going to write in my documentation also significantly helps and reduces the effort required to sit down and write documentation.
 
 **Aims for next week:**
 

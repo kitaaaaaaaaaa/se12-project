@@ -1,7 +1,16 @@
-# Starting Point:
+# Starting Point: (PLACEHOLDER)
 
 1. Gantt chart containing major tasks, the dependencies between them, and when they should take place. 
 Milestones should also be included on the Gantt chart.
+
+**Project timeline/milestones**
+- Identifying and defining
+    - Find client
+- Research and planning
+- Producing and implementing
+- Testing and evaluating
+- Project Presentation
+- Deadline: 24th July 2026 @ 11:55pm
 
 2. What software development approach (Waterfall/Agile/Wagile) will you be using and why.
 

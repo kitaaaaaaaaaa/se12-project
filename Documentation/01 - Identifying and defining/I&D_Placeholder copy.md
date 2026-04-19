@@ -1,4 +1,4 @@
-# Starting Point:
+# Starting Point: (PLACEHOLDER)
 
 1. Define the problem it is being created to solve.
 
