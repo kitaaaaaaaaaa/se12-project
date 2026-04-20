@@ -119,6 +119,17 @@ Writing rough plans for what I am going to write in my documentation also signif
 
 **Aims for next week:**
 
+## 20/04/2026
+**Aims:**
+**Progress:**
+- rough design of UI to visualise software solution, enabling easier comm with client
+- client suggested display time before a step/performance -> modified exec summary as optional because it might take a while to do dates and stuff
+
+**Challenges and solutions:**
+- exporting animations in figma is a pain, it's ok i just screen recorded it
+
+**Reflection:**
+**Aims for next week:**
 
 ---
 ## DD/MM/YYY
