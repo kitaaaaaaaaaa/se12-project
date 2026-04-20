@@ -101,13 +101,17 @@ Develop a project proposal and hopefully start the research & planning phase.
 This week, I aim to finish the Identifying and Defining phase and start work on the Research and Planning phase.
 
 **Progress:**
-This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet).
+This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet). I also explored [GitHub flavoured markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections) to find new ways to format project documentation, like the collapsable text below.
+
+<details>
+<summary>Research and planning draft</summary>
 
 I also listed all the entities that will be represented in the software (thus starting the R&P phase):
 - Events as an object from an event class
 - Users as an array of records or a database
 - Run sheet steps as an array of objects
     - Each step would be an object with: step number (integer), step instruction (string), performance title (string), assigned role (string), notes (string)
+</details>
 
 **Challenges and solutions:**
 The project notification and the course work have varying instructions. I had to consolidate them such that all dot points were being discussed. I may have to reorganise my I&D phase later on, but I know that all of the required information is in there.
