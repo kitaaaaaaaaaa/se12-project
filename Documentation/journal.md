@@ -76,12 +76,12 @@ Starting on the project itself by generating potential ideas and scenarios.
 
 **Progress:**
 Created a set of GitLab commit conventions to adhere to, ensuring consistency and allowing the commit history to be more accessible. Every commit from now on will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-![](Assets/2026-04-08-11-59-31.png)
+![](Assets/git_commit_conventions.png)
 
 Added files from the project template into my own documentation to give myself starting points for when I commence future phases of the project.
 
 Made a mindmap to brainstorm potential ideas and technical requirements:
-![](Assets/2026-04-12-08-19-31.png)
+![](Assets/ideas_mindmap.png)
 
 I also created my detailed scenario this week, taking inspiration from my own experience helping out backstage during a concert. I wanted to ground the project in something I knew well, which makes it easier to create software requirements.
 
@@ -127,6 +127,7 @@ Writing rough plans for what I am going to write in my documentation also signif
 
 **Challenges and solutions:**
 - exporting animations in figma is a pain, it's ok i just screen recorded it
+![](Assets/stagehands_view_design.gif)
 
 **Reflection:**
 **Aims for next week:**
