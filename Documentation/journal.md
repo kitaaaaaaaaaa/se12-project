@@ -132,6 +132,7 @@ Writing rough plans for what I am going to write in my documentation also signif
 **Challenges and solutions:**
 - exporting animations in figma is a pain, it's ok i just screen recorded it
 ![](Assets/stagehands_view_design.gif)
+![](Assets/admin_view_design.gif)
 
 **Reflection:**
 **Aims for next week:**
