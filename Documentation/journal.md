@@ -122,19 +122,29 @@ I believe I still need to cut down the amount I write for future phases, but I w
 Writing rough plans for what I am going to write in my documentation also significantly helps and reduces the effort required to sit down and write documentation.
 
 **Aims for next week:**
+Start work on the researching and planning phase.
 
 ## 20/04/2026
 **Aims:**
+- Meet with teachers to clarify project
+- Start elements of R&D and get as much done as possible before other assessments start. This would also give more time for producing & implementing.
+
 **Progress:**
-- rough design of UI to visualise software solution, enabling easier comm with client
-- client suggested display time before a step/performance -> modified exec summary as optional because it might take a while to do dates and stuff
+- Restructured and organised I&D documentation to make it easier for third parties to read. Those unfamiliar with live sound/production would struggle to grasp the context for the project.
+- Client suggested to display the time before a certain step. From my experience making the Learner Hours PWA, date and time calculations can get messy if done without using in-built features (such as JavaScript's `Date()` object). This is why I added this as an optional feature to add last.
+- Assessed the scheduling feasibility of the project, with help from teachers. Created some backup options as a result:
+    - Crew members could press 'next' on their own, rather than having it synchronised
+    - Remove ability to edit run sheets *during* an event
+- Considered some possible limitations:
+    - Lack of technical skill required to build back-end
+    - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitations in mind.
+
 
 **Challenges and solutions:**
-- exporting animations in figma is a pain, it's ok i just screen recorded it
-![](Assets/stagehands_view_design.gif)
-![](Assets/admin_view_design.gif)
+- Client had trouble grasping the concept of the project, even after some discussion. Created a rough design of the UI to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
 
 **Reflection:**
+
 **Aims for next week:**
 
 ---

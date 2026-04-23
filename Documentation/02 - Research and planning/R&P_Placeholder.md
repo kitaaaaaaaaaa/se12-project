@@ -5,7 +5,6 @@ Milestones should also be included on the Gantt chart.
 
 **Project timeline/milestones**
 - Identifying and defining
-    - Find client
 - Research and planning
 - Producing and implementing
 - Testing and evaluating
