@@ -104,7 +104,7 @@ This week, I aim to finish the Identifying and Defining phase and start work on 
 This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet). I also explored [GitHub flavoured markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections) to find new ways to format project documentation, like the collapsable text below.
 
 <details>
-<summary>Research and planning draft</summary>
+<summary>Draft explanations of chosen software development approach</summary>
 
 I also listed all the entities that will be represented in the software (thus starting the R&P phase):
 - Events as an object from an event class
@@ -127,7 +127,7 @@ Start work on the researching and planning phase.
 ## 20/04/2026
 **Aims:**
 - Meet with teachers to clarify project
-- Start elements of R&D and get as much done as possible before other assessments start. This would also give more time for producing & implementing.
+- Continue R&D and get as much done as possible before other assessments start. This would also give more time for producing & implementing.
 
 **Progress:**
 - Restructured and organised I&D documentation to make it easier for third parties to read. Those unfamiliar with live sound/production would struggle to grasp the context for the project.
@@ -138,10 +138,13 @@ Start work on the researching and planning phase.
 - Considered some possible limitations:
     - Lack of technical skill required to build back-end
     - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitations in mind.
+- Created comparison table to effectively choose an appropriate software development approach using this [Portable.com.au article](https://portable.com.au/articles/waterfall-agile-wagile-project-methodology-decision) and [Atlassian article](https://www.atlassian.com/agile/project-management/project-management-intro)
 
+![](Assets/approach_comparison.png)
 
 **Challenges and solutions:**
 - Client had trouble grasping the concept of the project, even after some discussion. Created a rough design of the UI to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
+
 
 **Reflection:**
 
