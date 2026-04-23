@@ -128,6 +128,7 @@ Start work on the researching and planning phase.
 **Aims:**
 - Meet with teachers to clarify project
 - Continue R&D and get as much done as possible before other assessments start. This would also give more time for producing & implementing.
+    - Write documentation for determining software development approach. This has to be done so I can determine how my GANTT chart should be structured.
 
 **Progress:**
 - Restructured and organised I&D documentation to make it easier for third parties to read. Those unfamiliar with live sound/production would struggle to grasp the context for the project.
@@ -138,6 +139,11 @@ Start work on the researching and planning phase.
 - Considered some possible limitations:
     - Lack of technical skill required to build back-end
     - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitations in mind.
+- GANTT chart was made. 
+    - The timeline may seem unrealistic at first glance, but I tried to take into account the previous phases of the project, and how it would speed up development. For example, event administrator home page would take less than a week since I would have made UI components. 
+    - Some events are also quite long, since I try to take my exam dates into account. I also tried to condense development a bit, since I am involved in backstage productions for a musical on 14th June. I am hoping I can trial run the software there. 
+    - There is ongoing client feedback, following a characteristic of Agile. 
+    - The chart is the absolute ideal, and I have one week to spare to account for unforeseen problems.
 - Created comparison table to effectively choose an appropriate software development approach using this [Portable.com.au article](https://portable.com.au/articles/waterfall-agile-wagile-project-methodology-decision) and [Atlassian article](https://www.atlassian.com/agile/project-management/project-management-intro)
 
 ![](Assets/approach_comparison.png)
