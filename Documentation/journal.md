@@ -138,19 +138,22 @@ Start work on the researching and planning phase.
     - Remove ability to edit run sheets *during* an event
 - Considered some possible limitations:
     - Lack of technical skill required to build back-end
-    - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitations in mind.
+    - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitation in mind.
 - GANTT chart was made. 
     - The timeline may seem unrealistic at first glance, but I tried to take into account the previous phases of the project, and how it would speed up development. For example, event administrator home page would take less than a week since I would have made UI components. 
     - Some events are also quite long, since I try to take my exam dates into account. I also tried to condense development a bit, since I am involved in backstage productions for a musical on 14th June. I am hoping I can trial run the software there. 
-    - There is ongoing client feedback, following a characteristic of Agile. 
-    - The chart is the absolute ideal, and I have one week to spare to account for unforeseen problems.
+    - There is ongoing client feedback, which is a characteristic of the Agile approach
+    - The chart is the absolute ideal, and I have 1-2 weeks spare to account for unforeseen problems.
 - Created comparison table to effectively choose an appropriate software development approach using this [Portable.com.au article](https://portable.com.au/articles/waterfall-agile-wagile-project-methodology-decision) and [Atlassian article](https://www.atlassian.com/agile/project-management/project-management-intro)
 
 ![](Assets/approach_comparison.png)
 
+- Found existing solutions to the problem.
+    - [Lasso Rundown](https://www.lasso.io/rundown/) provides a version of my software with some extended features, but it is unclear if it can synchronise across multiple devices *during* an event. It looks like it uses strict times (e.g. 9:15:23AM), which is not ideal in my unpredictable environment.
+    - [QLab recital](https://qlab.app/cookbook/qlab-recital/) is exactly what I am looking for, but it is used on macOS. It can synchronise across multiple devices, but the UI for crew members isn't visually appealing and the event creation process can be confusing.
+
 **Challenges and solutions:**
 - Client had trouble grasping the concept of the project, even after some discussion. Created a rough design of the UI to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
-
 
 **Reflection:**
 
