@@ -3,14 +3,6 @@
 1. Gantt chart containing major tasks, the dependencies between them, and when they should take place. 
 Milestones should also be included on the Gantt chart.
 
-**Project timeline/milestones**
-- Identifying and defining
-- Research and planning
-- Producing and implementing
-- Testing and evaluating
-- Project Presentation
-- Deadline: 24th July 2026 @ 11:55pm
-
 2. What software development approach (Waterfall/Agile/Wagile) will you be using and why.
 
 3. Discuss AT LEAST TWO social and/or ethical issues relevant to your project. (See Set 17.04)

@@ -136,10 +136,7 @@ Start work on the researching and planning phase.
 - Assessed the scheduling feasibility of the project, with help from teachers. Created some backup options as a result:
     - Crew members could press 'next' on their own, rather than having it synchronised
     - Remove ability to edit run sheets *during* an event
-- Considered some possible limitations:
-    - Lack of technical skill required to build back-end
-    - Time management will be of utmost importance, especially with other assessments and projects. GANTT chart timings are adjusted accordingly, keeping this limitation in mind.
-- GANTT chart was made. 
+- GANTT chart was made and I am well into the research and planning phase.
     - The timeline may seem unrealistic at first glance, but I tried to take into account the previous phases of the project, and how it would speed up development. For example, event administrator home page would take less than a week since I would have made UI components. 
     - Some events are also quite long, since I try to take my exam dates into account. I also tried to condense development a bit, since I am involved in backstage productions for a musical on 14th June. I am hoping I can trial run the software there. 
     - There is ongoing client feedback, which is a characteristic of the Agile approach
@@ -151,11 +148,16 @@ Start work on the researching and planning phase.
 - Found existing solutions to the problem.
     - [Lasso Rundown](https://www.lasso.io/rundown/) provides a version of my software with some extended features, but it is unclear if it can synchronise across multiple devices *during* an event. It looks like it uses strict times (e.g. 9:15:23AM), which is not ideal in my unpredictable environment.
     - [QLab recital](https://qlab.app/cookbook/qlab-recital/) is exactly what I am looking for, but it is used on macOS. It can synchronise across multiple devices, but the UI for crew members isn't visually appealing and the event creation process can be confusing.
+- When filling out [client communication](./02%20-%20Research%20and%20planning/4.%20Client%20Communication.md), I reflected on which communication issues in Set 17.06 might be applicable. Since I've known both of my clients for a couple years, I concluded that all issues could apply, and it was up to me to mitigate those issues.
 
 **Challenges and solutions:**
-- Client had trouble grasping the concept of the project, even after some discussion. Created a rough design of the UI to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
+- Client had trouble grasping the concept of the project, even after some discussion. I created a rough design of the UI using Figma to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
+- Due to the course conflicting with the task instructions, I had already specified methods for communication with stakeholders at an earlier stage. I kept this in my GANTT chart to accurately reflect what I had already done. I decided to extend the methods using the information in Set 17.06
 
 **Reflection:**
+I am really happy after making the GANTT chart because it started to provide some structure to the project. I know exactly what I need to work on, and on what day. It definitely helped that I created a Kanban board using the tasks on the GANTT chart.
+
+I am also getting more proficient at GitHub flavoured markdown. I don't need to search up how to format text as often, and I am starting to incorporate more advanced (and more useful) markdown features like footnotes.
 
 **Aims for next week:**
 
