@@ -55,7 +55,7 @@ Briefly end each entry by listing:
 Example:
 *“Next week I will be focussing on the Quality Assurance Document and adding lazy loading to my project.”*
 
-## 22/3/2026
+## 22/03/2026
 **Aims:**
 I aim to get a start on the SEP by setting the foundation for documentation structure. This will save time in the long run, so I don't have to worry about documentation formatting.
 
@@ -71,7 +71,7 @@ I aimed to set up the structure of the documentation so that I do not have to wo
 **Aims for next week:**
 Starting on the project itself by generating potential ideas and scenarios.
 
-## 8/4/2026
+## 08/04/2026
 **Aims:** Brainstorm some ideas and scenarios using a mindmap, and with the help of Gemini to create a wide range of ideas.
 
 **Progress:**
@@ -96,7 +96,7 @@ I successfully familiarsed myself with markdown this week, but I didn't think th
 **Aims for next week:**
 Develop a project proposal and hopefully start the research & planning phase.
 
-## 15/4/2026
+## 15/04/2026
 **Aims:**
 This week, I aim to finish the Identifying and Defining phase and start work on the Research and Planning phase.
 
@@ -161,6 +161,17 @@ I am also getting more proficient at GitHub flavoured markdown. I don't need to 
 
 **Aims for next week:**
 I aim to work on the Quality Assurance document. I want to finish it so that I can keep in time with my GANTT chart and allow more time for producing and implementing.
+
+## 27/04/2026
+**Aims:**
+This week I want to finish my Quality Assurance document and ideally, finish the Research & Planning phase so I can have a bit more development time.
+
+**Progress:**
+- I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms to be used in the system
+
+**Challenges and solutions:**
+**Reflection:**
+**Aims for next week:**
 
 ---
 ## DD/MM/YYY
