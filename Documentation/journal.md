@@ -160,6 +160,7 @@ I am really happy after making the GANTT chart because it started to provide som
 I am also getting more proficient at GitHub flavoured markdown. I don't need to search up how to format text as often, and I am starting to incorporate more advanced (and more useful) markdown features like footnotes.
 
 **Aims for next week:**
+I aim to work on the Quality Assurance document. I want to finish it so that I can keep in time with my GANTT chart and allow more time for producing and implementing.
 
 ---
 ## DD/MM/YYY
