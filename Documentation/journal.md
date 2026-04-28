@@ -168,6 +168,7 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 
 **Progress:**
 - I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms to be used in the system
+- Researched security libraries that are available for Python
 
 **Challenges and solutions:**
 **Reflection:**
