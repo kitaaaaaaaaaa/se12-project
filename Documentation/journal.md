@@ -167,11 +167,17 @@ I aim to work on the Quality Assurance document. I want to finish it so that I c
 This week I want to finish my Quality Assurance document and ideally, finish the Research & Planning phase so I can have a bit more development time.
 
 **Progress:**
-- I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms to be used in the system
-- Researched security libraries that are available for Python
+- Completed the QA checklist. I am currently relying on my functional requirements as my source of truth.
+- Researched security libraries that are available for Python.
+- Found this [article](https://alexwlchan.net/2023/testing-javascript-without-a-framework/) that may be helpful for writing unit tests in JavaScript.
 
 **Challenges and solutions:**
+- I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms that I will use in the system. I will keep this in mind as I develop the system and continually review the checklist.
+- Researched options to deploy the application. The good free option for a Flask app is [render.com](https://render.com), but has some limitations. Data does not save and the server reduces in performance after 15 minutes of no activity, so I have decided not to deploy it. I think it will take too much time to figure out custom methods of deployment, based off of my past experience of hosting my own Minecraft server.
+
 **Reflection:**
+The QA checklist seemed daunting at first, but I'm happy that I managed to finish it in the week. As of now, I am still on time with my GANTT chart, which quite frankly, is a miracle. I have been trying to get as much done as possible before exams hit and I might need to modify the GANTT chart in the future.
+
 **Aims for next week:**
 
 ---
