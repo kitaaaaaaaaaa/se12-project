@@ -104,7 +104,7 @@ This week, I aim to finish the Identifying and Defining phase and start work on 
 This week I worked through my project proposal and the I&D phase. I currently have worries about how feasible this project is, especially with the given time frame. There is some room in the scenario to further reduce the amount of essential features (e.g. No synchronised run sheet). I also explored [GitHub flavoured markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-collapsed-sections) to find new ways to format project documentation, like the collapsable text below.
 
 <details>
-<summary>Draft explanations of chosen software development approach</summary>
+<summary>Possible entities involved in the project</summary>
 
 I also listed all the entities that will be represented in the software (thus starting the R&P phase):
 - Events as an object from an event class
@@ -173,7 +173,10 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 
 **Challenges and solutions:**
 - I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms that I will use in the system. I will keep this in mind as I develop the system and continually review the checklist.
-- Researched options to deploy the application. The good free option for a Flask app is [render.com](https://render.com), but has some limitations. Data does not save and the server reduces in performance after 15 minutes of no activity, so I have decided not to deploy it. I think it will take too much time to figure out custom methods of deployment, based off of my past experience of hosting my own Minecraft server.
+- Researched options to deploy the application. The good free option for a Flask app is [render.com](https://render.com), but has some limitations. Data does not save and the server reduces in performance after 15 minutes of no activity, so I have decided not to deploy it publically. I will instead opt to host the app locally, and users can connect to the app (for now).
+- Client suggested a new feature: crew members should be able to relay to other crew members as to what microphone number is being used. This would be relayed in real-time during an event. I discussed that it would not be feasible in the time frame, but I did add it to the optional features.
+- Created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database
+![](Assets/whiteboard_schema.png)
 
 **Reflection:**
 The QA checklist seemed daunting at first, but I'm happy that I managed to finish it in the week. As of now, I am still on time with my GANTT chart, which quite frankly, is a miracle. I have been trying to get as much done as possible before exams hit and I might need to modify the GANTT chart in the future.
