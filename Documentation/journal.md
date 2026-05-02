@@ -131,13 +131,14 @@ Start work on the researching and planning phase.
     - Write documentation for determining software development approach. This has to be done so I can determine how my GANTT chart should be structured.
 
 **Progress:**
-- Restructured and organised I&D documentation to make it easier for third parties to read. Those unfamiliar with live sound/production would struggle to grasp the context for the project.
+- Had a web lesson with teachers which motivated the following:
+    - Restructured and organised I&D documentation to make it easier for third parties to read. Those unfamiliar with live sound/production would struggle to grasp the context for the project.
+    - Assessed the scheduling feasibility of the project, with help from teachers. Created some backup options as a result:
+        - Crew members could press 'next' on their own, rather than having it synchronised
+        - Remove ability to edit run sheets *during* an event
 - Client suggested to display the time before a certain step. From my experience making the Learner Hours PWA, date and time calculations can get messy if done without using in-built features (such as JavaScript's `Date()` object). This is why I added this as an optional feature to add last.
-- Assessed the scheduling feasibility of the project, with help from teachers. Created some backup options as a result:
-    - Crew members could press 'next' on their own, rather than having it synchronised
-    - Remove ability to edit run sheets *during* an event
 - GANTT chart was made and I am well into the research and planning phase.
-    - The timeline may seem unrealistic at first glance, but I tried to take into account the previous phases of the project, and how it would speed up development. For example, event administrator home page would take less than a week since I would have made UI components. 
+    - The timeline may seem unrealistic at first glance, but I tried to take into account the previous phases of the project, and how it would speed up development. For example, event administrator home page would take less than a week since I already would have made UI components.
     - Some events are also quite long, since I try to take my exam dates into account. I also tried to condense development a bit, since I am involved in backstage productions for a musical on 14th June. I am hoping I can trial run the software there. 
     - There is ongoing client feedback, which is a characteristic of the Agile approach
     - The chart is the absolute ideal, and I have 1-2 weeks spare to account for unforeseen problems.
@@ -151,7 +152,7 @@ Start work on the researching and planning phase.
 - When filling out [client communication](./02%20-%20Research%20and%20planning/4.%20Client%20Communication.md), I reflected on which communication issues in Set 17.06 might be applicable. Since I've known both of my clients for a couple years, I concluded that all issues could apply, and it was up to me to mitigate those issues.
 
 **Challenges and solutions:**
-- Client had trouble grasping the concept of the project, even after some discussion. I created a rough design of the UI using Figma to visualise the software solution and make it easier to understand, as seen in the [executive summary](./01%20-%20Identifying%20and%20defining/1.%20Executive%20Summary.md#software-functionality)
+- Client had trouble grasping the concept of the project, even after some discussion. I created a rough design of the UI using Figma to visualise the software solution and make it easier to understand, as seen at the bottom of this journal entry
 - Due to the course conflicting with the task instructions, I had already specified methods for communication with stakeholders at an earlier stage. I kept this in my GANTT chart to accurately reflect what I had already done. I decided to extend the methods using the information in Set 17.06
 
 **Reflection:**
@@ -162,6 +163,12 @@ I am also getting more proficient at GitHub flavoured markdown. I don't need to 
 **Aims for next week:**
 I aim to work on the Quality Assurance document. I want to finish it so that I can keep in time with my GANTT chart and allow more time for producing and implementing.
 
+![](Assets/admin_view_design.gif)
+*Event administrators can progress through the run sheet*
+
+![](Assets/stagehands_view_design.gif)
+*Crew members can view instructions, synchronised with the event admin*
+
 ## 27/04/2026
 **Aims:**
 This week I want to finish my Quality Assurance document and ideally, finish the Research & Planning phase so I can have a bit more development time.
@@ -170,18 +177,21 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 - Completed the QA checklist. I am currently relying on my functional requirements as my source of truth.
 - Researched security libraries that are available for Python.
 - Found this [article](https://alexwlchan.net/2023/testing-javascript-without-a-framework/) that may be helpful for writing unit tests in JavaScript.
+- Completed data dictionaries and systems modelling
 
 **Challenges and solutions:**
-- I suspect some things in the QA checklist will have to be modified since I haven't started developing yet, and I don't have a great grasp of the algorithms that I will use in the system. I will keep this in mind as I develop the system and continually review the checklist.
 - Researched options to deploy the application. The good free option for a Flask app is [render.com](https://render.com), but has some limitations. Data does not save and the server reduces in performance after 15 minutes of no activity, so I have decided not to deploy it publically. I will instead opt to host the app locally, and users can connect to the app (for now).
-- Client suggested a new feature: crew members should be able to relay to other crew members as to what microphone number is being used. This would be relayed in real-time during an event. I discussed that it would not be feasible in the time frame, but I did add it to the optional features.
-- Created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database
+- Client suggested a new feature: crew members should be able to relay to other crew members as to what microphone number is being used. This would be relayed in real-time during an event. I discussed that it would not be feasible in the time frame, but I plan to add it as a 'innovative solution' in my documentation.
+- Data dictionaries were hard to start without being able to visualise the database. I created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database. To fix these problems, I made the schema online to make it easier to modify.
 ![](Assets/whiteboard_schema.png)
+- Completed storyboard using Figma, inspired by some Pinterest posts. Overhauled the UI/UX according to client feedback/my own testing. It was hard to read the previous UI in the dark.
+    - I also had some UX concerns that neither me or my client could figure out. The crew member view was quite hard to quickly scan. I used Gemini to help me brainstorm ways to rearrange the UI. It revealed that I should put the jobs like "stage hands" on the left, because users scan quicker left and downwards.
 
 **Reflection:**
 The QA checklist seemed daunting at first, but I'm happy that I managed to finish it in the week. As of now, I am still on time with my GANTT chart, which quite frankly, is a miracle. I have been trying to get as much done as possible before exams hit and I might need to modify the GANTT chart in the future.
 
 **Aims for next week:**
+According to my GANTT chart, I should be starting on Producing and Implementing next week. This gives me extra time for development, which many students wish they had done last year (learnt after meeting teachers in web lesson)
 
 ---
 ## DD/MM/YYY
