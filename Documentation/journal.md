@@ -76,12 +76,12 @@ Starting on the project itself by generating potential ideas and scenarios.
 
 **Progress:**
 Created a set of GitLab commit conventions to adhere to, ensuring consistency and allowing the commit history to be more accessible. Every commit from now on will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
-![](Assets/git_commit_conventions.png)
+![GitLab commit conventions cheatsheet](Assets/git_commit_conventions.png)
 
 Added files from the project template into my own documentation to give myself starting points for when I commence future phases of the project.
 
 Made a mindmap to brainstorm potential ideas and technical requirements:
-![](Assets/ideas_mindmap.png)
+![Ideas mindmap](Assets/ideas_mindmap.png)
 
 I also created my detailed scenario this week, taking inspiration from my own experience helping out backstage during a concert. I wanted to ground the project in something I knew well, which makes it easier to create software requirements.
 
@@ -163,10 +163,10 @@ I am also getting more proficient at GitHub flavoured markdown. I don't need to 
 **Aims for next week:**
 I aim to work on the Quality Assurance document. I want to finish it so that I can keep in time with my GANTT chart and allow more time for producing and implementing.
 
-![](Assets/admin_view_design.gif)
+![Animation of admin view](Assets/admin_view_design.gif)
 *Event administrators can progress through the run sheet*
 
-![](Assets/stagehands_view_design.gif)
+![Animation of crew member view](Assets/stagehands_view_design.gif)
 *Crew members can view instructions, synchronised with the event admin*
 
 ## 27/04/2026
@@ -183,7 +183,7 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 - Researched options to deploy the application. The good free option for a Flask app is [render.com](https://render.com), but has some limitations. Data does not save and the server reduces in performance after 15 minutes of no activity, so I have decided not to deploy it publically. I will instead opt to host the app locally, and users can connect to the app (for now).
 - Client suggested a new feature: crew members should be able to relay to other crew members as to what microphone number is being used. This would be relayed in real-time during an event. I discussed that it would not be feasible in the time frame, but I plan to add it as a 'innovative solution' in my documentation.
 - Data dictionaries were hard to start without being able to visualise the database. I created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database. To fix these problems, I made the schema online to make it easier to modify.
-![](Assets/whiteboard_schema.png)
+![Database schema drafted on a whiteboard](Assets/whiteboard_schema.png)
 - Completed storyboard using Figma, inspired by some Pinterest posts. Overhauled the UI/UX according to client feedback/my own testing. It was hard to read the previous UI in the dark.
     - I also had some UX concerns that neither me or my client could figure out. The crew member view was quite hard to quickly scan. I used Gemini to help me brainstorm ways to rearrange the UI. It revealed that I should put the jobs like "stage hands" on the left, because users scan quicker left and downwards.
 
