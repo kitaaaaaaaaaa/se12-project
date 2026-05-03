@@ -193,8 +193,28 @@ The QA checklist seemed daunting at first, but I'm happy that I managed to finis
 **Aims for next week:**
 According to my GANTT chart, I should be starting on Producing and Implementing next week. This gives me extra time for development, which many students wish they had done last year (learnt after meeting teachers in web lesson)
 
+## 04/05/2026
+**Aims:**
+I am to create flow chart algorithms since I am required to do so. I want to do this before development so that everything is planned out, and so I can focus entirely on development later on.
+
+I also want to utilise proper branching strategies this week, setting it up so I don't have to worry about it while producing. You can see that I have pretty much only been using one branch: 
+
+<details>
+<summary>Image of repository graph</summary>
+
+![Repository graph](Assets/repo_graph.png)
+</details>
+
+**Progress:**
+- Set up a programmed data backup as per Set 18.06, using Windows Backup (Available on Windows 11)
+![](Assets/2026-05-03-14-00-05.png)
+
+**Challenges and solutions:**
+**Reflection:**
+**Aims for next week:**
+
 ---
-## DD/MM/YYY
+## DD/MM/YYYY
 **Aims:**
 **Progress:**
 **Challenges and solutions:**
