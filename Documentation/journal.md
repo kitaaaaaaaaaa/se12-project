@@ -210,6 +210,8 @@ I also want to utilise proper branching strategies this week, setting it up so I
 ![](Assets/2026-05-03-14-00-05.png)
 
 **Challenges and solutions:**
+- Had trouble finding and understanding effective branching strategies. I used this amazing [article](https://dev.to/karmpatel/git-branching-strategies-a-comprehensive-guide-24kh) which summarises popular branching strategies. I chose the "GitFlow" branching strategy, but removed the role of a `release/*` and `hotfix/*` branch since I do not anticipate this being used.
+
 **Reflection:**
 **Aims for next week:**
 
