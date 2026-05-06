@@ -207,10 +207,17 @@ I also want to utilise proper branching strategies this week, setting it up so I
 
 **Progress:**
 - Set up a programmed data backup as per Set 18.06, using Windows Backup (Available on Windows 11)
-![](Assets/2026-05-03-14-00-05.png)
+![](Assets/data_backup.png)
+- I only made flow chart diagrams for the live view interfaces, since this is the unique part of my project. I wanted to flesh the system logic out before I made it to reduce the amount of bugs, making it easier for me in the long run. I had to make a table to draft out my first flowchart - once I did that, it was easier to make my second one.
+![Draft of a flowchart algorithm in a table](Assets/flowchart_draft.png)
+- I wanted to revise my branching strategy. I used this amazing [article](https://dev.to/karmpatel/git-branching-strategies-a-comprehensive-guide-24kh) which summarises popular branching strategies. I chose the "GitFlow" branching strategy, but removed the role of a `release/*` and `hotfix/*` branch since I do not anticipate this being used.
+- I watched some YouTube videos on how to make a Python virtual environment - an isolated environment to prevent package version conflicts and make the project easier to share ([W3Schools](https://www.w3schools.com/python/python_virtualenv.asp)). I wanted to make sure that my app worked on all platforms.
+- I had to brush up on my SQL skills and learnt how to create new tables in SQL syntax with this [article](https://www.w3schools.com/sql/sql_create_table.asp).
 
 **Challenges and solutions:**
-- Had trouble finding and understanding effective branching strategies. I used this amazing [article](https://dev.to/karmpatel/git-branching-strategies-a-comprehensive-guide-24kh) which summarises popular branching strategies. I chose the "GitFlow" branching strategy, but removed the role of a `release/*` and `hotfix/*` branch since I do not anticipate this being used.
+- I encountered this error when creating the `init_db.py` file to create the database. I didn't know what this meant, so I looked at some StackOverflow articles and did a Google search. The search summary told me that I had a misplaced foreign key definition, so I moved all my foreign key definitions at the bottom and it solved the problem.
+![Error: unknown column "event_id"](Assets/2026-05-06-12-12-56.png)
+![Google search results](Assets/2026-05-06-12-18-54.png)
 
 **Reflection:**
 **Aims for next week:**
