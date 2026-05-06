@@ -213,11 +213,22 @@ I also want to utilise proper branching strategies this week, setting it up so I
 - I wanted to revise my branching strategy. I used this amazing [article](https://dev.to/karmpatel/git-branching-strategies-a-comprehensive-guide-24kh) which summarises popular branching strategies. I chose the "GitFlow" branching strategy, but removed the role of a `release/*` and `hotfix/*` branch since I do not anticipate this being used.
 - I watched some YouTube videos on how to make a Python virtual environment - an isolated environment to prevent package version conflicts and make the project easier to share ([W3Schools](https://www.w3schools.com/python/python_virtualenv.asp)). I wanted to make sure that my app worked on all platforms.
 - I had to brush up on my SQL skills and learnt how to create new tables in SQL syntax with this [article](https://www.w3schools.com/sql/sql_create_table.asp).
+- From my past experience making the Learner Hours PWA, CSS can be unpredictable at times. I viewed a few [articles](https://www.joshwcomeau.com/css/custom-css-reset/) that discussed their own methods of resetting CSS, and I decided to take some code snippets. Hopefully this will speed up development and make it even easier.
 
 **Challenges and solutions:**
 - I encountered this error when creating the `init_db.py` file to create the database. I didn't know what this meant, so I looked at some StackOverflow articles and did a Google search. The search summary told me that I had a misplaced foreign key definition, so I moved all my foreign key definitions at the bottom and it solved the problem.
+<details>
+<summary>Screenshots of error and Google search results</summary>
+
 ![Error: unknown column "event_id"](Assets/2026-05-06-12-12-56.png)
 ![Google search results](Assets/2026-05-06-12-18-54.png)
+</details>
+- With the flowcharts under my review column, I realised that they were a nightmare to read. With the draw.io file that was saved on my laptop, I decided to clean up the logic of the flowchart. It is now much more readable, giving me a better blueprint to follow while producing and implementing. 
+<details>
+<summary>Image of previous flowcharts</summary>
+
+![Previous flowcharts](Assets/previous_flowcharts.png)
+</details>
 
 **Reflection:**
 **Aims for next week:**

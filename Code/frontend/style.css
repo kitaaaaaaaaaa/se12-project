@@ -1,0 +1,33 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+*:not(dialog) {
+    margin: 0;
+}
+
+:root {
+    /* App colours */
+    --text: #fff;
+    --secondary-text: #a9afc3;
+    --background: #252525;
+
+    --primary-purple: #5a2e83;
+    --secondary-purple-1: #caa8f6;
+    --secondary-purple-2: #dac3f9;
+
+    --primary-card: #3d3d42;
+    --secondary-card: #4a4a4e;
+    --dark-card: #323232;
+
+
+    /* Fonts */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--background);
+    color: var(--text);
+}
