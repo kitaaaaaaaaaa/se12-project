@@ -62,6 +62,24 @@
             </template>
         </step-card>
 
+        <edit-step-card
+            step-title = "Erase Me by Lizzy McAlpine"
+            step-performer = "Vocal Ensemble"
+            step-number = "02"
+            curtains = "active"
+            video = ""
+            blackout = ""
+            >
+            <template>
+                {
+                    "instructions": [
+                        {"job": "Stage Hands", "command": "REMOVE", "detail": "all music stands"},
+                        {"job": "Stage Hands", "command": "HANDOFF", "detail": "8 radio mics to vocalists"}
+                    ]
+                }
+            </template>
+        </edit-step-card>
+
 
         <div class="step-card edit">
             <div class="step-header flex-container">
@@ -98,116 +116,41 @@
             <div class="instruction flex-container">
                 <div>
                     <i class="fa-regular fa-user"></i>
-                    <select name="" id="">
-                        <option value="">role1</option>
-                        <option value="">role2</option>
-                        <option value="">role3</option>
-                        <option value="">role4</option>
-                        <option value="">role5</option>
+                    <select name="instruction-job">
+                        <option value="stage_hands">Stage Hands</option>
+                        <option value="visuals">Visuals</option>
+                        <option value="sound">Sound</option>
+                        <option value="camera">Camera</option>
+                        <option value="lighting">Lighting</option>
                     </select>
                 </div>
 
                 <div class="flex-container instruction-detail">
                     <div>
-                        <select name="" id="">
-                            <option value="">REMOVE</option>
-                            <option value="">PLACE</option>
+                        <select name="instruction-detail-command">
                             <option value="">HANDOFF</option>
+                            <option value="">PLACE</option>
+                            <option value="">REMOVE</option>
+                            <option value="">MOVE</option>
                         </select>
                     </div>
                     <div class="instruction-text-input flex-container">
-                        <input type="text" name="" id="" placeholder="Instruction details">
-                    </div>
-                </div>
-            </div>
-
-                        <div class="instruction flex-container">
-                <div>
-                    <i class="fa-regular fa-user"></i>
-                    <select name="" id="">
-                        <option value="">role1</option>
-                        <option value="">role2</option>
-                        <option value="">role3</option>
-                        <option value="">role4</option>
-                        <option value="">role5</option>
-                    </select>
-                </div>
-
-                <div class="flex-container instruction-detail">
-                    <div>
-                        <select name="" id="">
-                            <option value="">REMOVE</option>
-                            <option value="">PLACE</option>
-                            <option value="">HANDOFF</option>
-                        </select>
-                    </div>
-                    <div class="instruction-text-input flex-container">
-                        <input type="text" name="" id="" placeholder="Instruction details">
-                    </div>
-                </div>
-            </div>
-                        <div class="instruction flex-container">
-                <div>
-                    <i class="fa-regular fa-user"></i>
-                    <select name="" id="">
-                        <option value="">role1</option>
-                        <option value="">role2</option>
-                        <option value="">role3</option>
-                        <option value="">role4</option>
-                        <option value="">role5</option>
-                    </select>
-                </div>
-
-                <div class="flex-container instruction-detail">
-                    <div>
-                        <select name="" id="">
-                            <option value="">REMOVE</option>
-                            <option value="">PLACE</option>
-                            <option value="">HANDOFF</option>
-                        </select>
-                    </div>
-                    <div class="instruction-text-input flex-container">
-                        <input type="text" name="" id="" placeholder="Instruction details">
-                    </div>
-                </div>
-            </div>
-                        <div class="instruction flex-container">
-                <div>
-                    <i class="fa-regular fa-user"></i>
-                    <select name="" id="">
-                        <option value="">role1</option>
-                        <option value="">role2</option>
-                        <option value="">role3</option>
-                        <option value="">role4</option>
-                        <option value="">role5</option>
-                    </select>
-                </div>
-
-                <div class="flex-container instruction-detail">
-                    <div>
-                        <select name="" id="">
-                            <option value="">REMOVE</option>
-                            <option value="">PLACE</option>
-                            <option value="">HANDOFF</option>
-                        </select>
-                    </div>
-                    <div class="instruction-text-input flex-container">
-                        <input type="text" name="" id="" placeholder="Instruction details">
+                        <input type="text" name="instruction-detail-text" placeholder="Instruction details">
                     </div>
                 </div>
             </div>
             
-
             <button type="button" class="new-instruction">
                 <i class="fa-solid fa-plus"></i>
                 New instruction
             </button>
         </div>
-
+        
         <button type="button" class="new-step">
             <i class="fa-solid fa-layer-group"></i>
             New step
         </button>
+
 
     </main>
     <script src="app.js" defer></script>

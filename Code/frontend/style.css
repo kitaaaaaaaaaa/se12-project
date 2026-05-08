@@ -551,7 +551,7 @@ dialog::backdrop {
     background-color: var(--background);
     color: var(--text);
 
-    margin-top: 1rem;
+    margin: 0.875rem 0rem;
 }
 
 .new-step:hover {
