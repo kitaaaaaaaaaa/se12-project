@@ -231,7 +231,6 @@ I also want to utilise proper branching strategies this week, setting it up so I
 
 - CSS components
     - editing step card (/pill, /text inputs, custom buttons)
-    - event card
 
 ## 11/05/2026
 **Aims:**

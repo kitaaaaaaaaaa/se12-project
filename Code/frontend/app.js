@@ -78,7 +78,7 @@ class eventCard extends HTMLElement {
                     </div>
                     <div class="event-actions">
                         <button type="button" class="play-button">
-                            <i class="fa-solid fa-play icon-green"></i>
+                            <i class="fa-solid fa-play" style="color: #d4f6a8;"></i>
                         </button>
 
                         <button type="button" class="edit-button">
@@ -93,9 +93,9 @@ class eventCard extends HTMLElement {
                 <div class="event-indicator ${past}"></div>
             </div>
         `
-        const playButton = this.querySelector(".play-button");
-        const editButton = this.querySelector(".edit-button");
-        const delButton = this.querySelector(".del-button");
+        const play_button = this.querySelector(".play-button");
+        const edit_button = this.querySelector(".edit-button");
+        const del_button = this.querySelector(".del-button");
     }
 }
 customElements.define("event-card", eventCard)

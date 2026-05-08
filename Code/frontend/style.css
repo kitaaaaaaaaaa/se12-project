@@ -28,10 +28,6 @@ button {
     --dark-card: #323232;
 }
 
-.icon-green {
-    color: #d4f6a8;
-}
-
 html, body {
     margin: 0;
     padding: 0;
@@ -312,6 +308,36 @@ button:hover {
     border: 1.5px solid var(--secondary-purple-2);
 }
 
+.red-button {
+    background-color: #ba4646;
+    color: var(--text);
+}
+
+.red-button:hover {
+    color: var(--text);
+    border: 1.5px solid #ba4646;
+}
+
+.green-button {
+    background-color: #24941a;
+    color: var(--text)
+}
+
+.green-button:hover {
+    color: var(--text);
+    border: 1.5px solid #24941a;
+}
+
+.blue-button {
+    background-color: #2b58a9;
+    color: var(--text);
+}
+
+.blue-button:hover {
+    color: var(--text);
+    border: 1.5px solid #2b58a9;
+}
+
 /* General styles for input elements */
 input {
     background-color: var(--dark-card);
@@ -319,6 +345,7 @@ input {
     font-family: "Figtree", sans-serif;
     border: 0;
     border-radius: 6px;
+    outline: 1px solid #a9afc333;
     height: 1.75rem;
     margin-left: 0.25rem;
     padding: 1rem 0.5rem;
@@ -334,6 +361,18 @@ input[type="date"] {
 
 input:focus {
     outline: 2px solid var(--secondary-purple-2);
+}
+
+select {
+    background-color: var(--dark-card);
+    color: var(--text);
+    font-family: "Figtree", sans-serif;
+    border: 0;
+    border-radius: 6px;
+    outline: 1px solid #a9afc333;
+    height: 2rem;
+    margin-left: 0.25rem;
+    padding: 0.25rem 1rem 0.25rem 0.5rem;
 }
 
 /* Dialog box */
@@ -423,6 +462,105 @@ dialog::backdrop {
     font-size: 0.875rem;
 }
 
+/* Step card in an edit state */
+.step-card.edit {
+    outline: 0;
+}
+
+.step-card.edit .step-header {
+    background-color: var(--primary-card);
+    justify-content: space-between;
+    gap: 1.375rem;
+}
+
+.step-card.edit .step-performer label {
+    flex-direction: row; 
+    align-items: center;
+    white-space: nowrap;
+    flex-grow: 1;
+    gap: 0.5rem;
+}
+
+.step-card.edit .step-performer input {
+    flex-grow: 1;
+    width: auto;
+}
+
+.step-card.edit .instruction {
+    background-color: var(--secondary-card);
+    align-items: center;
+    padding: 0.75rem 1.375rem;
+}
+
+.step-card.edit input {
+    margin: 0.125rem;
+}
+
+.step-card.edit .instruction-detail .instruction-text-input {
+    flex-grow: 1;
+}
+
+.step-card.edit .instruction-detail {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.step-card.edit .instruction-detail input {
+    flex-grow: 1;
+    width: auto;
+}
+
+.rearrange-container {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rearrange-container button {
+    font-size: 1.125rem;
+    padding: 0.125rem;
+}
+
+.edit-pills {
+    background-color: var(--secondary-card);
+    padding: 0.5rem 1.375rem;
+    gap: 1em;
+}
+
+.new-instruction {
+    display: none;
+    width: 100%;
+    border-radius: 0 0 12px 12px;
+}
+
+.step-card.edit:has(input:focus, select:focus) .new-instruction {
+    display: block;
+}
+
+.step-card.edit:hover .new-instruction {
+    display: block;
+}
+
+.new-step {
+    border-radius: 32px;
+    width: 30%;
+
+    border: 2px solid var(--secondary-purple-2);
+    background-color: var(--background);
+    color: var(--text);
+
+    margin-top: 1rem;
+}
+
+.new-step:hover {
+    border: 2px solid var(--secondary-purple-2);
+    color: var(--secondary-purple-2);
+    transform: translateY(-5px);
+}
+
+
 /* General step card */
 .step-card {
     background-color: var(--primary-card);
@@ -444,6 +582,7 @@ dialog::backdrop {
 .step-details {
     flex-direction: column;
     justify-content: space-evenly;
+    flex-grow: 1;
 }
 
 .step-number {
