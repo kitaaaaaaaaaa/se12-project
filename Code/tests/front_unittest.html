@@ -1,0 +1,45 @@
+<!-- Code from the following article: -->
+<!-- https://alexwlchan.net/2023/testing-javascript-without-a-framework/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Insert code to test -->
+    <script src="../frontend/app.js"></script>
+    
+    <!-- Load necessary files for testing -->
+    <script src="front_unittest.js"></script>
+    <style>
+        .test_result {
+            margin: 0;
+        }
+
+        .success { color: green; }
+        .failure { color: red;   }
+
+        .success::before { content: '✔ '; }
+        .failure::before { content: '✘ '; }
+    </style>
+</head>
+<body>
+<script>
+    // Write unit tests here
+    it('createPublicationYearLabel: a range of years', () => {
+        assertEqual(
+            createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
+            'published between 2001 and 2002'
+        );
+    });
+
+    it("addNumbers: Add 3 + 2", () => {
+        assertEqual(
+            addNumbers(3, 2),
+            5
+        );
+    })
+</script>    
+</body>
+</html>

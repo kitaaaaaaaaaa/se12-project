@@ -3,10 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Run Sheet</title>
+
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    
+    <!-- Import icons -->
+    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header class="grid-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>Digital Run Sheet</h1>
+        <button type="button" id="create-account">
+            <i class="fa-regular fa-circle-user"></i>
+            Create account
+        </button>
+    </header>
+    <main>
+        <button type="button" command="show-modal" commandfor="my-dialog">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            Open dialog
+        </button>
+
+        <dialog id="my-dialog">
+            <h2>Are you sure?</h2>
+            <p>Do you want to delete '2025 Concert'?</p>
+
+            <div class="dialog-buttons">
+                <button type="button" command="close" commandfor="my-dialog">
+                    <i class="fa-solid fa-plus"></i>
+                    Back
+                </button>
+
+                <button type="button" command="close" commandfor="my-dialog">
+                    <i class="fa-solid fa-plus"></i>
+                    Delete
+                </button>
+            </div>
+        </dialog>
+
+        <step-card
+            step-title = "Erase Me by Lizzy McAlpine"
+            step-performer = "Vocal Ensemble"
+            step-number = "02"
+            classes = "current-step admin"
+            >
+            <template>
+                {
+                    "instructions": [
+                        {"job": "Stage Hands", "detail": "REMOVE all music stands"},
+                        {"job": "Stage Hands", "detail": "HANDOFF 8 radio mics to vocalists"}
+                    ]
+                }
+            </template>
+        </step-card>
+
+    </main>
+    <script src="app.js" defer></script>
 </body>
 </html>
