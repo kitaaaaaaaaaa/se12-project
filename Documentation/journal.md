@@ -229,8 +229,6 @@ I also want to utilise proper branching strategies this week, setting it up so I
 **Aims for next week:**
 
 
-- create error logging (python side)
-
 - CSS components
     - editing step card (/pill, /text inputs, custom buttons)
     - event card

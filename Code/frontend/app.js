@@ -1,3 +1,4 @@
+// Create a web component for a step card
 class stepCard extends HTMLElement {
     connectedCallback() {
         // Retrieve attributes from HTML page
@@ -55,6 +56,50 @@ class stepCard extends HTMLElement {
 }
 customElements.define("step-card", stepCard)
 
+// Create a web component for an event card
+class eventCard extends HTMLElement {
+    connectedCallback() {
+        const event_name = this.getAttribute("event-name");
+        const event_date = this.getAttribute("event-date");
+        const event_location = this.getAttribute("event-location");
+        const past = this.getAttribute("past");
+
+        this.innerHTML = `
+            <div class="event-card">
+                <div class="event-information grid-container">
+                    <div class="event-details flex-container">
+                        <h2 class="figtree-medium">${event_name}</h2>
+                        <span class="secondary-text-clr">
+                            <i class="fa-regular fa-calendar"></i> ${event_date}
+                        </span>
+                        <span class="secondary-text-clr">
+                            <i class="fa-solid fa-location-dot"></i> ${event_location}
+                        </span>
+                    </div>
+                    <div class="event-actions">
+                        <button type="button" class="play-button">
+                            <i class="fa-solid fa-play icon-green"></i>
+                        </button>
+
+                        <button type="button" class="edit-button">
+                            <i class="fa-solid fa-pencil"></i>
+                        </button>
+
+                        <button type="button" class="del-button>
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="event-indicator ${past}"></div>
+            </div>
+        `
+        const playButton = this.querySelector(".play-button");
+        const editButton = this.querySelector(".edit-button");
+        const delButton = this.querySelector(".del-button");
+    }
+}
+customElements.define("event-card", eventCard)
+
 // Function to show a loading screen
 function showLoading() {
     const screen = document.createElement('div')
@@ -80,7 +125,3 @@ pills.forEach(pill => {
         event.target.classList.toggle("active");
     })
 })
-
-function addNumbers(a, b) {
-    return a + b
-}
