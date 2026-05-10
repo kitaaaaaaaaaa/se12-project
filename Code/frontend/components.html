@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Import icons -->
+    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
+
+    <!-- Define some temporary styles -->
+    <style>
+        .middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>Digital Run Sheet</h1>
+        <button type="button" id="create-account">
+            <i class="fa-regular fa-circle-user"></i>
+            Create account
+        </button>
+    </header>
+    <main>
+        <!-- Pills at the top of the page -->
+        <section class="pill-container">
+            <button type="button" class="pill active">
+                All events
+            </button>
+            <button type="button" class="pill">
+                Current events
+            </button>
+            <button type="button" class="pill">
+                Future events
+            </button>
+        </section>
+        
+        <!-- Code to make an event card -->
+        <section class="events-container grid-container">
+            <event-card
+                event-name="2026 Concert"
+                event-date="01/05/2026"
+                event-location="School Hall"
+                past=""
+            ></event-card>
+
+            <event-card
+                event-name="2025 Concert"
+                event-date="28/07/2025"
+                event-location="School Hall"
+                past="past"
+            ></event-card>
+        </section>
+
+
+            <!-- Button to open dialog -->
+            <button type="button" command="show-modal" commandfor="my-dialog" class="blue-button">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Open dialog
+            </button>
+
+            <!-- HTML to define the contents of the dialog box -->
+            <dialog id="my-dialog">
+                <h2>Are you sure?</h2>
+                <p>Do you want to delete '2025 Concert'?</p>
+
+                <div class="dialog-buttons">
+                    <button type="button" command="close" commandfor="my-dialog">
+                        <i class="fa-solid fa-plus"></i>
+                        Back
+                    </button>
+
+                    <button type="button" command="close" commandfor="my-dialog">
+                        <i class="fa-solid fa-plus"></i>
+                        Delete
+                    </button>
+                </div>
+            </dialog>
+
+            <!-- Code to define a step card -->
+            <step-card
+                step-title = "Erase Me by Lizzy McAlpine"
+                step-performer = "Vocal Ensemble"
+                step-number = "02"
+                classes = "current-step admin"
+                >
+                <template>
+                    {
+                        "instructions": [
+                            {"job": "Stage Hands", "detail": "REMOVE all music stands"},
+                            {"job": "Stage Hands", "detail": "HANDOFF 8 radio mics to vocalists"}
+                        ]
+                    }
+                </template>
+            </step-card>
+
+            <!-- Code to define a step card being edited -->
+            <edit-step-card
+                step-title = "Erase Me by Lizzy McAlpine"
+                step-performer = "Vocal Ensemble"
+                step-number = "02"
+                curtains = "active"
+                video = ""
+                blackout = ""
+                >
+                <template>
+                    {
+                        "instructions": [
+                            {"job": "Stage Hands", "command": "REMOVE", "detail": "all music stands"},
+                            {"job": "Stage Hands", "command": "HANDOFF", "detail": "8 radio mics to vocalists"}
+                        ]
+                    }
+                </template>
+            </edit-step-card>
+
+        <!-- Floating button to create a new event -->
+        <button type="button" class="floating-button" >
+            <i class="fa-solid fa-plus"></i>
+            Create new event
+        </button>
+
+        <!-- Empty screen -->
+        <section class="empty-screen hidden">
+            <span class="figtree-semibold">(っ °Д °)っ</span>
+            <p>Looks like there's nothing here...</p>
+        </section>
+    </main>
+    <script src="app.js" defer></script>
+</body>
+</html>

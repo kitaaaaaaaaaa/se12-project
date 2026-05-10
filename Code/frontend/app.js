@@ -15,11 +15,11 @@ class stepCard extends HTMLElement {
             try {
                 parsed_instructions = JSON.parse(template.innerHTML.trim()).instructions;
             } catch (e) {
-                console.error("Invalid JSON in step-card <template>", e)
+                console.error("Invalid JSON in step-card <template>", e);
                 parsed_instructions = null;
             }
         }
-        
+
         // Create step card container and insert the step header
         let stepHTML = `
             <div class="step-card ${classes}">
@@ -54,7 +54,7 @@ class stepCard extends HTMLElement {
         this.innerHTML = stepHTML;
     }
 }
-customElements.define("step-card", stepCard)
+customElements.define("step-card", stepCard);
 
 // Create a web component for editing a step card
 class editStepCard extends HTMLElement {
@@ -75,24 +75,24 @@ class editStepCard extends HTMLElement {
             try {
                 parsed_instructions = JSON.parse(template.innerHTML.trim()).instructions;
             } catch (e) {
-                console.error("Invalid JSON in step-card <template>", e)
+                console.error("Invalid JSON in edit-step-card <template>", e);
                 parsed_instructions = null;
             }
         }
-        
+
         // Create step card container and insert the step header
         let stepHTML = `
         <div class="step-card edit">
             <div class="step-header flex-container">
                     <span class="step-number figtree-semibold">${step_number}</span>
                     <div class="step-details flex-container">
-                        <input type="text" placeholder="Step title" value="${step_title}">
+                        <input type="text" placeholder="Step title" value="${step_title}" name="edit-step-title">
                         
                         <div class="secondary-text-clr step-performer">
                             <label for="performer" class="flex-container">
                                 <i class="fa-regular fa-star"></i>
                                 On stage: 
-                                <input type="text" name="performer" placeholder="Performer" value="${step_performer}">
+                                <input type="text" name="edit-step-performer" placeholder="Performer" value="${step_performer}">
                             </label>
                         </div>
                     </div>
@@ -108,9 +108,9 @@ class editStepCard extends HTMLElement {
             </div>
 
             <div class="edit-pills flex-container">
-                <button type="button" class="pill ${curtains}">Curtains open?</button>
-                <button type="button" class="pill ${video}">Video</button>
-                <button type="button" class="pill ${blackout}">Blackout</button>
+                <button type="button" class="pill curtains ${curtains}">Curtains open?</button>
+                <button type="button" class="pill video ${video}">Video</button>
+                <button type="button" class="pill blackout ${blackout}">Blackout</button>
             </div>
         `;
 
@@ -153,11 +153,12 @@ class editStepCard extends HTMLElement {
                     command_remove = "selected";
             }
 
+            // Display the instructions
             stepHTML += `
             <div class="instruction flex-container">
-                <div>
+                <div style="white-space: nowrap;">
                     <i class="fa-regular fa-user"></i>
-                    <select name="instruction-job">
+                    <select name="edit-step-instruction-job">
                         <option value="stage_hands" ${job_stage_hands}>Stage Hands</option>
                         <option value="visuals" ${job_visuals}>Visuals</option>
                         <option value="sound" ${job_sound}>Sound</option>
@@ -168,7 +169,7 @@ class editStepCard extends HTMLElement {
 
                 <div class="flex-container instruction-detail">
                     <div>
-                        <select name="instruction-detail-command">
+                        <select name="edit-step-instruction-command">
                             <option value="handoff" ${command_handoff}>HANDOFF</option>
                             <option value="place" ${command_place}>PLACE</option>
                             <option value="remove" ${command_remove}>REMOVE</option>
@@ -176,7 +177,7 @@ class editStepCard extends HTMLElement {
                         </select>
                     </div>
                     <div class="instruction-text-input flex-container">
-                        <input type="text" name="instruction-detail-text" placeholder="Instruction details" value="${instruction.detail}">
+                        <input type="text" name="edit-step-instruction-detail" placeholder="Instruction details" value="${instruction.detail}">
                     </div>
                 </div>
             </div>
@@ -194,29 +195,130 @@ class editStepCard extends HTMLElement {
 
         // Render the HTML
         this.innerHTML = stepHTML;
-        
+
         // Add a new step button after it
         const new_step_button = document.createElement("button");
-        new_step_button.classList.add("new-step")
+        new_step_button.classList.add("new-step");
         new_step_button.innerHTML = `
             <i class="fa-solid fa-layer-group"></i>
             New step
         `;
-        this.after(new_step_button)
+        this.after(new_step_button);
 
-        // Attach events to toggle the appearance of each pill
-        const pills = this.querySelectorAll(".pill")
+        // STUBS TO CHECK IF THE NEW STEP BUTTON WORKS
+        new_step_button.addEventListener('click', () => {
+            console.log('Click: new_step_button');
+        });
+        
+        // Define an arrow function to read the values of every input
+        // and format them into a JSON object
+        const getStepJSON = () => {
+            const edit_step_title_value = this.querySelector("input[name='edit-step-title']").value;
+            const edit_step_performer_value = this.querySelector("input[name='edit-step-performer']").value;
+            const edit_step_number = this.querySelector(".step-number").textContent;
 
-        pills.forEach(pill => {
-            addEventListener('click', (event) => {
+            // Get state of each pill as "active" or "" and save it to edit_attributes
+            const curtain_pill = this.querySelector(".pill.curtains");
+            const video_pill = this.querySelector(".pill.video");
+            const blackout_pill = this.querySelector(".pill.blackout");
+
+            let edit_curtains = "";
+            let edit_video = "";
+            let edit_blackout = "";
+
+            if (curtain_pill.classList.contains("active")) {
+                edit_curtains = "active";
+            }
+            if (video_pill.classList.contains("active")) {
+                edit_video = "active";
+            }
+            if (blackout_pill.classList.contains("active")) {
+                edit_blackout = "active";
+            }
+
+            // Create an object for the step attributes
+            let edit_attributes = {
+                "step-title": edit_step_title_value,
+                "step-performer": edit_step_performer_value,
+                "step-number": edit_step_number,
+                "curtains": edit_curtains,
+                "video": edit_video,
+                "blackout": edit_blackout
+            };
+
+            // Create an array of objects to store the step instructions
+            let edit_instructions = [];
+            const step_job_elements = this.querySelectorAll("select[name='edit-step-instruction-job']");
+            const step_command_elements = this.querySelectorAll("select[name='edit-step-instruction-command']");
+            const step_detail_elements = this.querySelectorAll("input[name='edit-step-instruction-detail']");
+
+            // For each instruction that exists, save it as an object and add it to the array
+            for (let i = 0; i < step_job_elements.length; i++) {
+                edit_instructions.push({
+                    "job": step_job_elements[i].value,
+                    "command": step_command_elements[i].value.toUpperCase(),
+                    "detail": step_detail_elements[i].value
+                });
+            }
+
+            // Format step into JSON object
+            let step = {
+                "attributes": edit_attributes,
+                "instructions": edit_instructions
+            };
+            return step;
+        }
+        
+        // STUB TO CHECK IF THE NEW INSTRUCTION BUTTON WORKS
+        const new_instruction_button = this.querySelector(".new-instruction");
+        new_instruction_button.addEventListener('click', () => {
+            console.log('Click: new_instruction_button');
+            
+            // Add a new instruction
+            const new_instruction_html = `
+                <div class="instruction flex-container">
+                    <div style="white-space: nowrap;">
+                        <i class="fa-regular fa-user"></i>
+                        <select name="edit-step-instruction-job">
+                            <option value="stage_hands">Stage Hands</option>
+                            <option value="visuals">Visuals</option>
+                            <option value="sound">Sound</option>
+                            <option value="camera">Camera</option>
+                            <option value="lighting">Lighting</option>
+                        </select>
+                    </div>
+
+                    <div class="flex-container instruction-detail">
+                        <div>
+                            <select name="edit-step-instruction-command">
+                                <option value="handoff">HANDOFF</option>
+                                <option value="place">PLACE</option>
+                                <option value="remove">REMOVE</option>
+                                <option value="move">MOVE</option>
+                            </select>
+                        </div>
+                        <div class="instruction-text-input flex-container">
+                            <input type="text" name="edit-step-instruction-detail" placeholder="Instruction details">
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            new_instruction_button.insertAdjacentHTML('beforebegin', new_instruction_html); 
+        });
+
+        // Attach events to toggle the state of each pill
+        const pill_container = this.querySelector(".edit-pills");
+
+        pill_container.addEventListener('click', (event) => {
+            if (event.target.matches(".pill")) {
                 event.target.classList.toggle("active");
-            })
-        })
-
+            }
+        });
 
     }
 }
-customElements.define("edit-step-card", editStepCard)
+customElements.define("edit-step-card", editStepCard);
 
 // Create a web component for an event card
 class eventCard extends HTMLElement {
@@ -278,12 +380,3 @@ function showLoading() {
 function hideLoading() {
     document.getElementById("loading-screen").remove();
 }
-
-// Function to toggle a pill
-const pills = document.querySelectorAll(".pill")
-
-pills.forEach(pill => {
-    addEventListener('click', (event) => {
-        event.target.classList.toggle("active");
-    })
-})
