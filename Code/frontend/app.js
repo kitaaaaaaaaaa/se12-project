@@ -1,5 +1,6 @@
 // Create a web component for a step card
 class stepCard extends HTMLElement {
+    // Run this code when the component is added to the page
     connectedCallback() {
         // Retrieve attributes from HTML page
         const step_title = this.getAttribute("step-title");
@@ -42,7 +43,7 @@ class stepCard extends HTMLElement {
                     <span class="figtree-bold">
                         <i class="fa-regular fa-user"></i> ${instruction.job}
                     </span>
-                    <span>${instruction.detail}</span>
+                    <span>${instruction.command} ${instruction.detail}</span>
                 </div>
             `;
         });
@@ -58,6 +59,7 @@ customElements.define("step-card", stepCard);
 
 // Create a web component for editing a step card
 class editStepCard extends HTMLElement {
+    // Run this code when the component is added to the page
     connectedCallback() {
         // Retrieve attributes from HTML page
         const step_title = this.getAttribute("step-title");
@@ -98,10 +100,10 @@ class editStepCard extends HTMLElement {
                     </div>
                 
                 <div class="rearrange-container flex-container">
-                    <button type="button">
+                    <button type="button" class="rearrange-up">
                         <i class="fa-solid fa-angle-up"></i>
                     </button>
-                    <button type="button">
+                    <button type="button" class="rearrange-down">
                         <i class="fa-solid fa-angle-down"></i>
                     </button>
                 </div>
@@ -191,89 +193,57 @@ class editStepCard extends HTMLElement {
                 New instruction
             </button>
         </div>
+            <button type="button" class="new-step">
+                <i class="fa-solid fa-layer-group"></i>
+                New step
+            </button>
         `;
 
         // Render the HTML
         this.innerHTML = stepHTML;
 
-        // Add a new step button after it
-        const new_step_button = document.createElement("button");
-        new_step_button.classList.add("new-step");
-        new_step_button.innerHTML = `
-            <i class="fa-solid fa-layer-group"></i>
-            New step
-        `;
-        this.after(new_step_button);
+        // Add functionality to the rearrange button
+        const rearrange_up_button = this.querySelector(".rearrange-up");
+        const rearrange_down_button = this.querySelector(".rearrange-down");
 
-        // STUBS TO CHECK IF THE NEW STEP BUTTON WORKS
+        rearrange_up_button.addEventListener('click', () => {
+            const previous_step = this.previousElementSibling;
+            if (previous_step && previous_step.matches("edit-step-card")) {
+                this.parentNode.insertBefore(this, previous_step);
+            }
+        });
+
+        rearrange_down_button.addEventListener('click', () => {
+            const next_step = this.nextElementSibling;
+            if (next_step && next_step.matches("edit-step-card")) {
+                this.parentNode.insertBefore(next_step, this);
+            }
+        });
+
+        // Add functionality to the new step button
+        const new_step_button = this.querySelector(".new-step");
         new_step_button.addEventListener('click', () => {
             console.log('Click: new_step_button');
+            
+            const new_step = createNewEditStep({
+                "attributes": {
+                    "step_title": "",
+                    "step_performer": "",
+                    "step_number": (parseInt(step_number) + 1).toString().padStart(2, '0'),
+                    "curtains": "",
+                    "video": "",
+                    "blackout": "" },
+                "instructions": [
+                    {"job": "", "command": "", "detail": ""}
+                ]}
+            );
+
+            this.after(new_step);
         });
         
-        // Define an arrow function to read the values of every input
-        // and format them into a JSON object
-        const getStepJSON = () => {
-            const edit_step_title_value = this.querySelector("input[name='edit-step-title']").value;
-            const edit_step_performer_value = this.querySelector("input[name='edit-step-performer']").value;
-            const edit_step_number = this.querySelector(".step-number").textContent;
-
-            // Get state of each pill as "active" or "" and save it to edit_attributes
-            const curtain_pill = this.querySelector(".pill.curtains");
-            const video_pill = this.querySelector(".pill.video");
-            const blackout_pill = this.querySelector(".pill.blackout");
-
-            let edit_curtains = "";
-            let edit_video = "";
-            let edit_blackout = "";
-
-            if (curtain_pill.classList.contains("active")) {
-                edit_curtains = "active";
-            }
-            if (video_pill.classList.contains("active")) {
-                edit_video = "active";
-            }
-            if (blackout_pill.classList.contains("active")) {
-                edit_blackout = "active";
-            }
-
-            // Create an object for the step attributes
-            let edit_attributes = {
-                "step-title": edit_step_title_value,
-                "step-performer": edit_step_performer_value,
-                "step-number": edit_step_number,
-                "curtains": edit_curtains,
-                "video": edit_video,
-                "blackout": edit_blackout
-            };
-
-            // Create an array of objects to store the step instructions
-            let edit_instructions = [];
-            const step_job_elements = this.querySelectorAll("select[name='edit-step-instruction-job']");
-            const step_command_elements = this.querySelectorAll("select[name='edit-step-instruction-command']");
-            const step_detail_elements = this.querySelectorAll("input[name='edit-step-instruction-detail']");
-
-            // For each instruction that exists, save it as an object and add it to the array
-            for (let i = 0; i < step_job_elements.length; i++) {
-                edit_instructions.push({
-                    "job": step_job_elements[i].value,
-                    "command": step_command_elements[i].value.toUpperCase(),
-                    "detail": step_detail_elements[i].value
-                });
-            }
-
-            // Format step into JSON object
-            let step = {
-                "attributes": edit_attributes,
-                "instructions": edit_instructions
-            };
-            return step;
-        }
-        
-        // STUB TO CHECK IF THE NEW INSTRUCTION BUTTON WORKS
+        // Add functionality to the new instructino button
         const new_instruction_button = this.querySelector(".new-instruction");
         new_instruction_button.addEventListener('click', () => {
-            console.log('Click: new_instruction_button');
-            
             // Add a new instruction
             const new_instruction_html = `
                 <div class="instruction flex-container">
@@ -317,11 +287,71 @@ class editStepCard extends HTMLElement {
         });
 
     }
+
+    getStepData() {
+        // Define an arrow function to read the values of every input
+        // and format them into a JSON object
+        const edit_step_title_value = this.querySelector("input[name='edit-step-title']").value;
+        const edit_step_performer_value = this.querySelector("input[name='edit-step-performer']").value;
+        const edit_step_number = this.querySelector(".step-number").textContent;
+
+        // Get state of each pill as "active" or "" and save it to edit_attributes
+        const curtain_pill = this.querySelector(".pill.curtains");
+        const video_pill = this.querySelector(".pill.video");
+        const blackout_pill = this.querySelector(".pill.blackout");
+
+        let edit_curtains = "";
+        let edit_video = "";
+        let edit_blackout = "";
+
+        if (curtain_pill.classList.contains("active")) {
+            edit_curtains = "active";
+        }
+        if (video_pill.classList.contains("active")) {
+            edit_video = "active";
+        }
+        if (blackout_pill.classList.contains("active")) {
+            edit_blackout = "active";
+        }
+
+        // Create an object for the step attributes
+        let edit_attributes = {
+            "step_title": edit_step_title_value,
+            "step_performer": edit_step_performer_value,
+            "step_number": edit_step_number,
+            "curtains": edit_curtains,
+            "video": edit_video,
+            "blackout": edit_blackout
+        };
+
+        // Create an array of objects to store the step instructions
+        let edit_instructions = [];
+        const step_job_elements = this.querySelectorAll("select[name='edit-step-instruction-job']");
+        const step_command_elements = this.querySelectorAll("select[name='edit-step-instruction-command']");
+        const step_detail_elements = this.querySelectorAll("input[name='edit-step-instruction-detail']");
+
+        // For each instruction that exists, save it as an object and add it to the array
+        for (let i = 0; i < step_job_elements.length; i++) {
+            edit_instructions.push({
+                "job": step_job_elements[i].value,
+                "command": step_command_elements[i].value.toUpperCase(),
+                "detail": step_detail_elements[i].value
+            });
+        }
+
+        // Format step into JSON object
+        let step = {
+            "attributes": edit_attributes,
+            "instructions": edit_instructions
+        };
+        return step;
+    }
 }
 customElements.define("edit-step-card", editStepCard);
 
 // Create a web component for an event card
 class eventCard extends HTMLElement {
+    // Run this code when the component is added to the page
     connectedCallback() {
         const event_name = this.getAttribute("event-name");
         const event_date = this.getAttribute("event-date");
@@ -349,7 +379,7 @@ class eventCard extends HTMLElement {
                             <i class="fa-solid fa-pencil"></i>
                         </button>
 
-                        <button type="button" class="del-button>
+                        <button type="button" class="del-button">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>
@@ -360,6 +390,19 @@ class eventCard extends HTMLElement {
         const play_button = this.querySelector(".play-button");
         const edit_button = this.querySelector(".edit-button");
         const del_button = this.querySelector(".del-button");
+    }
+
+    getEventData() {
+        const event_name = this.getAttribute("event-name");
+        const event_date = this.getAttribute("event-date");
+        const event_location = this.getAttribute("event-location");
+        const past = this.getAttribute("past");
+        return {
+            "event_name": event_name,
+            "event_date": event_date,
+            "event_location": event_location,
+            "past": past
+        };
     }
 }
 customElements.define("event-card", eventCard)
@@ -379,4 +422,43 @@ function showLoading() {
 // Function to hide a loading screen
 function hideLoading() {
     document.getElementById("loading-screen").remove();
+}
+
+function createNewEditStep(stepjson) {
+    // Use given step data that is split into attributes and instructions to create a new step
+    const new_step = document.createElement("edit-step-card");
+    new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
+    new_step.setAttribute("step-performer", stepjson.attributes["step_performer"]);
+    new_step.setAttribute("step-number", stepjson.attributes["step_number"]);
+    new_step.setAttribute("curtains", stepjson.attributes["curtains"]);
+    new_step.setAttribute("video", stepjson.attributes["video"]);
+    new_step.setAttribute("blackout", stepjson.attributes["blackout"]);
+
+    const template = document.createElement("template");
+    template.innerHTML = JSON.stringify({ instructions: stepjson.instructions });
+    new_step.appendChild(template);
+    return new_step;
+}
+
+function createNewStep(stepjson) {
+    // Use given step data that is split into attributes and instructions to create a new step
+    const new_step = document.createElement("step-card");
+    new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
+    new_step.setAttribute("step-performer", stepjson.attributes["step_performer"]);
+    new_step.setAttribute("step-number", stepjson.attributes["step_number"]);
+
+    const template = document.createElement("template");
+    template.innerHTML = JSON.stringify({ instructions: stepjson.instructions });
+    new_step.appendChild(template);
+    return new_step;
+}
+
+function createNewEvent(eventjson) {
+    // Use given event data to create a new event card
+    const new_event = document.createElement("event-card");
+    new_event.setAttribute("event-name", eventjson.name);
+    new_event.setAttribute("event-date", eventjson.date);
+    new_event.setAttribute("event-location", eventjson.location);
+    new_event.setAttribute("past", eventjson.past);
+    return new_event;
 }

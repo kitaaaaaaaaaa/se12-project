@@ -463,6 +463,13 @@ dialog::backdrop {
 }
 
 /* Step card in an edit state */
+edit-step-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .step-card.edit {
     outline: 0;
 }
@@ -545,7 +552,7 @@ dialog::backdrop {
 
 .new-step {
     border-radius: 32px;
-    width: 30%;
+    width: 45%;
 
     border: 2px solid var(--secondary-purple-2);
     background-color: var(--background);
