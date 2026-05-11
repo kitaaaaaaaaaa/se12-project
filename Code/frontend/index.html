@@ -24,62 +24,30 @@
         </button>
     </header>
     <main>
-        <button type="button" command="show-modal" commandfor="my-dialog" class="blue-button">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            Open dialog
-        </button>
+        <!-- Code copied from LearnerHours PWA -->
+        <form id="registrationForm">
+            <fieldset>
+                <legend>Create an account</legend>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="figtree-400">
+                <div id="usernameError" class="error"></div>
 
-        <dialog id="my-dialog">
-            <h2>Are you sure?</h2>
-            <p>Do you want to delete '2025 Concert'?</p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="figtree-400">
+                <div id="passwordError" class="error"></div>
 
-            <div class="dialog-buttons">
-                <button type="button" command="close" commandfor="my-dialog">
-                    <i class="fa-solid fa-plus"></i>
-                    Back
-                </button>
+                <label for="reenter-password">Reenter Password:</label>
+                <input type="password" id="reenter-password" name="password" class="figtree-400">
+                <div id="reenterPasswordError" class="error"></div>
 
-                <button type="button" command="close" commandfor="my-dialog">
-                    <i class="fa-solid fa-plus"></i>
-                    Delete
-                </button>
-            </div>
-        </dialog>
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" class="figtree-400">
+                <div id="phoneError" class="error"></div>
 
-        <step-card
-            step-title = "Erase Me by Lizzy McAlpine"
-            step-performer = "Vocal Ensemble"
-            step-number = "02"
-            classes = "current-step admin"
-            >
-            <template>
-                {
-                    "instructions": [
-                        {"job": "Stage Hands", "detail": "REMOVE all music stands"},
-                        {"job": "Stage Hands", "detail": "HANDOFF 8 radio mics to vocalists"}
-                    ]
-                }
-            </template>
-        </step-card>
-
-        <edit-step-card
-            step-title = "Erase Me by Lizzy McAlpine"
-            step-performer = "Vocal Ensemble"
-            step-number = "02"
-            curtains = "active"
-            video = ""
-            blackout = ""
-            >
-            <template>
-                {
-                    "instructions": [
-                        {"job": "stage_hands", "command": "remove", "detail": "all music stands"},
-                        {"job": "stage_hands", "command": "handoff", "detail": "8 radio mics to vocalists"}
-                    ]
-                }
-            </template>
-        </edit-step-card>
-
+                <div id="formError" class="error"></div>
+                <button type="submit">Register</button>
+            </fieldset>
+        </form>
     </main>
     <script type="module" src="components/app.js" defer></script>
 </body>

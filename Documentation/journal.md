@@ -152,7 +152,18 @@ Start work on the researching and planning phase.
 - When filling out [client communication](./02%20-%20Research%20and%20planning/4.%20Client%20Communication.md), I reflected on which communication issues in Set 17.06 might be applicable. Since I've known both of my clients for a couple years, I concluded that all issues could apply, and it was up to me to mitigate those issues.
 
 **Challenges and solutions:**
-- Client had trouble grasping the concept of the project, even after some discussion. I created a rough design of the UI using Figma to visualise the software solution and make it easier to understand, as seen at the bottom of this journal entry
+- Client had trouble grasping the concept of the project, even after some discussion. I created a rough design of the UI using Figma to visualise the software solution and make it easier to understand
+
+<details>
+<summary>Rough UI designs</summary>
+
+![Animation of admin view](Assets/admin_view_design.gif)
+*Event administrators can progress through the run sheet*
+
+![Animation of crew member view](Assets/stagehands_view_design.gif)
+*Crew members can view instructions, synchronised with the event admin*
+</details>
+
 - Due to the course conflicting with the task instructions, I had already specified methods for communication with stakeholders at an earlier stage. I kept this in my GANTT chart to accurately reflect what I had already done. I decided to extend the methods using the information in Set 17.06
 
 **Reflection:**
@@ -162,12 +173,6 @@ I am also getting more proficient at GitHub flavoured markdown. I don't need to 
 
 **Aims for next week:**
 I aim to work on the Quality Assurance document. I want to finish it so that I can keep in time with my GANTT chart and allow more time for producing and implementing.
-
-![Animation of admin view](Assets/admin_view_design.gif)
-*Event administrators can progress through the run sheet*
-
-![Animation of crew member view](Assets/stagehands_view_design.gif)
-*Crew members can view instructions, synchronised with the event admin*
 
 ## 27/04/2026
 **Aims:**
@@ -185,7 +190,7 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 - Data dictionaries were hard to start without being able to visualise the database. I created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database. To fix these problems, I made the schema online to make it easier to modify.
 ![Database schema drafted on a whiteboard](Assets/whiteboard_schema.png)
 - Completed storyboard using Figma, inspired by some Pinterest posts. Overhauled the UI/UX according to client feedback/my own testing. It was hard to read the previous UI in the dark.
-    - I also had some UX concerns that neither me or my client could figure out. The crew member view was quite hard to quickly scan. I used Gemini to help me brainstorm ways to rearrange the UI. It revealed that I should put the jobs like "stage hands" on the left, because users scan quicker left and downwards.
+    - I also had some UX concerns that neither me or my client could figure out, neither did we have the knowledge to solve it. The crew member view was quite hard to quickly scan. I used Gemini to help me brainstorm ways to rearrange the UI. It revealed that I should put the jobs like "stage hands" on the left, because users scan quicker going left and then downwards.
 
 **Reflection:**
 The QA checklist seemed daunting at first, but I'm happy that I managed to finish it in the week. As of now, I am still on time with my GANTT chart, which quite frankly, is a miracle. I have been trying to get as much done as possible before exams hit and I might need to modify the GANTT chart in the future.
@@ -214,6 +219,7 @@ I also want to utilise proper branching strategies this week, setting it up so I
 - I watched some YouTube videos on how to make a Python virtual environment - an isolated environment to prevent package version conflicts and make the project easier to share ([W3Schools](https://www.w3schools.com/python/python_virtualenv.asp)). I wanted to make sure that my app worked on all platforms.
 - I had to brush up on my SQL skills and learnt how to create new tables in SQL syntax with this [article](https://www.w3schools.com/sql/sql_create_table.asp), which was neccessary for my project.
 - From my past experience making the Learner Hours PWA, CSS can be unpredictable at times. I viewed a few [articles](https://www.joshwcomeau.com/css/custom-css-reset/) that discussed their own methods of resetting CSS, and I decided to take some code snippets. Hopefully this will speed up development and make it even easier.
+- Transferred UI designs in the storyboard into HTML/CSS/JS code
 
 **Challenges and solutions:**
 - I encountered this error when creating the `init_db.py` file to create the database. I didn't know what this meant, so I looked at some StackOverflow articles and did a Google search. The search summary told me that I had a misplaced foreign key definition, so I moved all my foreign key definitions at the bottom and it solved the problem. <details> <summary>Screenshots of error and Google search results</summary>
@@ -226,21 +232,33 @@ I also want to utilise proper branching strategies this week, setting it up so I
 </details>
 
 **Reflection:**
+- This week went extremely well. I started making the UI in HTML/CSS/JS, and it was a faster process than I thought, especially because I had UI designs and colours planned out in my storyboard. At times, I encountered JavaScript bugs too small to document, but they were caused by small syntax errors which was time consuming to manually find and fix. Next week, I should utilise JSLint more, which will automatically point out errors in my code.
+
+<details>
+<summary>GANTT chart update</summary>
+
+![GANTT chart as of 11/05/2025](Assets/gantt_11052026.png)
+</details>
+
 **Aims for next week:**
-
-
-- CSS components
-    - editing step card (/pill, /text inputs, custom buttons)
+- Finish off creation of UI components and start building authentication system
 
 ## 11/05/2026
 **Aims:**
+- Finish of creation of UI components
+- Start building authentication system
+
 **Progress:**
 - I watched some [YouTube tutorials](https://www.youtube.com/watch?v=-uyI0TjhXdk) and looked through some [StackOverflow articles](https://stackoverflow.com/questions/50404970/web-components-pass-data-to-and-from) in order to learn how to build web components - which allows for customised, reusable components that allow for consistent design. I implemented this into my project.
 - I also used a variety of W3Schools articles and MDN web documentation to help me design UI components based off of my storyboard. The discovery of CSS grids from my LearnerHours PWA has seriously been life changing - it offers a flexible and intuitive way to arrange content in grids.
+
 **Challenges and solutions:**
 - I had a problem where the app could not read the properties of an undefined objects while working on the `getSTEPJSON()` function. I first searched this up on Google, which pointed me to a few StackOverflow articles which suggested that a variable was not assigned yet, but I was still confused. I then asked Gemini for some assistance on how to solve this issue, and it pointed out a scope error. I was using an ordinary function, which creates its own scope, but I should have used an arrow function. This allows me to still access objects using `this.` in JavaScript, which I needed for my function. I did not know that I had to do this, since I am new with web components.
+- I was wondering why my repository graph did not properly show my utilisation of branching, but after some of my own testing, I found out it was because I was working on branches in isolation with one another. For instance, I would commit on one branch, then commit on another branch, but never work on two branches at the same time, which is why my graph might not look how I expected.
 
 **Reflection:**
+- This week I had some troubles with using version control effectively, since I couldn't visualise branches being merged in the terminal. This caused me some stress I'd like to avoid, so I will use the UI in VSCode.
+
 **Aims for next week:**
 
 ---
