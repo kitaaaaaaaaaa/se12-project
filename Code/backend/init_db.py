@@ -6,12 +6,14 @@ if __name__ == "__main__":
     conn = sqlite3.connect('./database/database.db')
     cursor = conn.cursor()
 
-    # Create users table
+    # Create users table and link it to the users table (many to 1)
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT NOT NULL,
-        password_hash TEXT NOT NULL
+        password_hash TEXT NOT NULL,
+        role_id INTEGER NOT NULL,
+        FOREIGN KEY (role_id) REFERENCES roles(role_id)
     )
     ''')
 
