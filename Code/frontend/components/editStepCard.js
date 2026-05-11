@@ -1,64 +1,10 @@
-// Create a web component for a step card
-class stepCard extends HTMLElement {
-    // Run this code when the component is added to the page
-    connectedCallback() {
-        // Retrieve attributes from HTML page
-        const step_title = this.getAttribute("step-title");
-        const step_performer = this.getAttribute("step-performer");
-        const step_number = this.getAttribute("step-number");
-        const classes = this.getAttribute("classes");
-
-        // Retrieve the step instructions from HTML page
-        const template = this.querySelector("template");
-        let parsed_instructions = [];
-
-        if (template) {
-            try {
-                parsed_instructions = JSON.parse(template.innerHTML.trim()).instructions;
-            } catch (e) {
-                console.error("Invalid JSON in step-card <template>", e);
-                parsed_instructions = null;
-            }
-        }
-
-        // Create step card container and insert the step header
-        let stepHTML = `
-            <div class="step-card ${classes}">
-                <div class="step-header flex-container">
-                    <div class="step-details flex-container">
-                        <span class="step-title figtree-semibold">${step_title}</span>
-
-                        <span class="secondary-text-clr step-performer">
-                            <i class="fa-regular fa-star"></i> On stage: ${step_performer}
-                        </span>
-                    </div>
-                    <span class="step-number figtree-semibold">${step_number}</span>
-                </div>
-        `;
-
-        // Insert an instruction for each one specified
-        parsed_instructions.forEach(instruction => {
-            stepHTML += `
-                <div class="instruction flex-container">
-                    <span class="figtree-bold">
-                        <i class="fa-regular fa-user"></i> ${instruction.job}
-                    </span>
-                    <span>${instruction.command} ${instruction.detail}</span>
-                </div>
-            `;
-        });
-
-        // Close the step card container
-        stepHTML += `</div>`;
-
-        // Render the HTML
-        this.innerHTML = stepHTML;
-    }
-}
-customElements.define("step-card", stepCard);
+// This file contains all the code for editing a step card
+// which displays a step in an editable format and its instructions for administrators.
+// It includes any functions related to it.
+// ---------------------------------------------------------------------------
 
 // Create a web component for editing a step card
-class editStepCard extends HTMLElement {
+export class editStepCard extends HTMLElement {
     // Run this code when the component is added to the page
     connectedCallback() {
         // Retrieve attributes from HTML page
@@ -199,7 +145,7 @@ class editStepCard extends HTMLElement {
                 // Save current state before rearranging
                 this.updateStepCard();
                 previous_step.updateStepCard();
-                
+
                 const current_step_number = this.getAttribute('step-number');
                 const previous_step_number = previous_step.getAttribute('step-number');
 
@@ -221,19 +167,19 @@ class editStepCard extends HTMLElement {
                 // Save current state before rearranging
                 this.updateStepCard();
                 next_step.updateStepCard();
-                
+
                 const current_step_number = this.getAttribute('step-number');
                 const next_step_number = next_step.getAttribute('step-number');
-                
+
                 // Swap the step numbers
                 next_step.setAttribute('step-number', current_step_number);
                 this.setAttribute('step-number', next_step_number);
-                
+
                 // Update the step number UI
                 next_step.querySelector('.step-number').textContent = current_step_number;
                 this.querySelector('.step-number').textContent = next_step_number;
-                
-                this.parentNode.insertBefore(next_step, this)
+
+                this.parentNode.insertBefore(next_step, this);
             }
         });
 
@@ -244,7 +190,7 @@ class editStepCard extends HTMLElement {
             // Get the current step number from the attribute
             const current_step_number = this.getAttribute('step-number');
             const new_step_number = formatStepNumber(parseInt(current_step_number) + 1);
-            
+
             // Create a new empty step
             const new_step = createNewEditStep({
                 "attributes": {
@@ -253,34 +199,36 @@ class editStepCard extends HTMLElement {
                     "step_number": new_step_number,
                     "curtains": "",
                     "video": "",
-                    "blackout": "" },
+                    "blackout": ""
+                },
                 "instructions": [
-                    {"job": "", "command": "", "detail": ""}
-                ]}
+                    { "job": "", "command": "", "detail": "" }
+                ]
+            }
             );
 
             this.after(new_step);
-            
+
             // Increment the step numbers of all subsequent steps
             let next_card = new_step.nextElementSibling;
             let num_to_increment = parseInt(new_step_number);
-            
+
             while (next_card && (next_card.matches('edit-step-card'))) {
                 num_to_increment += 1;
 
                 // Set the new step number attribute
                 const new_num = formatStepNumber(num_to_increment);
                 next_card.setAttribute('step-number', new_num);
-            
+
                 // Update the step number UI
                 const step_num_element = next_card.querySelector('.step-number');
                 step_num_element.textContent = new_num;
-                
+
                 // Go to the next card
                 next_card = next_card.nextElementSibling;
             }
         });
-        
+
         // Add functionality to the new instructino button
         const new_instruction_button = this.querySelector(".new-instruction");
         new_instruction_button.addEventListener('click', () => {
@@ -424,7 +372,7 @@ class editStepCard extends HTMLElement {
         if (oldTemplate) {
             oldTemplate.remove();
         }
-        
+
         // Create a new template with the updated instructions
         const newTemplate = document.createElement("template");
         newTemplate.innerHTML = JSON.stringify({ "instructions": step_instructions });
@@ -433,83 +381,8 @@ class editStepCard extends HTMLElement {
 }
 customElements.define("edit-step-card", editStepCard);
 
-// Create a web component for an event card
-class eventCard extends HTMLElement {
-    // Run this code when the component is added to the page
-    connectedCallback() {
-        const event_name = this.getAttribute("event-name");
-        const event_date = this.getAttribute("event-date");
-        const event_location = this.getAttribute("event-location");
-        const past = this.getAttribute("past");
-
-        this.innerHTML = `
-            <div class="event-card">
-                <div class="event-information grid-container">
-                    <div class="event-details flex-container">
-                        <h2 class="figtree-medium">${event_name}</h2>
-                        <span class="secondary-text-clr">
-                            <i class="fa-regular fa-calendar"></i> ${event_date}
-                        </span>
-                        <span class="secondary-text-clr">
-                            <i class="fa-solid fa-location-dot"></i> ${event_location}
-                        </span>
-                    </div>
-                    <div class="event-actions">
-                        <button type="button" class="play-button">
-                            <i class="fa-solid fa-play" style="color: #d4f6a8;"></i>
-                        </button>
-
-                        <button type="button" class="edit-button">
-                            <i class="fa-solid fa-pencil"></i>
-                        </button>
-
-                        <button type="button" class="del-button">
-                            <i class="fa-regular fa-trash-can"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="event-indicator ${past}"></div>
-            </div>
-        `
-        const play_button = this.querySelector(".play-button");
-        const edit_button = this.querySelector(".edit-button");
-        const del_button = this.querySelector(".del-button");
-    }
-
-    getEventData() {
-        const event_name = this.getAttribute("event-name");
-        const event_date = this.getAttribute("event-date");
-        const event_location = this.getAttribute("event-location");
-        const past = this.getAttribute("past");
-        return {
-            "event_name": event_name,
-            "event_date": event_date,
-            "event_location": event_location,
-            "past": past
-        };
-    }
-}
-customElements.define("event-card", eventCard)
-
-// Function to show a loading screen
-function showLoading() {
-    const screen = document.createElement('div')
-    screen.id = "loading-screen"
-    screen.classList.add("loading")
-
-    const anim = document.createElement('div')
-    anim.classList.add("loading-anim")
-    screen.appendChild(anim)
-    document.body.appendChild(screen)
-}
-
-// Function to hide a loading screen
-function hideLoading() {
-    document.getElementById("loading-screen").remove();
-}
-
 // Function to create a new edit step
-function createNewEditStep(stepjson) {
+export function createNewEditStep(stepjson) {
     // Use given step data that is split into attributes and instructions to create a new step
     const new_step = document.createElement("edit-step-card");
     new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
@@ -524,46 +397,3 @@ function createNewEditStep(stepjson) {
     new_step.appendChild(template);
     return new_step;
 }
-
-// Function to create a new step
-function createNewStep(stepjson) {
-    // Use given step data that is split into attributes and instructions to create a new step
-    const new_step = document.createElement("step-card");
-    new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
-    new_step.setAttribute("step-performer", stepjson.attributes["step_performer"]);
-    new_step.setAttribute("step-number", stepjson.attributes["step_number"]);
-
-    const template = document.createElement("template");
-    template.innerHTML = JSON.stringify({ instructions: stepjson.instructions });
-    new_step.appendChild(template);
-    return new_step;
-}
-
-// Functino to create a new event card
-function createNewEvent(eventjson) {
-    // Use given event data to create a new event card
-    const new_event = document.createElement("event-card");
-    new_event.setAttribute("event-name", eventjson.name);
-    new_event.setAttribute("event-date", eventjson.date);
-    new_event.setAttribute("event-location", eventjson.location);
-    new_event.setAttribute("past", eventjson.past);
-    return new_event;
-}
-
-const temp_button = document.getElementById("create-account")
-temp_button.addEventListener('click', () => {
-    // Get step data of all steps and log it in the console
-
-    const all_steps = document.querySelectorAll("edit-step-card");
-    all_steps.forEach(step => {
-        console.log(step.getFormInputs());
-    });
-});
-
-function updateHeaderDate() {
-    const date_element = document.querySelector("header span");
-    const current_date = new Date();
-    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' })
-}
-
-updateHeaderDate();
