@@ -559,3 +559,11 @@ temp_button.addEventListener('click', () => {
         console.log(step.getFormInputs());
     });
 });
+
+function updateHeaderDate() {
+    const date_element = document.querySelector("header span");
+    const current_date = new Date();
+    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' })
+}
+
+updateHeaderDate();
