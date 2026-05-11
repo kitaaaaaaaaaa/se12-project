@@ -402,19 +402,6 @@ dialog::backdrop {
     gap: 0.5rem;
 }
 
-/* Button specific NOT NEEDED FOR THIS BUTTON - IT IS DEFAULT STYLE */
-#create-account {
-    background-color: var(--secondary-purple-2);
-    color: var(--background);
-    border: 1.5px solid transparent;
-}
-
-#create-account:hover {
-    background-color: var(--background);
-    color: var(--secondary-purple-2);
-    border: 1.5px solid var(--secondary-purple-2);
-}
-
 /* Crew member current step card */
 .step-card.current-step {
     background-color: var(--primary-purple);
@@ -546,9 +533,9 @@ edit-step-card {
     display: block;
 }
 
-.step-card.edit:hover .new-instruction {
+/* .step-card.edit:hover .new-instruction {
     display: block;
-}
+} */
 
 .new-step {
     border-radius: 32px;
