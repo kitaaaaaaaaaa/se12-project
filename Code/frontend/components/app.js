@@ -36,7 +36,7 @@ function createNewEvent(eventjson) {
 export function updateHeaderDate() {
     const date_element = document.querySelector("header span");
     const current_date = new Date();
-    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' })
+    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' });
 }
 
 // Run this when the page loads
