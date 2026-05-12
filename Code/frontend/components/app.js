@@ -7,14 +7,14 @@ import './editStepCard.js';
 
 // Function to show a loading screen
 function showLoading() {
-    const screen = document.createElement('div')
-    screen.id = "loading-screen"
-    screen.classList.add("loading")
+    const screen = document.createElement('div');
+    screen.id = "loading-screen";
+    screen.classList.add("loading");
 
-    const anim = document.createElement('div')
-    anim.classList.add("loading-anim")
-    screen.appendChild(anim)
-    document.body.appendChild(screen)
+    const anim = document.createElement('div');
+    anim.classList.add("loading-anim");
+    screen.appendChild(anim);
+    document.body.appendChild(screen);
 }
 
 // Function to hide a loading screen

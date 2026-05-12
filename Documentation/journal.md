@@ -226,11 +226,8 @@ I also want to utilise proper branching strategies this week, setting it up so I
 </details>
 
 **Reflection:**
+
 **Aims for next week:**
-
-
-- CSS components
-    - editing step card (/pill, /text inputs, custom buttons)
 
 ## 11/05/2026
 **Aims:**
@@ -239,6 +236,7 @@ I also want to utilise proper branching strategies this week, setting it up so I
 - I also used a variety of W3Schools articles and MDN web documentation to help me design UI components based off of my storyboard. The discovery of CSS grids from my LearnerHours PWA has seriously been life changing - it offers a flexible and intuitive way to arrange content in grids.
 **Challenges and solutions:**
 - I had a problem where the app could not read the properties of an undefined objects while working on the `getSTEPJSON()` function. I first searched this up on Google, which pointed me to a few StackOverflow articles which suggested that a variable was not assigned yet, but I was still confused. I then asked Gemini for some assistance on how to solve this issue, and it pointed out a scope error. I was using an ordinary function, which creates its own scope, but I should have used an arrow function. This allows me to still access objects using `this.` in JavaScript, which I needed for my function. I did not know that I had to do this, since I am new with web components.
+- While making the UI components, I realised that allowing event admins to edit events while it is being played could be quite complicated to implement. To combat this, I tried brainstorming different approaches to structuring my backend. I ultimately decided to remove it from my functional requirements in order to increase the likelihood of success for my project.
 
 **Reflection:**
 **Aims for next week:**
