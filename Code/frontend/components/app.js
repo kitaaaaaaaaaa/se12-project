@@ -6,19 +6,19 @@ import './stepCard.js';
 import './editStepCard.js';
 
 // Function to show a loading screen
-function showLoading() {
-    const screen = document.createElement('div')
-    screen.id = "loading-screen"
-    screen.classList.add("loading")
+export function showLoading() {
+    const screen = document.createElement('div');
+    screen.id = "loading-screen";
+    screen.classList.add("loading");
 
-    const anim = document.createElement('div')
-    anim.classList.add("loading-anim")
-    screen.appendChild(anim)
-    document.body.appendChild(screen)
+    const anim = document.createElement('div');
+    anim.classList.add("loading-anim");
+    screen.appendChild(anim);
+    document.body.appendChild(screen);
 }
 
 // Function to hide a loading screen
-function hideLoading() {
+export function hideLoading() {
     document.getElementById("loading-screen").remove();
 }
 
@@ -36,7 +36,7 @@ function createNewEvent(eventjson) {
 export function updateHeaderDate() {
     const date_element = document.querySelector("header span");
     const current_date = new Date();
-    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' })
+    date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' });
 }
 
 // Run this when the page loads
