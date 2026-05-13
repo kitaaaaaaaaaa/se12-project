@@ -1,7 +1,7 @@
 // Code from the following article: 
 // https://alexwlchan.net/2023/testing-javascript-without-a-framework/
 
-function it(description, body_of_test) {
+function test(description, body_of_test) {
     const result = document.createElement("p");
     result.classList.add("test_result");
 
@@ -11,6 +11,7 @@ function it(description, body_of_test) {
         result.innerHTML = description;
     } catch (error) {
         result.classList.add("failure");
+        console.log(error);
         result.innerHTML = `${description}<br/><pre>${error}</pre>`;
     }
 

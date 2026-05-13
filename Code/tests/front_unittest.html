@@ -27,14 +27,14 @@
 <body>
 <script>
     // Write unit tests here
-    it('createPublicationYearLabel: a range of years', () => {
+    test('createPublicationYearLabel: a range of years', () => {
         assertEqual(
             createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
             'published between 2001 and 2002'
         );
     });
 
-    it("addNumbers: Add 3 + 2", () => {
+    test("addNumbers: Add 3 + 2", () => {
         assertEqual(
             addNumbers(3, 2),
             5
