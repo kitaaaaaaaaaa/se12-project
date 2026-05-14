@@ -1,22 +1,48 @@
+// Import testing functions
 import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from './front_test_funcs.js'
+
+// Import code to test
+import { formatStepNumber } from '../frontend/components/editStepCard.js'
+
 
 console.log("------- Starting front end unit tests -------");
 
 // Unit tests are written here
 try {
-renderTest('createPublicationYearLabel: a range of years', () => {
-    assertEqual(
-        createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
-        'published between 2001 and 2002'
-    );
-});
+    renderTest('formatStepNumber - 1 digit int', () => {
+        assertEqual(
+            formatStepNumber(2),
+            '02'
+        );
+    });
 
-renderTest("addNumbers: Add 3 + 2", () => {
-    assertEqual(
-        addNumbers(3, 2),
-        5
-    );
-})
+    renderTest('formatStepNumber - 2 digit int', () => {
+        assertEqual(
+            formatStepNumber(23),
+            '23'
+        );
+    });
+    
+    renderTest('formatStepNumber - 1 digit str', () => {
+        assertEqual(
+            formatStepNumber("8"),
+            '08'
+        );
+    });
+    
+    renderTest('formatStepNumber - 2 digit str', () => {
+        assertEqual(
+            formatStepNumber("13"),
+            '13'
+        );
+    });
+
+    renderTest('formatStepNumber - 2 digit padded str', () => {
+        assertEqual(
+            formatStepNumber("06"),
+            '06'
+        );
+    });
 } catch (error) {
     console.log(`❌ A test failed with ${error}`);
     test_failed = true;

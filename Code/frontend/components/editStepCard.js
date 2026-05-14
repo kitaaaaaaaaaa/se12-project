@@ -286,12 +286,6 @@ export class editStepCard extends HTMLElement {
             this.updateStepCard();
             console.log("CHANGED SELECTION");
         });
-
-
-        // Function to turn an integer into a padded string
-        function formatStepNumber(num) {
-            return num.toString().padStart(2, '0');
-        }
     }
 
     getFormInputs() {
@@ -396,4 +390,9 @@ export function createNewEditStep(stepjson) {
     template.innerHTML = JSON.stringify({ instructions: stepjson.instructions });
     new_step.appendChild(template);
     return new_step;
+}
+
+// Function to turn an integer into a padded string
+export function formatStepNumber(num) {
+    return num.toString().padStart(2, '0');
 }

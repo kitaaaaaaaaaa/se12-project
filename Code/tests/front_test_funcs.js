@@ -16,7 +16,9 @@ export function renderTest(description, body_of_test) {
         test_failed = true;
         result.classList.add("failure");
         result.innerHTML = `${description}<br/><pre>${error}</pre>`;
-        console.log(`❌ ${description} failed with ${error}`);
+        console.log(`❌ ${description} failed;
+            \t${error}
+        `);
     }
 
     document.body.appendChild(result);
@@ -32,7 +34,7 @@ export function assertEqual(x, y) {
     ) {
         return;
     } else {
-        throw new Error(`${x} &lt${typeof x}&gt != ${y} &lt${typeof y}&gt`);
+        throw new Error(`Expected ${y} &lt${typeof y}&gt, got ${x} &lt${typeof x}&gt`);
     }
 }
 
