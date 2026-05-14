@@ -1,41 +1,31 @@
-// Code from the following article: 
-// https://alexwlchan.net/2023/testing-javascript-without-a-framework/
+import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from './front_test_funcs.js'
 
-function test(description, body_of_test) {
-    const result = document.createElement("p");
-    result.classList.add("test_result");
+console.log("------- Starting front end unit tests -------");
 
-    try {
-        body_of_test();
-        result.classList.add("success");
-        result.innerHTML = description;
-    } catch (error) {
-        result.classList.add("failure");
-        console.log(error);
-        result.innerHTML = `${description}<br/><pre>${error}</pre>`;
-    }
+// Unit tests are written here
+try {
+renderTest('createPublicationYearLabel: a range of years', () => {
+    assertEqual(
+        createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
+        'published between 2001 and 2002'
+    );
+});
 
-    document.body.appendChild(result);
+renderTest("addNumbers: Add 3 + 2", () => {
+    assertEqual(
+        addNumbers(3, 2),
+        5
+    );
+})
+} catch (error) {
+    console.log(`❌ A test failed with ${error}`);
 }
 
-function assertEqual(x, y) {
-    if (
-        x === y ||
-        (typeof x === "object" &&
-        typeof y === "object" &&
-        x.length === y.length &&
-        x.every((element, index) => element === y[index]))
-    ) {
-        return;
-    } else {
-        throw new Error(`${x} &lt${typeof x}&gt != ${y} &lt${typeof y}&gt`);
-    }
-}
-
-function assertTrue(x) {
-    assertEqual(x, true);
-}
-
-function assertFalse(x) {
-    assertEqual(x, false);
+// Exit the script when all tests are finished
+if (test_failed) {
+    console.log("✅ Tests passed, exiting the script")
+    process.exit(1);
+} else {
+    console.log("❌ Tests failed, exiting the script")
+    process.exit(0);
 }
