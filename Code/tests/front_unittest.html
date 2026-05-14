@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Insert code to test -->
-    <script src="../frontend/app.js"></script>
+    <script type="module" src="../frontend/components/app.js"></script>
     
     <!-- Load necessary files for testing -->
-    <script src="front_unittest.js"></script>
+    <script type="module" src="front_test_funcs.js"></script>
+    <script type="module" src="front_unittest.js"></script>
     <style>
         .test_result {
             margin: 0;
@@ -25,21 +26,5 @@
     </style>
 </head>
 <body>
-<script>
-    // Write unit tests here
-    test('createPublicationYearLabel: a range of years', () => {
-        assertEqual(
-            createPublicationYearLabel({ afterYear: '2001', beforeYear: '2002' }),
-            'published between 2001 and 2002'
-        );
-    });
-
-    test("addNumbers: Add 3 + 2", () => {
-        assertEqual(
-            addNumbers(3, 2),
-            5
-        );
-    })
-</script>    
 </body>
 </html>
