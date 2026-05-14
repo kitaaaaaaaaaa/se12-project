@@ -19,13 +19,14 @@ renderTest("addNumbers: Add 3 + 2", () => {
 })
 } catch (error) {
     console.log(`❌ A test failed with ${error}`);
+    test_failed = true;
 }
 
 // Exit the script when all tests are finished
 if (test_failed) {
-    console.log("✅ Tests passed, exiting the script")
+    console.log("------- ❌ Tests failed, exiting the script -------")
     process.exit(1);
 } else {
-    console.log("❌ Tests failed, exiting the script")
+    console.log("------- ✅ Tests passed, exiting the script -------")
     process.exit(0);
 }
