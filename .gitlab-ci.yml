@@ -45,6 +45,7 @@ frontend-tests:
   before_script:
     # Install jsdom
     - npm init -y
+    - npm pkg set type="module"
     - npm install jsdom jsdom-global
   script:
     # Run the testing script with jsdom
