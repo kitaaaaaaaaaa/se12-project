@@ -25,10 +25,10 @@ include:
   - template: Jobs/Secret-Detection.gitlab-ci.yml
 
 # Don't scan documentation for vulnerabilities or sensitive information
-# Don't scan database or backend log files either
+# Don't scan backend log files either
 variables:
-  SAST_EXCLUDED_PATHS: "Documentation, Code/backend/database, Code/backend/app.log"
-  SECRET_DETECTION_EXCLUDED_PATHS: "Documentation, Code/backend/database, Code/backend/app.log"
+  SAST_EXCLUDED_PATHS: "Documentation, Code/backend/app.log"
+  SECRET_DETECTION_EXCLUDED_PATHS: "Documentation, Code/backend/app.log"
 
 stages:
   - test
