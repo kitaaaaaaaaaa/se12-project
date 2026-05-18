@@ -39,5 +39,36 @@ export function updateHeaderDate() {
     date_element.textContent = current_date.toLocaleDateString('en-GB', { dateStyle: 'full' });
 }
 
+// Function to clear all error messages
+export function clearErrors() {
+    const errorElements = document.querySelectorAll(".error");
+    errorElements.forEach((element) => element.textContent = "");
+}
+
+// Function to show error message
+export function showError(elementId, message) {
+    document.getElementById(elementId).textContent = message;
+}
+
+export async function sendFormData(form, route, method) {
+    const formData = new FormData(form);
+
+    await fetch(route, {
+        method: method,
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: formData,
+    })
+    .then(response => response.json)
+    .catch(error => redirectToError(error));
+}
+
+export function redirectToError(error) {
+    const encoded_msg = encodeURIComponent(error);
+
+    window.location.href = `error.html?err=${encoded_msg}`;
+}
+
 // Run this when the page loads
 updateHeaderDate();

@@ -16,6 +16,10 @@ logging.basicConfig(
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def index():
+    pass
+
 # Example of logging
 try:
     x = 3/0
