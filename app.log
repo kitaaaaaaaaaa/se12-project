@@ -1,0 +1,66 @@
+2026-05-18 19:49 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 19:49 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-18 19:49 - INFO -  * Restarting with stat
+2026-05-18 19:49 - WARNING -  * Debugger is active!
+2026-05-18 19:49 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:49 - INFO - 127.0.0.1 - - [18/May/2026 19:49:22] "[33mGET / HTTP/1.1[0m" 404 -
+2026-05-18 19:49 - INFO - 127.0.0.1 - - [18/May/2026 19:49:26] "[31m[1mGET /create_account HTTP/1.1[0m" 405 -
+2026-05-18 19:49 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:49 - INFO -  * Restarting with stat
+2026-05-18 19:49 - WARNING -  * Debugger is active!
+2026-05-18 19:49 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:49 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:49 - INFO -  * Restarting with stat
+2026-05-18 19:51 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 19:51 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-18 19:51 - INFO -  * Restarting with stat
+2026-05-18 19:51 - WARNING -  * Debugger is active!
+2026-05-18 19:51 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:51 - INFO - 127.0.0.1 - - [18/May/2026 19:51:29] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2026-05-18 19:51 - INFO - 127.0.0.1 - - [18/May/2026 19:51:30] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2026-05-18 19:51 - INFO - 127.0.0.1 - - [18/May/2026 19:51:30] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2026-05-18 19:51 - INFO - 127.0.0.1 - - [18/May/2026 19:51:30] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=fKVA53ZxIS7sLyFcv7qK HTTP/1.1" 200 -
+2026-05-18 19:51 - INFO - 127.0.0.1 - - [18/May/2026 19:51:30] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-18 19:52 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:52 - INFO -  * Restarting with stat
+2026-05-18 19:52 - WARNING -  * Debugger is active!
+2026-05-18 19:52 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:52 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-05-18 19:52 - INFO - [33mPress CTRL+C to quit[0m
+2026-05-18 19:52 - INFO -  * Restarting with stat
+2026-05-18 19:52 - WARNING -  * Debugger is active!
+2026-05-18 19:52 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:52 - INFO - 127.0.0.1 - - [18/May/2026 19:52:57] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 19:52 - INFO - 127.0.0.1 - - [18/May/2026 19:52:57] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2026-05-18 19:53 - INFO - 127.0.0.1 - - [18/May/2026 19:53:11] "[32mGET / HTTP/1.1[0m" 302 -
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941
+2026-05-18 19:53 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-05-18 19:53 - INFO -  * Restarting with stat
+2026-05-18 19:53 - WARNING -  * Debugger is active!
+2026-05-18 19:53 - INFO -  * Debugger PIN: 515-795-941

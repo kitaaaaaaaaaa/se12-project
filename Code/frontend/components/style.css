@@ -660,7 +660,7 @@ fieldset, legend {
 fieldset {
     min-height: 10rem;
     min-width: 20rem;
-    max-width: 30rem;
+    max-width: 25rem;
     box-shadow: 0 0 10px 2px var(--primary-purple);
 
     display: flex;

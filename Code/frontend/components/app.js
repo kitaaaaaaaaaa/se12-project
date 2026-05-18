@@ -1,6 +1,10 @@
 // This file contains all the code for the main components, alongside any functions that may be required
 // or used across the web application.
 
+// Variables to change
+const backend_url = "http://127.0.0.1:5000";
+
+// Import web components
 import './eventCard.js';
 import './stepCard.js';
 import './editStepCard.js';
@@ -50,24 +54,36 @@ export function showError(elementId, message) {
     document.getElementById(elementId).textContent = message;
 }
 
+// Sends data from a form as a JSON object
 export async function sendFormData(form, route, method) {
-    const formData = new FormData(form);
+    showLoading();
 
-    await fetch(route, {
-        method: method,
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: formData,
-    })
-    .then(response => response.json)
-    .catch(error => redirectToError(error));
+    const formData = new window.FormData(form);
+    const data = Object.fromEntries(formData);
+    const url = backend_url + route;
+
+    try {
+        const response = await fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+        console.log(await response.json()); // Dealing with server response
+    } catch(err) {
+        redirectToError("Your account could not be created...Please try again.");
+    }
+
+    hideLoading();
 }
 
+// Function to redirect the user to the error page
 export function redirectToError(error) {
     const encoded_msg = encodeURIComponent(error);
 
-    window.location.href = `error.html?err=${encoded_msg}`;
+    // URLs are automatically encoded, so XSS cannot be performed here
+    window.location.href = `/error.html?err=${encoded_msg}`;
 }
 
 // Run this when the page loads

@@ -38,6 +38,4 @@ signin_form.addEventListener('submit', (event) => {
     if (isValid) {
         sendFormData(signin_form, "/", "POST");
     }
-    
 });
-

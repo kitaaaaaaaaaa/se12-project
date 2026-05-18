@@ -45,7 +45,7 @@ signup_form.addEventListener('submit', (event) => {
     }
 
     if (isValid) {
-        sendFormData(signup_form, "/", "POST");
+        sendFormData(signup_form, "/create_account", "POST");
     }
 });
 

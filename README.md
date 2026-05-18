@@ -5,3 +5,9 @@ Project Name
 
 ## Description
 Some description for my software engineering project with photos.
+
+## Installation
+- Has to run in a development environment (due to project constraints)
+- Requires:
+    - Live Server VSCode extension (should be running port 5500)
+    - Python 3.14.3
