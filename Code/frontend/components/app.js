@@ -86,7 +86,7 @@ export async function sendFormData(form, route, method) {
             hideLoading();
             return parsed_response;
         }
-    } catch(error) {
+    } catch (error) {
         // Deal with client side errors
         const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
         error_dialog.showModal();
@@ -123,7 +123,7 @@ export async function sendRequest(request, route, method) {
             hideLoading();
             return parsed_response;
         }
-    } catch(error) {
+    } catch (error) {
         // Deal with client side errors
         const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
         error_dialog.showModal();
@@ -140,6 +140,7 @@ export function redirectToError(error) {
     window.location.href = `/error.html?err=${encoded_msg}`;
 }
 
+// Functions to save and retrieve tokens from session storage
 export function saveToken(token) {
     window.sessionStorage.setItem("token", token);
 }

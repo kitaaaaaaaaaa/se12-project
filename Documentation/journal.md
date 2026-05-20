@@ -261,6 +261,17 @@ I also want to utilise proper branching strategies this week, setting it up so I
 
 **Aims for next week:**
 
+## 18/05/2026
+**Aims:**
+- Make an active effort to reduce the amount written in diary entries in order to keep it succint and readable
+- Finish authentication system
+- If time allows, start work on the event admin dashboard
+**Progress:**
+**Challenges and solutions:**
+**Reflection:**
+**Aims for next week:**
+
+
 ---
 ## DD/MM/YYYY
 **Aims:**

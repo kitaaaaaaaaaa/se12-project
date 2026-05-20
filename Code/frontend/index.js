@@ -37,21 +37,15 @@ signin_form.addEventListener('submit', async (event) => {
 
     if (isValid) {
         const response = await sendFormData(signin_form, "/login", "POST");
-        console.log(response);
 
-        if (response.token) {
-            saveToken(response.token);
+        // Deal with a successful response
+        try {
+            if (response.token) {
+                saveToken(response.token);
+            }
+        } catch (error) {
+            // Catch other unforeseen errors
+            // Errors are handled in app.js
         }
     }
-});
-
-const test_button = document.getElementById("test-button");
-test_button.addEventListener("click", async () => {
-    const response = await sendRequest(
-        {
-            "message": "hello"
-        }
-        , "/test_route", "POST");
-    
-        console.log(response);
 });

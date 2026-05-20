@@ -90,10 +90,13 @@ def authorise(req):
 
     try:
         jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        logging.info("A user has logged into their account sucessfully")
         return True
     except jwt.ExpiredSignatureError:
+        logging.warning("A user has an expired token")
         return jsonify({'error': 'Token has expired. Please sign in again.'}), 401
     except jwt.InvalidTokenError:
+        logging.warning("A user has tried to access a resource with an invalid token")
         return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
 
 
@@ -102,6 +105,7 @@ def authorise(req):
 def index():
     # If the user happens to access the hosted URL manually
     # in their browser, redirect them to the frontend
+    logging.warning("Someone has tried to manually access the API")
     return redirect(frontend_url)
 
 @app.route('/create_account', methods=['POST'])
@@ -125,9 +129,11 @@ def create_account():
         user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0]
 
         # Send JWT
+        logging.info(f"Successfully created an account for - {email}")
         token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 201
     else:
+        logging.info("Account could not be created because it already exists")
         return jsonify({"error": "The account already exists. Try signing in."}), 409
         
 
@@ -143,11 +149,15 @@ def login():
     if len(existing_account) == 1 and check_password_hash(existing_account[0][2], password):
         user_id = existing_account[0][0]
 
+        logging.info(f"Successful login for - {email}")
         token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 200
     
+    logging.warning(f"Login failure. Invalid credentials for - {email}")
     return jsonify({"error": "The credentials are invalid. Please try again."}), 401
 
+
+# TEMP: Example of a protected route
 @app.route('/test_route', methods=["POST"])
 def test():
     auth = authorise(request)
@@ -160,13 +170,7 @@ def test():
     return auth
 
 
-# Example of logging
-# try:
-#     x = 3/0
-# except Exception as e:
-#     logging.exception("Calculation error")
-
-
 # Run the app
 if __name__ == "__main__":
     app.run(debug=True, port=5000)
+    logging.info("App started successfully")
