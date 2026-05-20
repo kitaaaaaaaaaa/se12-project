@@ -41,6 +41,7 @@ backend-tests:
   image: python:3.11
   script:
     - pip install pytest
+    - pip install -r requirements.txt
     - pytest Code/tests/back_test.py
 
 # Job for JavaScript Tests
