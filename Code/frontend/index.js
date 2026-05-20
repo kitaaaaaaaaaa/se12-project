@@ -49,3 +49,15 @@ signin_form.addEventListener('submit', async (event) => {
         }
     }
 });
+
+
+const test_button = document.getElementById("test-button");
+test_button.addEventListener("click", async () => {
+    const response = await sendRequest(
+        {
+            "message": "hello"
+        }
+        , "/test_route", "POST");
+    
+        console.log(response);
+});

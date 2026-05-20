@@ -678,7 +678,7 @@ fieldset {
 
 legend {
     list-style-type: none;
-    padding: 0.2em 0.5em;
+    padding: 0.2em 0.75em;
     margin-bottom: 0.5rem;
     background-color: var(--secondary-card);
     color: var(--text);
@@ -688,4 +688,10 @@ legend {
 .error {
     color: var(--red);
     font-size: 0.875rem;
+    white-space: pre-line;   
+    margin-top: 0.5rem;
+}
+
+#password-error {
+    line-height: 0.5rem;
 }

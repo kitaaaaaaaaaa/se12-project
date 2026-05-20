@@ -1,22 +1,17 @@
 # Variables to change
-frontend_url = "http://127.0.0.1:5500"
+frontend_port = "5500"
+frontend_localhost_url = "http://127.0.0.1"
 
 # Import external libraries
-import os
+import os, socket
+import sqlite3, jwt, datetime, bleach, logging
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_cors import CORS
-import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt
-import datetime
-import bleach
-
 
 # Configure backend logging module
-import logging
-
 # logging.basicConfig(
 #     filename="./app.log",
 #     encoding="utf-8",
@@ -39,7 +34,9 @@ limiter = Limiter(
 )
 
 # Configure trusted domains
-CORS(app, origins=[frontend_url])
+frontend_network_url = "http://" + socket.gethostbyname(socket.gethostname()) + ":" + frontend_port
+
+CORS(app, origins=[f"{frontend_localhost_url}:{frontend_port}", frontend_network_url])
 
 # Handle input sanitisation
 allowed_tags = ['b', 'i', 'u', 'p', 'br']
@@ -80,18 +77,38 @@ def execute_query(query, params=()):
         conn.commit()
         return cursor
 
-def authorise(req):
+def authorise(req, needed_access):
+    '''
+    Checks if a client is authorised to make a request
+
+    Args:
+        req (obj): The client's request
+        needed_access (int): The needed access level for the route
+            - Admin = 1
+            - User = 2
+
+    Returns:
+        dict: JSON response with an error code, or a True boolean if it is authorised
+    '''
     auth_header = req.headers.get('Authorization')
     
     if auth_header == None:
-        return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
+        return jsonify({'error': 'You need to sign in to perform this action.'}), 401
 
     token = auth_header.split(" ")[1]
 
     try:
-        jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-        logging.info("A user has logged into their account sucessfully")
-        return True
+        # Check if the JWT token is valid
+        decoded = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+        user_id = decoded['user_id']
+        access_level = execute_query("SELECT role_id FROM users WHERE user_id = ?", (user_id,)).fetchall()[0][0]
+        
+        # Check if the user has the required access level
+        if access_level == needed_access:
+            return True
+        
+        # If the user doesn't have the required access level
+        return jsonify({'error': 'You are not allowed to perform this action.'}), 401
     except jwt.ExpiredSignatureError:
         logging.warning("A user has an expired token")
         return jsonify({'error': 'Token has expired. Please sign in again.'}), 401
@@ -106,7 +123,7 @@ def index():
     # If the user happens to access the hosted URL manually
     # in their browser, redirect them to the frontend
     logging.warning("Someone has tried to manually access the API")
-    return redirect(frontend_url)
+    return redirect(frontend_network_url)
 
 @app.route('/create_account', methods=['POST'])
 def create_account():
@@ -133,7 +150,7 @@ def create_account():
         token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 201
     else:
-        logging.info("Account could not be created because it already exists")
+        logging.info("An account could not be created because it already exists")
         return jsonify({"error": "The account already exists. Try signing in."}), 409
         
 
@@ -153,14 +170,14 @@ def login():
         token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 200
     
-    logging.warning(f"Login failure. Invalid credentials for - {email}")
+    logging.warning(f"Login not permitted. Invalid credentials for - {email}")
     return jsonify({"error": "The credentials are invalid. Please try again."}), 401
 
 
 # TEMP: Example of a protected route
 @app.route('/test_route', methods=["POST"])
 def test():
-    auth = authorise(request)
+    auth = authorise(request, 1)
     data = request.get_json()
     
     if auth == True:
@@ -172,5 +189,6 @@ def test():
 
 # Run the app
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=True, port=5000, host="0.0.0.0")
     logging.info("App started successfully")
+    

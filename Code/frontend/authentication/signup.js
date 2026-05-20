@@ -1,6 +1,6 @@
 // This contains the code for the sign up and account creation page
 
-import { showLoading, hideLoading, clearErrors, showError, sendFormData } from '../components/app.js';
+import { saveToken, getToken, clearErrors, showError, sendFormData } from '../components/app.js';
 
 const signin_switch = document.getElementById("signin-switch-button");
 
@@ -30,11 +30,16 @@ signup_form.addEventListener('submit', async (event) => {
         isValid = false;
     }
 
-    // Validate Password (min 12 characters, at least one letter, one number and one special character)
-    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=])[A-Za-z\d!@#$%^&*()_+\-=]{12,}$/;
+    // Validate Password (min 8 characters, at least one letter, one number and one special character)
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=])[A-Za-z\d!@#$%^&*()_+\-=]{8,}$/;
 
     if (!passwordPattern.test(password)) {
-        showError("password-error", "Password must be at least 12 characters long, contain letters, numbers and special characters such as !@#$%^&*()_+-=");
+        showError("password-error", `
+            Password must be:
+            \n• At least 8 characters long
+            \n• Contain a mix of letters and numbers
+            \n• Contains special characters such as !@#$%^&*()_+-=
+            `);
         isValid = false;
     }
 
@@ -46,9 +51,20 @@ signup_form.addEventListener('submit', async (event) => {
 
     if (isValid) {
         const response = await sendFormData(signup_form, "/create_account", "POST");
-        console.log(response);
-        // Decide where to redirect the user...
-        // Backend will check for authorisation
+        
+        // Deal with a successful response
+        try {
+            // Save the token to session storage
+            if (response.token) {
+                saveToken(response.token);
+            }
+
+            // Redirect the user to dashboard
+            
+        } catch (error) {
+            // Catch other unforeseen errors
+            // Errors are handled in app.js
+        }
     }
 });
 

@@ -267,7 +267,9 @@ I also want to utilise proper branching strategies this week, setting it up so I
 - Finish authentication system
 - If time allows, start work on the event admin dashboard
 **Progress:**
+- Inspired by the musical production I am currently involved in, I decided to name the app "QueSync". This is because the actions for backstage crew are organised into "cues" - key points and pieces of dialogue that serve as cues to prepare equipment and props. Also, I found the letter Q to be more appealing as an icon than C.
 **Challenges and solutions:**
+CORS issues when testing authentication on client device
 **Reflection:**
 **Aims for next week:**
 

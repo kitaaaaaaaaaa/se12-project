@@ -2,7 +2,9 @@
 // or used across the web application.
 
 // Variables to change
-const backend_url = "http://127.0.0.1:5000";
+const backend_url = "http://192.168.1.103:5000"; //Change this to the local IP address of the host machine
+
+
 
 // Import web components
 import './eventCard.js';
@@ -77,7 +79,7 @@ export async function sendFormData(form, route, method) {
 
         // Deal with errors in the response
         if ("error" in parsed_response || !response.ok) {
-            const error_dialog = createDialog("An error occurred (・ω・)ノ", parsed_response.error);
+            const error_dialog = createDialog("An error occurred", parsed_response.error);
             error_dialog.showModal();
         }
 
@@ -88,7 +90,7 @@ export async function sendFormData(form, route, method) {
         }
     } catch (error) {
         // Deal with client side errors
-        const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
+        const error_dialog = createDialog("An error occurred", "The server could not be contacted...Please try again.");
         error_dialog.showModal();
     }
 
@@ -114,7 +116,7 @@ export async function sendRequest(request, route, method) {
 
         // Deal with errors in the response
         if ("error" in parsed_response || !response.ok) {
-            const error_dialog = createDialog("An error occurred (・ω・)ノ", parsed_response.error);
+            const error_dialog = createDialog("An error occurred", parsed_response.error);
             error_dialog.showModal();
         }
 
@@ -125,7 +127,7 @@ export async function sendRequest(request, route, method) {
         }
     } catch (error) {
         // Deal with client side errors
-        const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
+        const error_dialog = createDialog("An error occurred", "The server could not be contacted...Please try again.");
         error_dialog.showModal();
     }
 
