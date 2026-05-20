@@ -95,12 +95,57 @@ export async function sendFormData(form, route, method) {
     hideLoading();
 }
 
+// Sends data from a form as a JSON object as seen on MDN Docs
+export async function sendRequest(request, route, method) {
+    showLoading();
+
+    const url = backend_url + route;
+
+    try {
+        const response = await fetch(url, {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${getToken()}`
+            },
+            body: JSON.stringify(request)
+        });
+        const parsed_response = await response.json();
+
+        // Deal with errors in the response
+        if ("error" in parsed_response || !response.ok) {
+            const error_dialog = createDialog("An error occurred (・ω・)ノ", parsed_response.error);
+            error_dialog.showModal();
+        }
+
+        // If the response was successful
+        if (response.ok) {
+            hideLoading();
+            return parsed_response;
+        }
+    } catch(error) {
+        // Deal with client side errors
+        const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
+        error_dialog.showModal();
+    }
+
+    hideLoading();
+}
+
 // Function to redirect the user to the error page
 export function redirectToError(error) {
     const encoded_msg = encodeURIComponent(error);
 
     // URLs are automatically encoded, so XSS cannot be performed here
     window.location.href = `/error.html?err=${encoded_msg}`;
+}
+
+export function saveToken(token) {
+    window.sessionStorage.setItem("token", token);
+}
+
+export function getToken() {
+    return window.sessionStorage.getItem("token");
 }
 
 // Run this when the page loads

@@ -28,7 +28,7 @@ import logging
 
 # Initialise the Flask app and the database
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'Uwtf9yKv6UDG9NAnntcVv2Ez'
+app.config['SECRET_KEY'] = 'fd63bbe7b774ea0718361c795c218ccb0a55c9fbb972be4f2c5b0918ba0fe1c122e2d68f04eb1a61152c1f9c9b81cf9e243d0ddb5013c2b8fb87cef3729dc08f'
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, 'database', 'database.db')
 
@@ -81,16 +81,21 @@ def execute_query(query, params=()):
         return cursor
 
 def authorise(req):
-    token = req.headers.get('Authorization').split(" ")[1]
+    auth_header = req.headers.get('Authorization')
+    
+    if auth_header == None:
+        return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
+
+    token = auth_header.split(" ")[1]
+
     try:
         jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
-        result = True
+        return True
     except jwt.ExpiredSignatureError:
-        result = jsonify({'error': 'Token has expired'}), 401
+        return jsonify({'error': 'Token has expired. Please sign in again.'}), 401
     except jwt.InvalidTokenError:
-        result = jsonify({'error': 'Invalid token'}), 401
-    
-    return result
+        return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
+
 
 # Default route
 @app.route('/')
@@ -143,6 +148,16 @@ def login():
     
     return jsonify({"error": "The credentials are invalid. Please try again."}), 401
 
+@app.route('/test_route', methods=["POST"])
+def test():
+    auth = authorise(request)
+    data = request.get_json()
+    
+    if auth == True:
+        print(request.get_json())
+        return jsonify({"message": "Successful resource accessed"}), 200
+    
+    return auth
 
 
 # Example of logging

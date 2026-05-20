@@ -1,7 +1,7 @@
 // This contains the code for the first page that the user sees
 // The user will first see a login/signin page
 
-import { showLoading, hideLoading, clearErrors, showError, sendFormData, redirectToError } from './components/app.js';
+import { saveToken, clearErrors, showError, sendFormData, redirectToError, sendRequest } from './components/app.js';
 // import { DOMPurify } from '../libs/purify.min.js';
 
 const signup_switch = document.getElementById("signup-switch-button");
@@ -38,5 +38,20 @@ signin_form.addEventListener('submit', async (event) => {
     if (isValid) {
         const response = await sendFormData(signin_form, "/login", "POST");
         console.log(response);
+
+        if (response.token) {
+            saveToken(response.token);
+        }
     }
+});
+
+const test_button = document.getElementById("test-button");
+test_button.addEventListener("click", async () => {
+    const response = await sendRequest(
+        {
+            "message": "hello"
+        }
+        , "/test_route", "POST");
+    
+        console.log(response);
 });
