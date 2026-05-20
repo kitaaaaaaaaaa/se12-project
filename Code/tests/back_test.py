@@ -1,33 +1,73 @@
-import pytest
+import sys
+import os
+# Navigate up one folder
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# Actual business functions in ./modules/math_numbers.py
-def add(a, b):
-    return a + b
+import pytest, socket
+from backend import app as backend_app # Import the backend application
 
-def subtract(a, b):
-    return a - b
+backend_url = "http://" + socket.gethostbyname(socket.gethostname()) + ":5000"
 
-def multiply(a, b):
-    return a * b
+@pytest.fixture()
+def app():
+    flask_app = backend_app.app
+    flask_app.config.update({
+        "TESTING": True,
+    })
 
-def calculate_total(prices):
-    return sum(prices)
+    with flask_app.app_context():
+        yield flask_app
 
-# Pytest test functions in ./tests/test_functions/test_math_numbers.py
+@pytest.fixture()
+def client(app):
+    return app.test_client()
 
-def test_add():
-    assert add(2, 3) == 5
-
-def test_subtract():
-    assert subtract(3, 2) == 1
-
-@pytest.mark.parametrize("a, b, expected", [
-    (1, 2, 2),
-    (3, 0, 0),
+@pytest.mark.parametrize("text, expected", [
+    ("Hello<script>console.log('world')</script>", "Hello&lt;script&gt;console.log('world')&lt;/script&gt;"),
+    ("Hello <u>world</u>", "Hello <u>world</u>"),
 ])
-def test_multiply(a, b, expected):
-    assert multiply(a, b) == expected
+def test_sanitise(text, expected):
+    assert backend_app.sanitise(text) == expected
 
-def test_calculate_total():
-    items = [10, 20, 30, 40]
-    assert calculate_total(items) == 100
+def test_login_success(client):
+    custom_payload = {
+        "email": "something@mail.com",
+        "password": "hello123!@#$%^&*()"
+    }
+
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.post("/login", json=custom_payload, headers=custom_headers)
+
+    assert response.status_code == 200
+    assert response.get_json()["token"] is not None
+
+def test_login_fail(client):
+    custom_payload = {
+        "email": "something@mail.com",
+        "password": "fakepassword"
+    }
+
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.post("/login", json=custom_payload, headers=custom_headers)
+
+    assert response.status_code == 401
+
+def test_login_nonexist(client):
+    custom_payload = {
+        "email": "aosdjfioasjfoidfjgosdji@asdofiajfgdsflgf",
+        "password": "afjkghidisj49jgf"
+    }
+
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.post("/login", json=custom_payload, headers=custom_headers)
+
+    assert response.status_code == 401

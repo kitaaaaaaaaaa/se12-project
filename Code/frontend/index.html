@@ -3,52 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Run Sheet</title>
+    <title>QueSync</title>
+    <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
 
     <!-- Import fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/style.css">
     
     <!-- Import icons -->
     <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="flex-container">
-        <span class="secondary-text-clr">DDDD, DD MMMM YYYY</span>
-        <h1>Digital Run Sheet</h1>
-        <button type="button" id="create-account">
-            <i class="fa-regular fa-circle-user"></i>
-            Create account
-        </button>
+        <span class="secondary-text-clr"></span>
+        <h1>QueSync</h1>
+        <a href="authentication/signup.html" class="button" id="signup-switch-button">
+            <i class="fa-solid fa-user-plus"></i>
+            Create an account
+        </a>
     </header>
-    <main>
-        <!-- Code copied from LearnerHours PWA -->
-        <form id="registrationForm">
-            <fieldset>
-                <legend>Create an account</legend>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" class="figtree-400">
-                <div id="usernameError" class="error"></div>
+    <main style="height: 85vh;">
+        <!-- Code adapted from LearnerHours PWA -->
+        <section id="authentication-section">
+            <form id="signin-form">
+                <fieldset>
+                    <legend>Sign in</legend>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email">
+                        <div id="email-error" class="error"></div>
+                    </div>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" class="figtree-400">
-                <div id="passwordError" class="error"></div>
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password">
+                        <div id="password-error" class="error"></div>
+                    </div>
 
-                <label for="reenter-password">Reenter Password:</label>
-                <input type="password" id="reenter-password" name="password" class="figtree-400">
-                <div id="reenterPasswordError" class="error"></div>
+                    <div>
+                        <a href="authentication/signup.html" class="link" tabindex="0">
+                            Don't have an account?
+                        </a>
+                    </div>
 
-                <label for="phone">Phone Number:</label>
-                <input type="text" id="phone" name="phone" class="figtree-400">
-                <div id="phoneError" class="error"></div>
-
-                <div id="formError" class="error"></div>
-                <button type="submit">Register</button>
-            </fieldset>
-        </form>
+                    <div>
+                        <button type="submit" id="signin-button">
+                            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            Sign in
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <button type="button" class="blue-button" id="test-button">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                Make a request to test route
+            </button>
+        </section>
     </main>
     <script type="module" src="components/app.js" defer></script>
+    <script type="module" src="index.js" defer></script>
 </body>
 </html>

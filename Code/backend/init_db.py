@@ -6,7 +6,7 @@ if __name__ == "__main__":
     conn = sqlite3.connect('./database/database.db')
     cursor = conn.cursor()
 
-    # Create users table and link it to the users table (many to 1)
+    # Create users table and link it to the roles table (Many to 1)
     cursor.execute('''
     CREATE TABLE IF NOT EXISTS users (
         user_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,6 +67,11 @@ if __name__ == "__main__":
         job_id INTEGER PRIMARY KEY AUTOINCREMENT,
         job_name TEXT NOT NULL
     )
+    ''')
+
+    # Input roles into the roles table
+    cursor.execute('''
+    INSERT INTO roles (role_name) VALUES ('admin'), ('user')
     ''')
 
     conn.commit()
