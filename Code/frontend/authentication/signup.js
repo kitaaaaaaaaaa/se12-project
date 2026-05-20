@@ -10,7 +10,7 @@ const header = document.querySelector("header");
 
 const signup_form = document.getElementById("signup-form");
 
-signup_form.addEventListener('submit', (event) => {
+signup_form.addEventListener('submit', async (event) => {
     clearErrors();
 
     // Prevent the page from reloading
@@ -45,7 +45,10 @@ signup_form.addEventListener('submit', (event) => {
     }
 
     if (isValid) {
-        sendFormData(signup_form, "/create_account", "POST");
+        const response = await sendFormData(signup_form, "/create_account", "POST");
+        console.log(response);
+        // Decide where to redirect the user...
+        // Backend will check for authorisation
     }
 });
 

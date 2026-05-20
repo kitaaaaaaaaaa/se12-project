@@ -435,7 +435,7 @@ dialog:open {
     display: flex;
     flex-direction: column;
     gap: 0.875rem;
-    width: 30dvw;
+    width: 30rem;
 
 }
 
@@ -450,6 +450,10 @@ dialog::backdrop {
     flex-wrap: nowrap;
     justify-content: flex-end;
     gap: 0.5rem;
+}
+
+.dialog-buttons button {
+    padding-left: 0.5rem;
 }
 
 /* Crew member current step card */

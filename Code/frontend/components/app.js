@@ -8,6 +8,8 @@ const backend_url = "http://127.0.0.1:5000";
 import './eventCard.js';
 import './stepCard.js';
 import './editStepCard.js';
+import './dialog.js';
+import { createDialog } from './dialog.js';
 
 // Function to show a loading screen
 export function showLoading() {
@@ -37,6 +39,7 @@ function createNewEvent(eventjson) {
     return new_event;
 }
 
+// Function to update the date in the header
 export function updateHeaderDate() {
     const date_element = document.querySelector("header span");
     const current_date = new Date();
@@ -49,12 +52,12 @@ export function clearErrors() {
     errorElements.forEach((element) => element.textContent = "");
 }
 
-// Function to show error message
+// Function to show an error message
 export function showError(elementId, message) {
     document.getElementById(elementId).textContent = message;
 }
 
-// Sends data from a form as a JSON object
+// Sends data from a form as a JSON object as seen on MDN Docs
 export async function sendFormData(form, route, method) {
     showLoading();
 
@@ -70,9 +73,23 @@ export async function sendFormData(form, route, method) {
             },
             body: JSON.stringify(data)
         });
-        console.log(await response.json()); // Dealing with server response
-    } catch(err) {
-        redirectToError("Your account could not be created...Please try again.");
+        const parsed_response = await response.json();
+
+        // Deal with errors in the response
+        if ("error" in parsed_response || !response.ok) {
+            const error_dialog = createDialog("An error occurred (・ω・)ノ", parsed_response.error);
+            error_dialog.showModal();
+        }
+
+        // If the response was successful
+        if (response.ok) {
+            hideLoading();
+            return parsed_response;
+        }
+    } catch(error) {
+        // Deal with client side errors
+        const error_dialog = createDialog("An error occurred (・ω・)ノ", "The server could not be contacted...Please try again.");
+        error_dialog.showModal();
     }
 
     hideLoading();

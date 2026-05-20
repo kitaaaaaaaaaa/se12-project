@@ -11,7 +11,7 @@ const header = document.querySelector("header");
 
 const signin_form = document.getElementById("signin-form");
 
-signin_form.addEventListener('submit', (event) => {
+signin_form.addEventListener('submit', async (event) => {
     clearErrors();
 
     // Prevent the page from reloading
@@ -36,6 +36,7 @@ signin_form.addEventListener('submit', (event) => {
     }
 
     if (isValid) {
-        sendFormData(signin_form, "/", "POST");
+        const response = await sendFormData(signin_form, "/login", "POST");
+        console.log(response);
     }
 });
