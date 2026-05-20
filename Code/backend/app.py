@@ -143,7 +143,7 @@ def create_account():
     if len(existing_account) == 0:
         # Create account in the database
         execute_query("INSERT INTO users (email, role_id, password_hash) VALUES (?, ?, ?)", (email, role_id, password_hash))
-        user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0]
+        user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0][0]
 
         # Send JWT
         logging.info(f"Successfully created an account for - {email}")
@@ -164,7 +164,7 @@ def login():
     existing_account = execute_query("SELECT * FROM users WHERE email = ?", (email,)).fetchall()
 
     if len(existing_account) == 1 and check_password_hash(existing_account[0][2], password):
-        user_id = existing_account[0][0]
+        user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0][0]
 
         logging.info(f"Successful login for - {email}")
         token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
