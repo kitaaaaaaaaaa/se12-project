@@ -43,6 +43,12 @@ signin_form.addEventListener('submit', async (event) => {
             if (response.token) {
                 saveToken(response.token);
             }
+
+            if (response.level === 1) {
+                window.location.href = "/homepage/homepage.html";
+            } else {
+                // Redirect to user page
+            }
         } catch (error) {
             // Catch other unforeseen errors
             // Errors are handled in app.js

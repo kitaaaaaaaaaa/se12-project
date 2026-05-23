@@ -272,7 +272,8 @@ I also want to utilise proper branching strategies this week, setting it up so I
 **Progress:**
 - Inspired by the musical production I am currently involved in, I decided to name the app "QueSync". This is because the actions for backstage crew are organised into "cues" - key points and pieces of dialogue that serve as cues to prepare equipment and props. Also, I found the letter Q to be more appealing as an icon than C.
 **Challenges and solutions:**
-CORS issues when testing authentication on client device
+- CORS issues when testing authentication on client device
+- Failed backend tests - could not find pip requirements...solved by looking at the logs and a quick google search to generate a requirements txt file
 **Reflection:**
 **Aims for next week:**
 

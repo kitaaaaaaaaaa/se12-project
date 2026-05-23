@@ -14,9 +14,9 @@ export class eventCard extends HTMLElement {
 
         this.innerHTML = `
             <div class="event-card">
+                <h2 class="figtree-medium">${event_name}</h2>
                 <div class="event-information grid-container">
                     <div class="event-details flex-container">
-                        <h2 class="figtree-medium">${event_name}</h2>
                         <span class="secondary-text-clr">
                             <i class="fa-regular fa-calendar"></i> ${event_date}
                         </span>

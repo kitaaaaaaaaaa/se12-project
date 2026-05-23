@@ -4,7 +4,9 @@ frontend_localhost_url = "http://127.0.0.1"
 
 # Import external libraries
 import os, socket
-import sqlite3, jwt, datetime, bleach, logging
+import sqlite3, jwt, bleach, logging
+import datetime as dt
+from datetime import date, datetime
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -147,7 +149,7 @@ def create_account():
 
         # Send JWT
         logging.info(f"Successfully created an account for - {email}")
-        token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+        token = jwt.encode({'user_id': user_id, 'exp': dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 201
     else:
         logging.info("An account could not be created because it already exists")
@@ -165,13 +167,47 @@ def login():
 
     if len(existing_account) == 1 and check_password_hash(existing_account[0][2], password):
         user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0][0]
+        access_level = execute_query("SELECT role_id FROM users WHERE user_id = ?", (user_id,)).fetchall()[0][0]
 
         logging.info(f"Successful login for - {email}")
-        token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
-        return jsonify({'token': token}), 200
+        token = jwt.encode({'user_id': user_id, 'exp': dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+        return jsonify({"token": token, "level": access_level}), 200
     
     logging.warning(f"Login not permitted. Invalid credentials for - {email}")
     return jsonify({"error": "The credentials are invalid. Please try again."}), 401
+
+@app.route('/get_events', methods=["GET"])
+def get_events():
+    # Check if the request has the correct authorisation level
+    auth = authorise(request, 1)
+    
+    # If the user is authorised
+    if auth is True:
+        # Get all events and their data
+        events = []
+        events_query = execute_query("SELECT event_name, event_date, event_location FROM events").fetchall()
+
+        for event in events_query:
+            today = date.today() # Get today's date as yyyy-mm-dd
+
+            event_name = event[0]
+            event_date = event[1]
+            date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
+            event_location = event[2]
+
+            past = "past" if date_object < today else ""
+
+            events.append({
+                "name": event_name,
+                "date": event_date,
+                "location": event_location,
+                "past": past
+            })
+
+        # Give them a past attribute if it is needed
+        return jsonify(events), 200
+    
+    return auth
 
 
 # TEMP: Example of a protected route
