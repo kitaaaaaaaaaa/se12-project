@@ -2,7 +2,7 @@
 // or used across the web application.
 
 // Variables to change
-const backend_url = "http://192.168.1.103:5000"; //Change this to the local IP address of the host machine
+const backend_url = "http://127.0.0.1:5000"; //Change this to the local IP address of the host machine
 
 // Import web components
 import './eventCard.js';
@@ -49,16 +49,17 @@ export function updateHeaderDate() {
 // Function to clear all error messages
 export function clearErrors() {
     const errorElements = document.querySelectorAll(".error");
-    errorElements.forEach((element) => element.textContent = "");
+    errorElements.forEach((element) => {element.textContent = ""; element.classList.add("hidden");});
 }
 
 // Function to show an error message
 export function showError(elementId, message) {
+    document.getElementById(elementId).classList.remove("hidden");
     document.getElementById(elementId).textContent = message;
 }
 
 // Sends data from a form as a JSON object as seen on MDN Docs
-export async function sendFormData(form, route, method) {
+export async function sendFormData(form, route, method, logged_in) {
     showLoading();
 
     const formData = new window.FormData(form);
@@ -66,13 +67,25 @@ export async function sendFormData(form, route, method) {
     const url = backend_url + route;
 
     try {
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+        let response = "";
+        if (logged_in) {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${getToken()}`
+                },
+                body: JSON.stringify(data)
+            });
+        } else {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        }
         const parsed_response = await response.json();
 
         // Deal with errors in the response

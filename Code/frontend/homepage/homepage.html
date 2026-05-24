@@ -37,15 +37,14 @@
     <main>
         <!-- Pills at the top of the page -->
         <section class="pill-container">
-            <button type="button" class="pill active">
-                All events
-            </button>
-            <button type="button" class="pill">
-                Current events
-            </button>
-            <button type="button" class="pill">
-                Future events
-            </button>
+            <input type="radio" name="filter-events" id="all" checked value="all">
+            <label class="pill" for="all">All events</label>
+
+            <input type="radio" name="filter-events" id="previous" value="previous">
+            <label class="pill" for="previous">Previous events</label>
+
+            <input type="radio" name="filter-events" id="upcoming" value="upcoming">
+            <label class="pill" for="upcoming">Upcoming events</label>
         </section>
         
         <!-- Code to make an event card -->
@@ -54,7 +53,7 @@
         </section>
 
         <!-- Floating button to create a new event -->
-        <button type="button" class="floating-button" >
+        <button type="button" class="floating-button" id="create-event">
             <i class="fa-solid fa-plus"></i>
             Create new event
         </button>

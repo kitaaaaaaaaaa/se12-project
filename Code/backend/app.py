@@ -113,10 +113,10 @@ def authorise(req, needed_access):
         return jsonify({'error': 'You are not allowed to perform this action.'}), 401
     except jwt.ExpiredSignatureError:
         logging.warning("A user has an expired token")
-        return jsonify({'error': 'Token has expired. Please sign in again.'}), 401
+        return jsonify({'error': 'Your session has expired. Please sign in again.'}), 401
     except jwt.InvalidTokenError:
         logging.warning("A user has tried to access a resource with an invalid token")
-        return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
+        return jsonify({'error': 'Your session is invalid. Please sign in again.'}), 401
 
 
 # Default route
@@ -195,6 +195,7 @@ def get_events():
             date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
             event_location = event[2]
 
+            # Give them a past attribute if it is needed
             past = "past" if date_object < today else ""
 
             events.append({
@@ -204,11 +205,31 @@ def get_events():
                 "past": past
             })
 
-        # Give them a past attribute if it is needed
         return jsonify(events), 200
     
     return auth
 
+@app.route('/create_event', methods=["POST"])
+def create_event():
+    # Check if the request has the correct authorisation level
+    auth = authorise(request, 1)
+    
+    # If the user is authorised
+    if auth is True:
+        data = request.get_json();
+        name = sanitise(data.get('name'))
+        date = sanitise(data.get('date'))
+        location = sanitise(data.get('location'))
+
+        try:
+            execute_query("INSERT INTO events (event_name, event_date, event_location) VALUES (?, ?, ?)", (name, date, location))
+            event_id = execute_query("SELECT event_id FROM events WHERE event_name = ? AND event_date = ? AND event_location = ?", (name, date, location)).fetchall()[0][0]
+            
+            return jsonify({"event_id": event_id}), 201
+        except Exception as e:
+            return jsonify({"error": "Event could not be created"}), 500
+    
+    return auth
 
 # TEMP: Example of a protected route
 @app.route('/test_route', methods=["POST"])
