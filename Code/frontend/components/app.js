@@ -32,9 +32,10 @@ export function hideLoading() {
 export function createNewEvent(eventjson) {
     // Use given event data to create a new event card
     const new_event = document.createElement("event-card");
-    new_event.setAttribute("event-name", eventjson.name);
-    new_event.setAttribute("event-date", eventjson.date);
-    new_event.setAttribute("event-location", eventjson.location);
+    new_event.setAttribute("event-id", eventjson.event_id);
+    new_event.setAttribute("event-name", eventjson.event_name);
+    new_event.setAttribute("event-date", eventjson.event_date);
+    new_event.setAttribute("event-location", eventjson.event_location);
     new_event.setAttribute("past", eventjson.past);
     return new_event;
 }

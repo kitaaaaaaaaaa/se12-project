@@ -333,7 +333,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--background);
+    background-color: inherit;
     color: var(--secondary-purple-2);
     border: 1.5px solid var(--secondary-purple-2);
 }

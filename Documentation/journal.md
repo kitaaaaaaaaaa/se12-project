@@ -263,20 +263,39 @@ I also want to utilise proper branching strategies this week, setting it up so I
 - This week I had some troubles with using version control effectively, since I couldn't visualise branches being merged in the terminal. This caused me some stress I'd like to avoid, so I will use the UI in VSCode in the future.
 
 **Aims for next week:**
+- Since I didn't start on the authentication system, I am to do that next week.
 
 ## 18/05/2026
 **Aims:**
 - Make an active effort to reduce the amount written in diary entries in order to keep it succint and readable
-- Finish authentication system
+- Finish authentication system, which I need to do first because it serves as the foundation for the rest of the pages (crew/admin dashboards)
 - If time allows, start work on the event admin dashboard
+
 **Progress:**
 - Inspired by the musical production I am currently involved in, I decided to name the app "QueSync". This is because the actions for backstage crew are organised into "cues" - key points and pieces of dialogue that serve as cues to prepare equipment and props. Also, I found the letter Q to be more appealing as an icon than C.
+- After viewing a few articles about the implementation of an authentication system in a Flask app, I was able to understand its authentication logic in the context of a backend API. I gathered two main methods for achieving this - issuing and checking JWTs, or using the Flask-User library. I found examples in PWP6 of a secure API, and adapted the code for my own project. This method uses JWTs for session management. I decided to authenticate users by taking user inputs, sanitising it and checking the database via safe SQL queries.
+![Screenshot of article about Flask authentication](Assets/2026-05-26-11-22-07.png)
+
 **Challenges and solutions:**
-- CORS issues when testing authentication on client device
-- Failed backend tests - could not find pip requirements...solved by looking at the logs and a quick google search to generate a requirements txt file
+- Towards the end of this sprint, I reached out to my client in order to test the authentication system. I observed that they had no issues with navigating the UI. However, I ran into some connection issues. Initially, the client could view the front end page, but it could not access the backend server. After looking through my code and their console logs, this was because the code for my front end was pointing to `http://127.0.0.1:5000`, which leads to the device's own local host. I had to change this to my public facing IP address in order to resolve the issue.
+- Upon completion of the authentication system, I merged the feature branch with the main branch. My pipelines to perform unit/integration testing on the backend [failed](https://gitlab.com/alexander.legia1/se12-project/-/jobs/14461597871). Reading the error logs (pictured below), I saw that the testing script was missing a module. I watched a video on setting up GitLab pipelines for a Flask project, and learnt that I needed to include a command to install all the requirements. I did that, and it fixed the problem.
+![Failed pipeline](Assets/2026-05-26-11-45-35.png)
+
+**Reflection:**
+- This week went quite smoothly, as I was able to adapt UI elements from my LearnerHours PWA and backend elements from coursework
+- Other assessments have definitely impacted how frequently I work on the project. Next week, I will only work on the project in extremely small tasks/chunks. This will allow me to make time for my other assessments, while still working on the project.
+
+**Aims for next week:**
+- Start work on the homepage for the event administrator. There is no necessity to finish it since I have important exams in the following weeks.
+
+## 25/05/2026
+**Aims:**
+**Progress:**
+**Challenges and solutions:**
+Wanted to sort json by dates in python
+https://stackoverflow.com/questions/35437516/python-sort-list-of-json-by-mm-dd-yyyy-dates
 **Reflection:**
 **Aims for next week:**
-
 
 ---
 ## DD/MM/YYYY
