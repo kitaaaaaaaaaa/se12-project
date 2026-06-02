@@ -187,4 +187,6 @@ export function logOut() {
 }
 
 // Run this when the page loads
-updateHeaderDate();
+if (typeof window !== 'undefined') {
+    window.addEventListener('load', updateHeaderDate);
+}
