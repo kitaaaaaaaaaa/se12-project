@@ -60,7 +60,10 @@ export class stepCard extends HTMLElement {
         this.innerHTML = stepHTML;
     }
 }
-customElements.define("step-card", stepCard);
+
+if (typeof customElements !== 'undefined') {
+    customElements.define("step-card", stepCard);
+}
 
 // Function to create a new step
 function createNewStep(stepjson) {
