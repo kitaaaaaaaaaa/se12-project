@@ -290,12 +290,23 @@ I also want to utilise proper branching strategies this week, setting it up so I
 
 ## 25/05/2026
 **Aims:**
+- This week, I want to start work on the homepage for the event administrator, which is crucial for the next step in my GANTT chart
+- I will write a diary entry at the end of the week, instead of throughout the week. This will force me to be concise.
+
 **Progress:**
+- Since I had already created all the UI components, making the interface was quickly done.
+- Added functionality to the homepage: pulling events from the backend, creating events, deleting events. I used my previous experience gained when making the LearnerHours PWA app to make the JavaScript for the page.
+- I am starting to get the hang of how backend servers work. While doing some research, I found that I had coded my backend as a REST API, which sends a representation of the necessary data, rather than the entire database.
+
 **Challenges and solutions:**
-Wanted to sort json by dates in python
-https://stackoverflow.com/questions/35437516/python-sort-list-of-json-by-mm-dd-yyyy-dates
+- In the backend, I wanted to return all my events in chronological order so that events in the future would come first. I didn't know how to do this, so I looked at this [StackOverflow article](https://stackoverflow.com/questions/35437516/python-sort-list-of-json-by-mm-dd-yyyy-dates) and used this code to do so. I implemented it in my backend and only had to change some parameters.
+
 **Reflection:**
+- It seems that making a reflection at the end of the week worked - this week's diary entry is noticably more concise. I will continue to do this.
+- This week was marked with an important assessment, so I did not get much project work done.
+
 **Aims for next week:**
+- Start the next phase of my project: implementing CRUD operations for run sheet steps
 
 ---
 ## DD/MM/YYYY
