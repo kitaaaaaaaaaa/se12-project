@@ -2,9 +2,7 @@
 // or used across the web application.
 
 // Variables to change
-const backend_url = "http://192.168.1.103:5000"; //Change this to the local IP address of the host machine
-
-
+const backend_url = "http://127.0.0.1:5000"; //Change this to the local IP address of the host machine
 
 // Import web components
 import './eventCard.js';
@@ -31,12 +29,13 @@ export function hideLoading() {
 }
 
 // Functino to create a new event card
-function createNewEvent(eventjson) {
+export function createNewEvent(eventjson) {
     // Use given event data to create a new event card
     const new_event = document.createElement("event-card");
-    new_event.setAttribute("event-name", eventjson.name);
-    new_event.setAttribute("event-date", eventjson.date);
-    new_event.setAttribute("event-location", eventjson.location);
+    new_event.setAttribute("event-id", eventjson.event_id);
+    new_event.setAttribute("event-name", eventjson.event_name);
+    new_event.setAttribute("event-date", eventjson.event_date);
+    new_event.setAttribute("event-location", eventjson.event_location);
     new_event.setAttribute("past", eventjson.past);
     return new_event;
 }
@@ -51,16 +50,17 @@ export function updateHeaderDate() {
 // Function to clear all error messages
 export function clearErrors() {
     const errorElements = document.querySelectorAll(".error");
-    errorElements.forEach((element) => element.textContent = "");
+    errorElements.forEach((element) => {element.textContent = ""; element.classList.add("hidden");});
 }
 
 // Function to show an error message
 export function showError(elementId, message) {
+    document.getElementById(elementId).classList.remove("hidden");
     document.getElementById(elementId).textContent = message;
 }
 
 // Sends data from a form as a JSON object as seen on MDN Docs
-export async function sendFormData(form, route, method) {
+export async function sendFormData(form, route, method, logged_in) {
     showLoading();
 
     const formData = new window.FormData(form);
@@ -68,13 +68,25 @@ export async function sendFormData(form, route, method) {
     const url = backend_url + route;
 
     try {
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+        let response = "";
+        if (logged_in) {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${getToken()}`
+                },
+                body: JSON.stringify(data)
+            });
+        } else {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+        }
         const parsed_response = await response.json();
 
         // Deal with errors in the response
@@ -97,21 +109,34 @@ export async function sendFormData(form, route, method) {
     hideLoading();
 }
 
-// Sends data from a form as a JSON object as seen on MDN Docs
-export async function sendRequest(request, route, method) {
+// Sends data from a form as a JSON object as seen on MDN Docs, returns parsed JSON
+export async function sendRequest(request, route, method, error_func) {
     showLoading();
 
     const url = backend_url + route;
 
     try {
-        const response = await fetch(url, {
-            method: method,
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${getToken()}`
-            },
-            body: JSON.stringify(request)
-        });
+        let response = "";
+
+        if (method === "GET") {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${getToken()}`
+                },
+            });
+        } else {
+            response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${getToken()}`
+                },
+                body: JSON.stringify(request)
+            });
+        }
+
         const parsed_response = await response.json();
 
         // Deal with errors in the response
@@ -126,9 +151,14 @@ export async function sendRequest(request, route, method) {
             return parsed_response;
         }
     } catch (error) {
-        // Deal with client side errors
-        const error_dialog = createDialog("An error occurred", "The server could not be contacted...Please try again.");
-        error_dialog.showModal();
+        if (error_func) {
+            // Run the defined error function if it was passed
+            error_func();
+        } else {
+            // Deal with client side errors
+            const error_dialog = createDialog("An error occurred", "The server could not be contacted...Please try again.");
+            error_dialog.showModal();
+        }
     }
 
     hideLoading();
@@ -149,6 +179,11 @@ export function saveToken(token) {
 
 export function getToken() {
     return window.sessionStorage.getItem("token");
+}
+
+export function logOut() {
+    window.sessionStorage.removeItem("token");
+    window.location.href = "/";
 }
 
 // Run this when the page loads

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Homepage</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
+
+    <!-- Define some temporary styles -->
+    <style>
+        .middle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>CueSync</h1>
+        <button type="button" id="log-out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Log out
+        </button>
+    </header>
+    <main>
+        <!-- Pills at the top of the page -->
+        <section class="pill-container">
+            <input type="radio" name="filter-events" id="all" checked value="all">
+            <label class="pill" for="all">All events</label>
+
+            <input type="radio" name="filter-events" id="previous" value="previous">
+            <label class="pill" for="previous">Previous events</label>
+
+            <input type="radio" name="filter-events" id="upcoming" value="upcoming">
+            <label class="pill" for="upcoming">Upcoming events</label>
+        </section>
+        
+        <!-- Code to make an event card -->
+        <section class="events-container grid-container">
+            
+        </section>
+
+        <!-- Floating button to create a new event -->
+        <button type="button" class="floating-button" id="create-event">
+            <i class="fa-solid fa-plus"></i>
+            Create new event
+        </button>
+
+        <!-- Code for an empty screen -->
+        <section class="empty-screen">
+            <span class="figtree-semibold">(っ °Д °)っ</span>
+            <p>Looks like there's nothing here...Let's fix that!</p>
+        </section>
+    </main>
+    <script type="module" src="../components/app.js" defer id="app-js"></script>
+    <script type="module" src="homepage.js" defer></script>
+</body>
+</html>

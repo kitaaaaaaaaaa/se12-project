@@ -1,10 +1,12 @@
 # Variables to change
-frontend_port = "5500"
-frontend_localhost_url = "http://127.0.0.1"
+frontend_port = '5500'
+frontend_localhost_url = 'http://127.0.0.1'
 
 # Import external libraries
 import os, socket
-import sqlite3, jwt, datetime, bleach, logging
+import sqlite3, jwt, bleach, logging
+import datetime as dt
+from datetime import date, datetime
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -13,12 +15,12 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 # Configure backend logging module
 # logging.basicConfig(
-#     filename="./app.log",
-#     encoding="utf-8",
-#     filemode="a",
-#     format="{asctime} - {levelname} - {message}",
-#     style="{",
-#     datefmt="%Y-%m-%d %H:%M",
+#     filename='./app.log',
+#     encoding='utf-8',
+#     filemode='a',
+#     format='{asctime} - {levelname} - {message}',
+#     style='{',
+#     datefmt='%Y-%m-%d %H:%M',
 # )
 
 # Initialise the Flask app and the database
@@ -34,9 +36,9 @@ limiter = Limiter(
 )
 
 # Configure trusted domains
-frontend_network_url = "http://" + socket.gethostbyname(socket.gethostname()) + ":" + frontend_port
+frontend_network_url = 'http://' + socket.gethostbyname(socket.gethostname()) + ':' + frontend_port
 
-CORS(app, origins=[f"{frontend_localhost_url}:{frontend_port}", frontend_network_url])
+CORS(app, origins=[f'{frontend_localhost_url}:{frontend_port}', frontend_network_url])
 
 # Handle input sanitisation
 allowed_tags = ['b', 'i', 'u', 'p', 'br']
@@ -55,7 +57,7 @@ def sanitise(text):
     try:
         clean = bleach.clean(text, tags=allowed_tags, attributes=allowed_attributes)
     except Exception as e:
-        clean = ""
+        clean = ''
 
     return clean
 
@@ -92,16 +94,16 @@ def authorise(req, needed_access):
     '''
     auth_header = req.headers.get('Authorization')
     
-    if auth_header == None:
+    if auth_header is None:
         return jsonify({'error': 'You need to sign in to perform this action.'}), 401
 
-    token = auth_header.split(" ")[1]
+    token = auth_header.split(' ')[1]
 
     try:
         # Check if the JWT token is valid
         decoded = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
         user_id = decoded['user_id']
-        access_level = execute_query("SELECT role_id FROM users WHERE user_id = ?", (user_id,)).fetchall()[0][0]
+        access_level = execute_query('SELECT role_id FROM users WHERE user_id = ?', (user_id,)).fetchall()[0][0]
         
         # Check if the user has the required access level
         if access_level == needed_access:
@@ -110,11 +112,11 @@ def authorise(req, needed_access):
         # If the user doesn't have the required access level
         return jsonify({'error': 'You are not allowed to perform this action.'}), 401
     except jwt.ExpiredSignatureError:
-        logging.warning("A user has an expired token")
-        return jsonify({'error': 'Token has expired. Please sign in again.'}), 401
+        logging.warning('A user has an expired token')
+        return jsonify({'error': 'Your session has expired. Please sign in again.'}), 401
     except jwt.InvalidTokenError:
-        logging.warning("A user has tried to access a resource with an invalid token")
-        return jsonify({'error': 'Invalid token. Please sign in again.'}), 401
+        logging.warning('A user has tried to access a resource with an invalid token')
+        return jsonify({'error': 'Your session is invalid. Please sign in again.'}), 401
 
 
 # Default route
@@ -122,7 +124,7 @@ def authorise(req, needed_access):
 def index():
     # If the user happens to access the hosted URL manually
     # in their browser, redirect them to the frontend
-    logging.warning("Someone has tried to manually access the API")
+    logging.warning('Someone has tried to manually access the API')
     return redirect(frontend_network_url)
 
 @app.route('/create_account', methods=['POST'])
@@ -132,63 +134,142 @@ def create_account():
     email = sanitise(data.get('email'))
     password = sanitise(data.get('password'))
     role = sanitise(data.get('role'))
-    role_id = 1 if role == "admin" else 2
+    role_id = 1 if role == 'admin' else 2
 
     # Hash the password
     password_hash = generate_password_hash(password)
 
     # Check that the account does not already exist
-    existing_account = execute_query("SELECT * FROM Users WHERE email = ?", (email,)).fetchall()
+    existing_account = execute_query('SELECT * FROM Users WHERE email = ?', (email,)).fetchall()
 
     if len(existing_account) == 0:
         # Create account in the database
-        execute_query("INSERT INTO users (email, role_id, password_hash) VALUES (?, ?, ?)", (email, role_id, password_hash))
-        user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0][0]
+        execute_query('INSERT INTO users (email, role_id, password_hash) VALUES (?, ?, ?)', (email, role_id, password_hash))
+        user_id = execute_query('SELECT user_id FROM users WHERE email = ?', (email,)).fetchall()[0][0]
 
         # Send JWT
-        logging.info(f"Successfully created an account for - {email}")
-        token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+        logging.info(f'Successfully created an account for - {email}')
+        token = jwt.encode({'user_id': user_id, 'exp': dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
         return jsonify({'token': token}), 201
     else:
-        logging.info("An account could not be created because it already exists")
-        return jsonify({"error": "The account already exists. Try signing in."}), 409
+        logging.info('An account could not be created because it already exists')
+        return jsonify({'error': 'The account already exists. Try signing in.'}), 409
         
 
-@app.route('/login', methods=["POST"])
+@app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
     email = sanitise(data.get('email'))
     password = sanitise(data.get('password'))
 
     # Check if the account exists in the database
-    existing_account = execute_query("SELECT * FROM users WHERE email = ?", (email,)).fetchall()
+    existing_account = execute_query('SELECT * FROM users WHERE email = ?', (email,)).fetchall()
 
     if len(existing_account) == 1 and check_password_hash(existing_account[0][2], password):
-        user_id = execute_query("SELECT user_id FROM users WHERE email = ?", (email,)).fetchall()[0][0]
+        user_id = execute_query('SELECT user_id FROM users WHERE email = ?', (email,)).fetchall()[0][0]
+        access_level = execute_query('SELECT role_id FROM users WHERE user_id = ?', (user_id,)).fetchall()[0][0]
 
-        logging.info(f"Successful login for - {email}")
-        token = jwt.encode({'user_id': user_id, 'exp': datetime.datetime.now(datetime.UTC) + datetime.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
-        return jsonify({'token': token}), 200
+        logging.info(f'Successful login for - {email}')
+        token = jwt.encode({'user_id': user_id, 'exp': dt.datetime.now(dt.UTC) + dt.timedelta(hours=1)}, app.config['SECRET_KEY'], algorithm='HS256')
+        return jsonify({'token': token, 'level': access_level}), 200
     
-    logging.warning(f"Login not permitted. Invalid credentials for - {email}")
-    return jsonify({"error": "The credentials are invalid. Please try again."}), 401
+    logging.warning(f'Login not permitted. Invalid credentials for - {email}')
+    return jsonify({'error': 'The credentials are invalid. Please try again.'}), 401
 
+@app.route('/get_events', methods=['GET'])
+def get_events():
+    # Check if the request has the correct authorisation level
+    auth = authorise(request, 1)
+    
+    # If the user is authorised
+    if auth is True:
+        # Get all events and their data
+        events = []
+        events_query = execute_query('SELECT event_name, event_date, event_location FROM events').fetchall()
+
+        for event in events_query:
+            today = date.today() # Get today's date as yyyy-mm-dd
+
+            event_name = event[0]
+            event_date = event[1]
+            date_object = datetime.strptime(event_date, '%Y-%m-%d').date()
+            event_location = event[2]
+            event_id = execute_query('SELECT event_id FROM events WHERE event_name = ? AND event_date = ? AND event_location = ?', (event_name, event_date, event_location)).fetchall()[0][0]
+
+            # Give them a past attribute if it is needed
+            past = 'past' if date_object < today else ''
+
+            events.append({
+                'event_id': event_id,
+                'event_name': event_name,
+                'event_date': event_date,
+                'event_location': event_location,
+                'past': past
+            })
+
+        # Sort the events from most recent to least recent
+        sorted_events = sorted(events, key=lambda x: datetime.strptime(x['event_date'], '%Y-%m-%d'), reverse=True)
+
+        return jsonify(sorted_events), 200
+    
+    return auth
+
+@app.route('/create_event', methods=['POST'])
+def create_event():
+    # Check if the request has the correct authorisation level
+    auth = authorise(request, 1)
+    
+    # If the user is authorised
+    if auth is True:
+        data = request.get_json();
+        name = sanitise(data.get('name'))
+        date = sanitise(data.get('date'))
+        location = sanitise(data.get('location'))
+
+        # Check if the date is valid before entering into the database
+        # Invalid dates will throw errors later on.
+        if str(date) > "9999-12-31":
+            return jsonify({'error', 'Event could not be created because the date is too far in the future'}), 500
+
+        try:
+            execute_query('INSERT INTO events (event_name, event_date, event_location) VALUES (?, ?, ?)', (name, date, location))
+            event_id = execute_query('SELECT event_id FROM events WHERE event_name = ? AND event_date = ? AND event_location = ?', (name, date, location)).fetchall()[0][0]
+            
+            return jsonify({'event_id': event_id}), 201
+        except Exception:
+            return jsonify({'error': 'Event could not be created'}), 500
+    
+    return auth
+
+@app.route('/delete_event', methods=['DELETE'])
+def delete_event():
+    auth = authorise(request, 1)
+    event_id = str(request.get_json())
+
+    if auth is True:
+        try:
+            execute_query("DELETE FROM events WHERE event_id = ?", (event_id,))
+            return jsonify({'message': 'Event deleted successfully'}), 200
+        except Exception as e:
+            return jsonify({'error': 'The event could not be deleted. Please try again.'}), 500
+
+    return auth
 
 # TEMP: Example of a protected route
-@app.route('/test_route', methods=["POST"])
+@app.route('/test_route', methods=['POST'])
 def test():
     auth = authorise(request, 1)
     data = request.get_json()
     
-    if auth == True:
+    if auth is True:
         print(request.get_json())
-        return jsonify({"message": "Successful resource accessed"}), 200
+        return jsonify({'message': 'Successful resource accessed'}), 200
     
     return auth
 
 
 # Run the app
-if __name__ == "__main__":
-    app.run(debug=True, port=5000, host="0.0.0.0")
-    logging.info("App started successfully")
+if __name__ == '__main__':
+    app.run(debug=True, port=5000, host='0.0.0.0')
+    logging.info('App started successfully')
     
