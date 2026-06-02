@@ -66,7 +66,14 @@ try {
         );
     });
 
-    renderTest('isDateInvalid - Misformatted invalid date', () => {
+    renderTest('isDateInvalid - Misformatted invaliddate', () => {
+        assertEqual(
+            isDateInvalid('03/12/574342'),
+            true
+        );
+    });
+
+    renderTest('isDateInvalid - Misformatted date', () => {
         assertEqual(
             isDateInvalid('21/08/24022'),
             true

@@ -142,6 +142,10 @@ export function isDateInvalid(date) {
     const limit = new Date("9999-12-31");
     const date_object = new Date(date);
 
+    if (Number.isNaN(date_object.getTime())) {
+        return true
+    }
+
     // Returns true if invalid, returns false if valid
     return date_object > limit;
 }
