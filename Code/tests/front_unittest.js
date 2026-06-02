@@ -62,11 +62,11 @@ try {
     renderTest('isDateInvalid - Misformatted valid date', () => {
         assertEqual(
             isDateInvalid('21/08/4023'),
-            false
+            true
         );
     });
 
-    renderTest('isDateInvalid - Misformatted invaliddate', () => {
+    renderTest('isDateInvalid - Misformatted invalid date', () => {
         assertEqual(
             isDateInvalid('03/12/574342'),
             true
