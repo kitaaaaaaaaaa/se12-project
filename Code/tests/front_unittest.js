@@ -3,6 +3,7 @@ import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from '.
 
 // Import code to test
 import { formatStepNumber } from '../frontend/components/editStepCard.js'
+import { isDateInvalid } from '../frontend/homepage/homepage.js';
 
 
 console.log("------- Starting front end unit tests -------");
@@ -41,6 +42,34 @@ try {
         assertEqual(
             formatStepNumber("06"),
             '06'
+        );
+    });
+
+    renderTest('isDateInvalid - Valid Date', () => {
+        assertEqual(
+            isDateInvalid('2023-03-21'),
+            false
+        );
+    });
+
+    renderTest('isDateInvalid - Invalid Date', () => {
+        assertEqual(
+            isDateInvalid('21023-04-20'),
+            true
+        );
+    });
+
+    renderTest('isDateInvalid - Misformatted valid date', () => {
+        assertEqual(
+            isDateInvalid('21/08/4023'),
+            false
+        );
+    });
+
+    renderTest('isDateInvalid - Misformatted invalid date', () => {
+        assertEqual(
+            isDateInvalid('21/08/24022'),
+            true
         );
     });
 } catch (error) {

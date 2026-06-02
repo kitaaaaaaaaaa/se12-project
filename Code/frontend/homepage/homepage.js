@@ -98,7 +98,7 @@ function initHomepage() {
             }
 
             // Validate date
-            if (isDateValid(date)) {
+            if (isDateInvalid(date)) {
                 showError("date-error", "The date is too far in the future");
                 isValid = false;
             }
@@ -138,10 +138,10 @@ function initHomepage() {
 }
 
 // Function to check if a date is valid
-function isDateValid(date) {
+export function isDateInvalid(date) {
     const limit = new Date("9999-12-31");
     const date_object = new Date(date);
 
-    // Returns false if invalid, returns true if valid
-    return date < limit;
+    // Returns true if invalid, returns false if valid
+    return date_object > limit;
 }
