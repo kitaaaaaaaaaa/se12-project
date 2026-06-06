@@ -232,8 +232,14 @@ def create_event():
             return jsonify({'error', 'Event could not be created because the date is too far in the future'}), 500
 
         try:
+            # Create a new event record
             execute_query('INSERT INTO events (event_name, event_date, event_location) VALUES (?, ?, ?)', (name, date, location))
+            # Retrieve the event id
             event_id = execute_query('SELECT event_id FROM events WHERE event_name = ? AND event_date = ? AND event_location = ?', (name, date, location)).fetchall()[0][0]
+            # Create a new placeholder step linked to the event
+            # execute_query('INSERT INTO steps (event_id, step_num)')
+            # Retrieve the step id
+            # execute_query('INSERT INTO instructions (step_id, job_id, instruction_num, instruction_detail)')
             
             return jsonify({'event_id': event_id}), 201
         except Exception:
@@ -253,6 +259,31 @@ def delete_event():
         except Exception as e:
             return jsonify({'error': 'The event could not be deleted. Please try again.'}), 500
 
+    return auth
+
+@app.route('/get_instructions/<int:event_id>', methods=['GET'])
+def get_instructions(event_id):
+    auth = authorise(request, 1)
+    # Execute query to get necessary data
+    steps_query = execute_query("""
+        SELECT step_title, step_performer, step_number
+        FROM steps
+        WHERE event_id = ?
+    """, (event_id,))
+
+# for each step... (FOR LOOP)
+    instructions_query = execute_query("""
+        SELECT jobs.job_name, instructions.instruction_num, instructions.instruction_detail
+        FROM instructions, jobs
+        WHERE instructions.job_id = jobs.job_id AND instructions.step_id = ?
+    """, (step_id,))
+
+    # Assign variables
+    # Process
+    
+    if auth is True:
+        return jsonify({'message': event_id}), 200
+    
     return auth
 
 # TEMP: Example of a protected route

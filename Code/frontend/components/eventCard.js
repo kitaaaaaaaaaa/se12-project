@@ -5,7 +5,7 @@
 
 import { sendRequest } from "./app.js";
 import { createDeleteConfirmation } from "./dialog.js";
-import { populateEvents, resetFilter } from "../homepage/homepage.js";
+import { populateEvents, resetFilter, saveEventId } from "../homepage/homepage.js";
 
 // Create a web component for an event card
 export class eventCard extends HTMLElement {
@@ -48,6 +48,15 @@ export class eventCard extends HTMLElement {
         const play_button = this.querySelector(".play-button");
         const edit_button = this.querySelector(".edit-button");
         const del_button = this.querySelector(".del-button");
+
+        edit_button.addEventListener("click", () => {
+            // Save event id in session storage
+            const event_id = this.getAttribute("event-id");
+            saveEventId(event_id);
+
+            // Redirect the user to the edit page
+            window.location.href = "/edit/edit.html";
+        });
 
         del_button.addEventListener("click", () => {
             // Add a confirmation box

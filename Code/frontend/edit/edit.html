@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit run sheet</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>CueSync</h1>
+        <button type="button" id="exit-edit">
+            <i class="fa-solid fa-angle-left"></i>
+            Back
+        </button>
+    </header>
+
+    <div class="edit-container grid-container">
+        <aside>
+        </aside>
+        <main>
+            <edit-step-card
+                step-title = "Erase Me by Lizzy McAlpine"
+                step-performer = "Vocal Ensemble"
+                step-number = "01"
+                curtains = "active"
+                video = ""
+                blackout = ""
+                >
+                <template>
+                    {
+                        "instructions": [
+                            {"job": "Stage Hands", "command": "REMOVE", "detail": "all music stands"},
+                            {"job": "Stage Hands", "command": "HANDOFF", "detail": "8 radio mics to vocalists"}
+                        ]
+                    }
+                </template>
+            </edit-step-card>
+        </main>
+    </div>
+    <script type="module" src="../components/app.js" defer></script>
+    <script type="module" src="./edit.js" defer></script>
+</body>
+</html>
