@@ -124,6 +124,12 @@ function initHomepage() {
                         dialog.close();
                         dialog.remove();
                         populateEvents();
+                        
+                        // Save event id in session storage
+                        saveEventId(response.event_id);
+                        
+                        // Redirect the user to edit page
+                        window.location.href = "/edit/edit.html";
                     }
 
                 } catch (error) {
@@ -138,10 +144,19 @@ function initHomepage() {
 }
 
 // Function to check if a date is valid
-export function isDateInvalid(date) {
+export function isDateValid(date) {
     const limit = new Date("9999-12-31");
     const date_object = new Date(date);
 
-    // Returns true if invalid, returns false if valid
-    return date_object > limit;
+    // Returns false if invalid, returns true if valid
+    return date < limit;
+}
+
+// Functions to save and retrieve temporary event id
+export function saveEventId(id) {
+    window.sessionStorage.setItem("event_id", id);
+}
+
+export function getEventId() {
+    return window.sessionStorage.getItem("event_id");
 }

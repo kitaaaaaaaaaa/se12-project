@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator View</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr" style="display: none;">Friday, 1 May 2026</span>
+        <div style="white-space: nowrap;">
+            <i class="fa-regular fa-user"></i>
+            Role:
+            <select id="crew-role">
+                <option value="all">All roles</option>
+                <option value="stage_hands">Stage Hands</option>
+                <option value="visuals">Visuals</option>
+                <option value="sound">Sound</option>
+                <option value="camera">Camera</option>
+                <option value="lighting">Lighting</option>
+            </select>
+        </div>
+        <h1>Crew Dashboard</h1>
+        <button type="button" id="log-out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Log out
+        </button>
+    </header>
+    <main id="crew-main">
+        <div>
+            <strong>Current step</strong>
+            <hr>
+            <section id="current">
+            </section>
+        </div>
+        
+        <div>
+            <strong>Upcoming steps</strong>
+            <hr>
+            <section id="upcoming">                
+            </section>
+        </div>
+    </main>
+    <script type="module" src="../components/app.js" defer></script>
+    <script type="module" src="crew.js" defer></script>
+</body>
+</html>

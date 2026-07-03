@@ -3,6 +3,10 @@
 // It includes any functions related to it.
 // ---------------------------------------------------------------------------
 
+import { getEventId } from "../homepage/homepage.js";
+import { sendRequest } from "./app.js";
+import { createDialog } from "./dialog.js";
+
 // Create a web component for editing a step card
 export class editStepCard extends HTMLElement {
     // Run this code when the component is added to the page
@@ -34,7 +38,7 @@ export class editStepCard extends HTMLElement {
         let stepHTML = `
         <div class="step-card edit">
             <div class="step-header flex-container">
-                    <span class="step-number figtree-semibold">${step_number}</span>
+                    <span class="step-number figtree-semibold">${formatStepNumber(step_number)}</span>
                     <div class="step-details flex-container">
                         <input type="text" placeholder="Step title" value="${step_title}" name="edit-step-title" autocomplete="off">
                         
@@ -87,6 +91,11 @@ export class editStepCard extends HTMLElement {
                             <option value="place">PLACE</option>
                             <option value="remove">REMOVE</option>
                             <option value="move">MOVE</option>
+                            <option value="open">OPEN</option>
+                            <option value="close">CLOSE</option>
+                            <option value="cue">CUE</option>
+                            <option value="mute">MUTE</option>
+                            <option value="apply">APPLY</option>
                         </select>
                     </div>
                     <div class="instruction-text-input flex-container">
@@ -99,15 +108,27 @@ export class editStepCard extends HTMLElement {
 
         // Close the step card
         stepHTML += `
-            <button type="button" class="new-instruction">
-                <i class="fa-solid fa-plus"></i>
-                New instruction
-            </button>
+            <div class="instruction-buttons">
+                <button type="button" class="new-instruction">
+                    <i class="fa-solid fa-plus"></i>
+                    New instruction
+                </button>
+                <button type="button" class="delete-instruction red-button">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete last instruction
+                </button>
+            </div>
         </div>
-            <button type="button" class="new-step">
-                <i class="fa-solid fa-layer-group"></i>
-                New step
-            </button>
+            <div class="step-buttons">
+                <button type="button" class="new-step">
+                    <i class="fa-solid fa-layer-group"></i>
+                    New step
+                </button>
+                <button type="button" class="delete-step">
+                    <i class="fa-regular fa-trash-can"></i>
+                    Delete step above
+                </button>
+            </div>
         `;
 
         // Render the HTML
@@ -117,6 +138,7 @@ export class editStepCard extends HTMLElement {
         const job_elements = this.querySelectorAll("select[name='edit-step-instruction-job']");
         const command_elements = this.querySelectorAll("select[name='edit-step-instruction-command']");
         parsed_instructions.forEach((instruction, index) => {
+            // Set default values for each dropdown box
             job_elements[index].value = "stage_hands";
             command_elements[index].value = "handoff";
 
@@ -183,6 +205,11 @@ export class editStepCard extends HTMLElement {
             }
         });
 
+        // Add functionality to the delete step button
+        const delete_step = this.querySelector(".delete-step");
+        delete_step.addEventListener('click', () => {
+            this.remove();
+        });
 
         // Add functionality to the new step button
         const new_step_button = this.querySelector(".new-step");
@@ -229,6 +256,17 @@ export class editStepCard extends HTMLElement {
             }
         });
 
+        // Add functionality to the delete instructino button
+        const delete_instruction_button = this.querySelector(".delete-instruction");
+        delete_instruction_button.addEventListener('click', () => {
+            const instruction_el = this.querySelectorAll(".instruction");
+            const last_instruction = instruction_el[instruction_el.length - 1]
+            
+            if (last_instruction) {
+                last_instruction.remove();
+            }
+        });
+
         // Add functionality to the new instructino button
         const new_instruction_button = this.querySelector(".new-instruction");
         new_instruction_button.addEventListener('click', () => {
@@ -253,6 +291,11 @@ export class editStepCard extends HTMLElement {
                                 <option value="place">PLACE</option>
                                 <option value="remove">REMOVE</option>
                                 <option value="move">MOVE</option>
+                                <option value="open">OPEN</option>
+                                <option value="close">CLOSE</option>
+                                <option value="cue">CUE</option>
+                                <option value="mute">MUTE</option>
+                                <option value="apply">APPLY</option>
                             </select>
                         </div>
                         <div class="instruction-text-input flex-container">
@@ -262,18 +305,38 @@ export class editStepCard extends HTMLElement {
                 </div>
             `;
 
-            new_instruction_button.insertAdjacentHTML('beforebegin', new_instruction_html);
+            this.querySelector(".instruction-buttons").insertAdjacentHTML('beforebegin', new_instruction_html);
             this.updateStepCard();
         });
 
         // Attach events to toggle the state of each pill
         const pill_container = this.querySelector(".edit-pills");
 
-        pill_container.addEventListener('click', (event) => {
+        pill_container.addEventListener('click', async (event) => {
             if (event.target.matches(".pill")) {
                 event.target.classList.toggle("active");
                 this.updateStepCard();
+
+                const pill = document.querySelector("#disable-reload")
+                const active = pill.classList.contains("active")
+
+                if (!active) {
+                    const step_elements = document.querySelectorAll("edit-step-card");
+                    let all_steps = []
+
+                    step_elements.forEach((element) => {
+                        all_steps.push(element.getFormInputs())
+                    })
+
+                    const response = await sendRequest(all_steps, `/save_edit_event_data/${Number(getEventId())}`, "PUT", () => {
+                        const error_dialog = createDialog("Error", "Event could not be saved. Please try again.");
+                        error_dialog.showModal();
+
+                    });
+                    window.location.reload();
+                }
             }
+            
         });
 
         // When the step is edited, update the step card
@@ -284,13 +347,13 @@ export class editStepCard extends HTMLElement {
 
         step_card_container.addEventListener('change', () => {
             this.updateStepCard();
-            console.log("CHANGED SELECTION");
         });
     }
 
     getFormInputs() {
-        // Define an arrow function to read the values of every input
+        // Define a function to read the values of every input
         // and format them into a JSON object
+        const edit_step_id = this.getAttribute("step-id");
         const edit_step_title_value = this.querySelector("input[name='edit-step-title']").value;
         const edit_step_performer_value = this.querySelector("input[name='edit-step-performer']").value;
         const edit_step_number = this.querySelector(".step-number").textContent;
@@ -316,6 +379,7 @@ export class editStepCard extends HTMLElement {
 
         // Create an object for the step attributes
         let edit_attributes = {
+            "step_id": edit_step_id,
             "step_title": edit_step_title_value,
             "step_performer": edit_step_performer_value,
             "step_number": edit_step_number,
@@ -382,6 +446,7 @@ if (typeof customElements !== 'undefined') {
 export function createNewEditStep(stepjson) {
     // Use given step data that is split into attributes and instructions to create a new step
     const new_step = document.createElement("edit-step-card");
+    new_step.setAttribute("step-id", stepjson.attributes["step_id"]);
     new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
     new_step.setAttribute("step-performer", stepjson.attributes["step_performer"]);
     new_step.setAttribute("step-number", stepjson.attributes["step_number"]);
