@@ -319,12 +319,11 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 - I have no expectation to finish this feature this week because I expect that it will be the most time consuming feature
 
 **Progress:**
-- Created the UI for event admins editing an event but did not add functionality
-- Looking back at the storyboard, I realised I changed the flow between "Event Admin - Create new event" and "Event Admin - Editing event page". This is because a request needs to be made to the server to order to get an event id number, before the user can be redirected to the edit page. These functions are currently in multiple places and it would be too much time to consolidate it into one place.
-![](Assets/2026-07-03-13-18-44.png)
+- Created the UI for event admins editing an event but did not add functionality. Since I had already created UI components earlier, I just had to put them together.
 
 **Challenges and solutions:**
 - I realised that once you are editing an event, you can create steps, but not delete them. I wish I saw this problem in the Planning phase so that I could make it earlier and waste less time. I also realise that using WAgile allows me to adapt my Producing and Implementing phase as needed - using pure Waterfall would be utterly horrendous and lead to unfulfilled project requirement/quality assurance tests.
+- One glaring challenge is that my project is not running on schedule according to my GANTT chart. I know that I will not be able to catch up on this, judging from experience on previous projects. After some deliberation, I determined that I would try my best to get back on schedule.
 
 **Reflection:**
 - The past two weeks have been extremely busy with other assessments and events happening at the same time. No project work was done. Next time, I would still allocate a bit of time to project work during busy phases to avoid losing familiarity with the project.
@@ -356,11 +355,21 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 
 **Progress:**
 - Made a couple of UI changes to the edit page. The overview on the left side now stays there when the user scrolls down.
+- Created the event admin live dashboard. I also used my flowchart algorithms to help.
+- Created the crew member live dashboard using similar logic to the edit page and homepage. The design has been changed slightly in order to minimise the extra time spent on producing and implementing. I also used my flowchart algorithms to help.
 
 **Challenges and solutions:**
-- global variables in flask app not possible
+- I anticipated that I needed to make the stopwatch on the event admin live dashboard using the JavaScript `Date()` object, but I wasn't exactly sure how to. I looked at some articles on how to achieve this, but they used other methods that were quite complex and didn't fit my needs. I stumbled upon some code in [this article](https://dev.to/chrislemus/stopwatch-using-javascript-accurate-and-easy-5ado). I modified it and used it in my project because it fit exactly what I was trying to do.
+- I wanted to use global variables in my backend because I needed to store the current step while an event is being played. I tried simply declaring a variable in the global scope, but this didn't work. After some research, some methods to achieve this were recommended to me. I decided to use caching with the help of this [documentation](https://flask-caching.readthedocs.io/en/latest/), because it was the simplest to implement.
+- After the core functionality was finished, I performed more system testing using simlated data with my client. I gave them a user account while I operated an administrator account. This returned a CORS error, like [before](#18052026). I went home and tried to debug this issue. After some experimentation I figured out that it was because the URLs of the backend and frontend kept changing. This is because it depends on the network I am connected to. I added config files to make it easier to set up the web app. Installation can be easily done by typing in the frontend and backend URLs.
+![](Assets/2026-07-03-17-21-21.png)
+
 **Reflection:**
+- Overall, this week was extremely productive because I've managed to finish a significant chunk of producing and implementing in a couple days. I didn't realise that I would end up reusing a lot of my previously produced logic and algorithms.
+- However, being off schedule according to my GANTT chart has been quite a disadvantage, since I am unable to contact teachers for my testing and evaluating phase. I will have to rely on senior crew members.
+
 **Aims for next week:**
+
 
 ---
 ## DD/MM/YYYY

@@ -1,34 +1,42 @@
 # Import external libraries
-import config
 import os, socket
-import sqlite3, jwt, bleach, logging
-import datetime as dt
 from datetime import date, datetime
+import datetime as dt
+import sqlite3, jwt, bleach, logging
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from flask_cors import CORS
 from flask_caching import Cache
 from werkzeug.security import generate_password_hash, check_password_hash
+# from . import config
+import json
+
+# Declare the base directory for later use
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Configure front end url
-frontend_localhost_url = config.frontend_url
-frontend_port = config.frontend_port
+CONFIG = os.path.join(BASE_DIR, 'config.json')
+with open(CONFIG, "r") as file:
+    data = json.load(file)
+
+frontend_localhost_url = data['frontend_url']
+frontend_port = data['frontend_port']
 
 # Configure backend logging module
-# logging.basicConfig(
-#     filename='./app.log',
-#     encoding='utf-8',
-#     filemode='a',
-#     format='{asctime} - {levelname} - {message}',
-#     style='{',
-#     datefmt='%Y-%m-%d %H:%M',
-# )
+LOG = os.path.join(BASE_DIR, 'app.log')
+logging.basicConfig(
+    filename=LOG,
+    encoding='utf-8',
+    filemode='a',
+    format='{asctime} - {levelname} - {message}',
+    style='{',
+    datefmt='%Y-%m-%d %H:%M',
+)
 
 # Initialise the Flask app and the database
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'fd63bbe7b774ea0718361c795c218ccb0a55c9fbb972be4f2c5b0918ba0fe1c122e2d68f04eb1a61152c1f9c9b81cf9e243d0ddb5013c2b8fb87cef3729dc08f'
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATABASE = os.path.join(BASE_DIR, 'database', 'database.db')
 
 # Configure rate limiting
@@ -480,13 +488,13 @@ def save_edit_event_data(event_id):
             attributes = step.get("attributes")
             instructions = step.get("instructions")
             
-            s_id = attributes.get("step_id")
-            s_title = attributes.get("step_title")
-            s_performer = attributes.get("step_performer")
-            s_number = attributes.get("step_number")
-            s_curtains = attributes.get("curtains")
-            s_video = attributes.get("video")
-            s_blackout = attributes.get("blackout")
+            s_id = sanitise(attributes.get("step_id"))
+            s_title = sanitise(attributes.get("step_title"))
+            s_performer = sanitise(attributes.get("step_performer"))
+            s_number = sanitise(attributes.get("step_number"))
+            s_curtains = sanitise(attributes.get("curtains"))
+            s_video = sanitise(attributes.get("video"))
+            s_blackout = sanitise(attributes.get("blackout"))
 
             # If the curtains, video, blackout attributes are active, add commands for them
             if s_curtains == "active" and curtains_instruction not in instructions:
@@ -544,15 +552,15 @@ def save_edit_event_data(event_id):
             for instruction in instructions:
                 # Retrieve all the instruction attributes and preprocess them
                 # to store in the database
-                i_job = instruction.get("job")
+                i_job = sanitise(instruction.get("job"))
                 i_job_id = execute_query("""
                     SELECT job_id
                     FROM jobs
                     WHERE job_name = ?
                 """, (i_job,)).fetchall()[0][0]
                 i_number = instructions.index(instruction) + 1
-                i_command = instruction.get("command")
-                i_detail = instruction.get("detail")
+                i_command = sanitise(instruction.get("command"))
+                i_detail = sanitise(instruction.get("detail"))
                 i_combined = i_command + " " + i_detail
 
                 # Add the new instructions to the database

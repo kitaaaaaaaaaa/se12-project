@@ -70,7 +70,6 @@ export class eventCard extends HTMLElement {
         del_button.addEventListener("click", () => {
             // Add a confirmation box
             const event_data = this.getEventData();
-            console.log(event_data);
 
             const confirm = createDeleteConfirmation("Are you sure?", `Would you like to delete '${event_data.event_name}'?`);
             confirm.showModal();
@@ -88,7 +87,6 @@ export class eventCard extends HTMLElement {
                         populateEvents();
                     }
                 } catch (error) {
-                    console.log(error);
                     // Catch unforeseen errors
                     // Errors are already handled in app.js
                 }

@@ -72,7 +72,7 @@ export function createReloadDialog(title, description) {
     return dialog_element;
 }
 
-// Creates a dialog box that forces the user to reload the page
+// Creates a dialog box for the creation of a new event
 export function createEventDialog() {
     // Close all existing dialogs
     closeAll();

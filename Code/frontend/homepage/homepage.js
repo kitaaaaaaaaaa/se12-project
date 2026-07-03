@@ -84,9 +84,9 @@ function initHomepage() {
         new_event_form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            const name = document.querySelector("#new-event #name").value;
-            const date = document.querySelector("#new-event #date").value;
-            const location = document.querySelector("#new-event #location").value;
+            const name = DOMPurify.sanitize(document.querySelector("#new-event #name").value);
+            const date = DOMPurify.sanitize(document.querySelector("#new-event #date").value);
+            const location = DOMPurify.sanitize(document.querySelector("#new-event #location").value);
 
             // Track if the form is valid
             let isValid = true;
@@ -98,7 +98,7 @@ function initHomepage() {
             }
 
             // Validate date
-            if (isDateInvalid(date)) {
+            if (!isDateValid(date)) {
                 showError("date-error", "The date is too far in the future");
                 isValid = false;
             }
@@ -149,7 +149,7 @@ export function isDateValid(date) {
     const date_object = new Date(date);
 
     // Returns false if invalid, returns true if valid
-    return date < limit;
+    return date_object < limit;
 }
 
 // Functions to save and retrieve temporary event id

@@ -1,12 +1,24 @@
 // Import testing functions
 import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from './front_test_funcs.js'
 
-// Import code to test
-import { formatStepNumber } from '../frontend/components/editStepCard.js'
-import { isDateValid } from '../frontend/homepage/homepage.js'
+// Code to test pasted here to avoid module import chaos
+
+// Function to turn an integer into a padded string
+function formatStepNumber(num) {
+    return num.toString().padStart(2, '0');
+}
+
+// Function to check if a date is valid
+export function isDateValid(date) {
+    const limit = new Date("9999-12-31");
+    const date_object = new Date(date);
+
+    // Returns false if invalid, returns true if valid
+    return date_object < limit;
+}
 
 console.log("------- Starting front end unit tests -------");
-
+// -------------------------------------------------------------
 // Unit tests are written here
 try {
     renderTest('formatStepNumber - 1 digit int', () => {

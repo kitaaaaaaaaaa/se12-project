@@ -27,6 +27,8 @@ async function initPage() {
         upcoming.innerHTML = ``;
     }
 
+    // Stopwatch code from 
+    // https://dev.to/chrislemus/stopwatch-using-javascript-accurate-and-easy-5ado
     const stopwatch = { elapsedTime: 0 }
     stopwatch.startTime = Date.now();
 
@@ -44,6 +46,7 @@ async function initPage() {
     }, 100);
 }
 
+// Function to display the time on the UI
 function displayTime(hour, minutes, seconds) {
     const leadZeroTime = [hour, minutes, seconds].map(time => time < 10 ? `0${time}` : time)
     const stopwatch_element = document.getElementById("stopwatch")

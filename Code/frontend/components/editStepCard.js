@@ -437,10 +437,8 @@ export class editStepCard extends HTMLElement {
         this.appendChild(newTemplate);
     }
 }
+customElements.define("edit-step-card", editStepCard);
 
-if (typeof customElements !== 'undefined') {
-    customElements.define("edit-step-card", editStepCard);
-}
 
 // Function to create a new edit step
 export function createNewEditStep(stepjson) {
