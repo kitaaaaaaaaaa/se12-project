@@ -144,7 +144,7 @@ function initHomepage() {
 }
 
 // Function to check if a date is valid
-function isDateValid(date) {
+export function isDateValid(date) {
     const limit = new Date("9999-12-31");
     const date_object = new Date(date);
 

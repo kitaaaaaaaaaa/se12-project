@@ -3,7 +3,7 @@ import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from '.
 
 // Import code to test
 import { formatStepNumber } from '../frontend/components/editStepCard.js'
-
+import { isDateValid } from '../frontend/homepage/homepage.js'
 
 console.log("------- Starting front end unit tests -------");
 

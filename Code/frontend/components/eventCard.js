@@ -49,6 +49,15 @@ export class eventCard extends HTMLElement {
         const edit_button = this.querySelector(".edit-button");
         const del_button = this.querySelector(".del-button");
 
+        play_button.addEventListener("click", () => {
+            // Save event id in session storage
+            const event_id = this.getAttribute("event-id");
+            saveEventId(event_id);
+
+            // Redirect the user to the admin live view page
+            window.location.href = "/admin/admin.html";
+        });
+
         edit_button.addEventListener("click", () => {
             // Save event id in session storage
             const event_id = this.getAttribute("event-id");
@@ -85,8 +94,6 @@ export class eventCard extends HTMLElement {
                 }
             });
             
-            
-
         });
     }
 

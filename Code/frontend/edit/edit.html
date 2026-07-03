@@ -15,37 +15,23 @@
     <!-- Import icons -->
     <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="edit-body">
     <header class="flex-container">
         <span class="secondary-text-clr">Friday, 1 May 2026</span>
         <h1>CueSync</h1>
         <button type="button" id="exit-edit">
             <i class="fa-solid fa-angle-left"></i>
-            Back
+            Save & Exit
         </button>
     </header>
 
     <div class="edit-container grid-container">
         <aside>
         </aside>
-        <main>
-            <edit-step-card
-                step-title = "Erase Me by Lizzy McAlpine"
-                step-performer = "Vocal Ensemble"
-                step-number = "01"
-                curtains = "active"
-                video = ""
-                blackout = ""
-                >
-                <template>
-                    {
-                        "instructions": [
-                            {"job": "Stage Hands", "command": "REMOVE", "detail": "all music stands"},
-                            {"job": "Stage Hands", "command": "HANDOFF", "detail": "8 radio mics to vocalists"}
-                        ]
-                    }
-                </template>
-            </edit-step-card>
+        <main id="edit-main">
+            <button type="button" class="pill" style="align-self: baseline;" id="disable-reload">
+                Disable reloading
+            </button>
         </main>
     </div>
     <script type="module" src="../components/app.js" defer></script>

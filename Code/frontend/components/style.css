@@ -558,6 +558,10 @@ dialog .dialog-buttons {
     font-size: 0.875rem;
 }
 
+.step-card .instruction span.figtree-bold {
+    width: 12ch;
+}
+
 /* Admin step heading */
 .step-card.admin .step-title {
     font-size: 1.5rem;
@@ -641,31 +645,64 @@ edit-step-card {
     gap: 1em;
 }
 
-.new-instruction {
-    display: none;
+.new-instruction, .delete-instruction {
+    border-radius: 0;
+}
+
+.new-instruction:hover {
+    border-radius: 0 0 0 10px;
+}
+
+.delete-instruction:hover {
+    border-radius: 0 0 10px 0;
+}
+
+.instruction-buttons {
     width: 100%;
-    border-radius: 0 0 12px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* Show the new instruction button when the user focsues on an input element */
-.step-card.edit:has(input:focus, select:focus) .new-instruction {
+/* .step-card.edit:has(input:focus, select:focus) .new-instruction {
     display: block;
-}
+} */
 
 /* Show the new instruction button when the user hovers over a step */
 /* .step-card.edit:hover .new-instruction {
     display: block;
 } */
 
-.new-step {
-    border-radius: 32px;
-    width: 45%;
+.step-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
 
+.step-buttons button {
+    border-radius: 32px;
+    width: 40%;
+    margin: 0.875rem 0rem;
+}
+
+.delete-step {
+    border: 2px solid var(--red);
+    background-color: var(--background);
+    color: var(--text);
+}
+
+.delete-step:hover {
+    border: 2px solid var(--red);
+    color: var(--text);
+    transform: translateY(-5px);
+}
+
+.new-step {
     border: 2px solid var(--secondary-purple-2);
     background-color: var(--background);
     color: var(--text);
-
-    margin: 0.875rem 0rem;
 }
 
 .new-step:hover {
@@ -680,7 +717,7 @@ edit-step-card {
     background-color: var(--primary-card);
     border-radius: 10px;
     overflow: hidden;
-    width: 70dvw;
+    /* width: 70dvw; */
     margin: 1rem 0;
 
     transition-duration: 0.5s;
@@ -761,23 +798,42 @@ legend {
 }
 
 /* Styles for editing run sheets */
+#edit-body {
+    overflow: visible;
+}
+
+#edit-main {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+#edit-main .step-card {
+    width: 100%;
+}
+
+#edit-main edit-step-card {
+    width: 100%;
+}
+
 .edit-container {
     grid-template-columns: 1fr 5fr;
     padding: 1rem;
 }
 
 aside {
+    align-self: flex-start;
     width: 100%;
-    height: 100%;
-    padding: 1rem 0 0 1rem;
+    padding: 0 0 0 1rem;
     overflow: hidden;
     color: var(--secondary-text);
-
+    position: sticky;
+    top: 1rem;
 }
 
 aside h2 {
     color: var(--text);
     padding-bottom: 0.5rem;
+    font-size: 1rem;
 }
 
 aside span {
@@ -788,4 +844,46 @@ aside span {
     display: block;
     font-size: 0.75rem;
     padding-bottom: 0.125rem;
+}
+
+/* Styles for the admin dashboard */
+#admin-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 1rem;
+    gap: 1rem;
+    height: calc(100dvh - 56px);
+    align-items: start;
+}
+
+#crew-main {
+    padding: 1rem 16dvw 0 16dvw;
+}
+
+#crew-main div {
+    width: 100%;
+}
+
+#admin-right, #admin-right div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#admin-right {
+    align-self: start;
+    margin-top: 5rem;
+    gap: 1rem;
+    position: sticky;
+    top: 5rem;
+}
+
+/* Styles for connection indiciator */
+#connection-display {
+    color: #e2ad44;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1rem;
 }

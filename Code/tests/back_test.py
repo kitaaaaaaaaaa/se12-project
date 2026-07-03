@@ -71,3 +71,12 @@ def test_login_nonexist(client):
     response = client.post("/login", json=custom_payload, headers=custom_headers)
 
     assert response.status_code == 401
+
+def test_get_server_status(client):
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.get("/get_server_status", headers=custom_headers)
+
+    assert response.status_code == 200
