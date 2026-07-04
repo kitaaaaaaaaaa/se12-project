@@ -2,7 +2,7 @@
 import os, socket
 from datetime import date, datetime
 import datetime as dt
-import sqlite3, jwt, bleach, logging
+import sqlite3, jwt, nh3, logging
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -95,7 +95,7 @@ def sanitise(text):
         str: The encoded/sanitised text
     '''
     try:
-        clean = bleach.clean(text, tags=allowed_tags, attributes=allowed_attributes)
+        clean = nh3.clean(text, tags=allowed_tags, attributes=allowed_attributes)
     except Exception as e:
         clean = ''
 

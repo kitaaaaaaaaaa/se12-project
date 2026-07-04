@@ -22,6 +22,7 @@ signin_form.addEventListener('submit', async (event) => {
     const password = DOMPurify.sanitize(document.getElementById("password").value);
 
     // Perform basic data validation before sending to backend
+    // Prevents unnecessary requests
     let isValid = true;
 
     // Validate email
