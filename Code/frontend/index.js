@@ -19,7 +19,7 @@ signin_form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const email = DOMPurify.sanitize(document.getElementById("email").value);
-    const password = DOMPurify.sanitize(document.getElementById("password").value);
+    const password = document.getElementById("password").value;
 
     // Perform basic data validation before sending to backend
     // Prevents unnecessary requests

@@ -2,7 +2,7 @@
 import os, socket
 from datetime import date, datetime
 import datetime as dt
-import sqlite3, jwt, nh3, logging
+import sqlite3, jwt, bleach, logging
 from flask import Flask, request, jsonify, redirect
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
@@ -95,7 +95,7 @@ def sanitise(text):
         str: The encoded/sanitised text
     '''
     try:
-        clean = nh3.clean(text, tags=allowed_tags, attributes=allowed_attributes)
+        clean = bleach.clean(text, tags=allowed_tags, attributes=allowed_attributes)
     except Exception as e:
         clean = ''
 
@@ -263,7 +263,7 @@ def create_account():
         # Send JWT
         logging.info(f'Successfully created an account for - {email}')
         token = jwt.encode({'user_id': user_id, 'exp': dt.datetime.now(dt.UTC) + dt.timedelta(hours=2)}, app.config['SECRET_KEY'], algorithm='HS256')
-        return jsonify({'token': token}), 201
+        return jsonify({'token': token, 'level': role_id}), 201
     else:
         logging.info('An account could not be created because it already exists')
         return jsonify({'error': 'The account already exists. Try signing in.'}), 409
@@ -275,6 +275,7 @@ def login():
     data = request.get_json()
     email = sanitise(data.get('email'))
     password = sanitise(data.get('password'))
+    print(email)
 
     # Check if the account exists in the database
     existing_account = execute_query('SELECT * FROM users WHERE email = ?', (email,)).fetchall()
@@ -323,6 +324,7 @@ def get_events():
             })
 
         # Sort the events from most recent to least recent
+        # This function was made using the help of a StackOverflow article
         sorted_events = sorted(events, key=lambda x: datetime.strptime(x['event_date'], '%Y-%m-%d'), reverse=True)
 
         logging.info('Admin user has retrieved all events for homepage')

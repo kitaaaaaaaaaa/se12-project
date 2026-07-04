@@ -94,7 +94,7 @@ async function checkConnection() {
         // If there is a response update UI and change delay to 5s
         connection_display.innerHTML = `🟢 Connected`
         connection_display.style.color = "#24941a"
-        changeDelay(5000);
+        changeDelay(7000);
     } else {
         // If there isn't a response and change delay to 1s
         connection_display.innerHTML = `🔴 Backend not connected`

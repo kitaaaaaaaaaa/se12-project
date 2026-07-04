@@ -207,3 +207,358 @@
 2026-07-04 10:04 - INFO - 127.0.0.1 - - [04/Jul/2026 10:04:12] "GET /get_events HTTP/1.1" 200 -
 2026-07-04 10:08 - INFO - 127.0.0.1 - - [04/Jul/2026 10:08:18] "OPTIONS /get_events HTTP/1.1" 200 -
 2026-07-04 10:08 - INFO - 127.0.0.1 - - [04/Jul/2026 10:08:18] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 14:21 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.104:5000
+2026-07-04 14:21 - INFO - [33mPress CTRL+C to quit[0m
+2026-07-04 14:21 - INFO -  * Restarting with stat
+2026-07-04 14:21 - WARNING -  * Debugger is active!
+2026-07-04 14:21 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 14:21 - INFO - 127.0.0.1 - - [04/Jul/2026 14:21:55] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:21 - INFO - 127.0.0.1 - - [04/Jul/2026 14:21:55] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:00] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:00] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:03] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:03] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:08] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:08] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:10] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:10] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:13] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:13] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:15] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:22 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:15] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:15] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:15] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:18] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:18] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:20] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:20] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:21] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:22 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:21] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:23] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:23] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:25] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:25] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:29] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:29] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:30] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:30] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:30] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:22 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:30] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:35] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:35] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:35] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:35] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:40] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:40] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:41] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:41] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:45] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:45] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:47] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:47] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:50] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:50] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:53] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:53] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:55] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:55] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:59] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:22 - INFO - 127.0.0.1 - - [04/Jul/2026 14:22:59] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:00] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:00] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:08] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:23 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:08] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:10] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:10] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:11] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:15] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:15] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:17] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:17] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:20] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:20] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:23] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:23] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:26] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:26] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:29] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:29] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:32] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:32] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:35] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:35] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:38] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:38] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:41] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:41] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:44] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:44] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:47] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:47] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:50] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:50] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:53] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:53] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:56] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:56] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:59] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:23 - INFO - 127.0.0.1 - - [04/Jul/2026 14:23:59] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:01] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:01] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:02] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:24 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:02] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:06] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:06] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:11] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:11] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:16] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:16] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:17] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:17] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:20] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:21] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:25] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:25] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:27] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:27] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:30] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:30] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:33] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:33] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:35] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:35] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:39] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:39] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:40] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:40] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:45] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:45] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:45] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:45] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:50] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:50] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:51] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:51] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:55] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:55] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:56] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:58] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:59] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:24 - INFO - 127.0.0.1 - - [04/Jul/2026 14:24:59] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:03] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:03] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:08] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:08] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:11] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:13] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:13] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:17] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:17] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:18] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:18] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:23] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:23] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:23] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:23] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:28] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:28] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:29] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:29] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:33] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:33] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:35] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:35] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:39] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:39] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:39] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:41] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:42] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:42] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:47] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:47] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:48] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:48] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:52] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:52] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:54] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:25 - INFO - 127.0.0.1 - - [04/Jul/2026 14:25:54] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.104:5000
+2026-07-04 14:28 - INFO - [33mPress CTRL+C to quit[0m
+2026-07-04 14:28 - INFO -  * Restarting with stat
+2026-07-04 14:28 - WARNING -  * Debugger is active!
+2026-07-04 14:28 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:06] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:06] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:11] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:13] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:13] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:15] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:28 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:15] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:16] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:16] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:19] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:19] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:22] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:22] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:25] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:25] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:27] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:27] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:31] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:31] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:32] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:32] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:37] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:37] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:37] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:37] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:42] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:42] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:43] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:43] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:47] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:47] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:49] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:49] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:52] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:52] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:55] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:55] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:57] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:28 - INFO - 127.0.0.1 - - [04/Jul/2026 14:28:57] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:01] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:01] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:02] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:02] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:12] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:12] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:13] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:13] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:17] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:17] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:19] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:19] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:22] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:22] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:25] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:25] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:27] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:27] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:31] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:31] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:32] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:32] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:37] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:37] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:37] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:39] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:29 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:39] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:42] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:42] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:43] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:43] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:47] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:47] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:49] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:49] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:52] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:52] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:55] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:55] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:57] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:29 - INFO - 127.0.0.1 - - [04/Jul/2026 14:29:57] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:01] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:01] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:02] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:02] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:10] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:11] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:17] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:17] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:18] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:18] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:22] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:22] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:24] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:24] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:27] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:27] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:30] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:30] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:32] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO - 127.0.0.1 - - [04/Jul/2026 14:30:32] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:30 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 14:30 - INFO -  * Restarting with stat
+2026-07-04 14:31 - INFO -  * Restarting with stat
+2026-07-04 14:31 - INFO -  * Restarting with stat
+2026-07-04 14:31 - INFO -  * Restarting with stat
+2026-07-04 14:32 - INFO -  * Restarting with stat
+2026-07-04 14:33 - INFO -  * Restarting with stat
+2026-07-04 14:33 - WARNING -  * Debugger is active!
+2026-07-04 14:33 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:24] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:24] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:29] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:29] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:34] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:34] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:39] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:39] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:44] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:44] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 14:33 - INFO -  * Restarting with stat
+2026-07-04 14:33 - WARNING -  * Debugger is active!
+2026-07-04 14:33 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:49] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:49] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:53] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 14:33 - WARNING - Login not permitted. Invalid credentials for - 
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:53] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:54] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:54] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:59] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:33 - INFO - 127.0.0.1 - - [04/Jul/2026 14:33:59] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 14:34 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 14:34 - INFO -  * Restarting with stat
+2026-07-04 14:36 - INFO -  * Restarting with stat
+2026-07-04 14:49 - WARNING -  * Debugger is active!
+2026-07-04 14:49 - INFO -  * Debugger PIN: 515-795-941
