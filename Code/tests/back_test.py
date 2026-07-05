@@ -31,7 +31,7 @@ def test_sanitise(text, expected):
 
 def test_login_success(client):
     custom_payload = {
-        "email": "something@mail.com",
+        "email": "testing@donotdelete.com",
         "password": "hello123!@#$%^&*()"
     }
 
@@ -46,7 +46,7 @@ def test_login_success(client):
 
 def test_login_fail(client):
     custom_payload = {
-        "email": "something@mail.com",
+        "email": "testing@donotdelete.com",
         "password": "fakepassword"
     }
 
@@ -62,7 +62,7 @@ def test_login_nonexist(client):
     custom_payload = {
         "email": "aosdjfioasjfoidfjgosdji@asdofiajfgdsflgf",
         "password": "afjkghidisj49jgf"
-    }
+    } 
 
     custom_headers = {
         'Content-Type': 'application/json'
@@ -71,6 +71,38 @@ def test_login_nonexist(client):
     response = client.post("/login", json=custom_payload, headers=custom_headers)
 
     assert response.status_code == 401
+
+def test_account_creation_failure(client):
+    custom_payload = {
+        "email": "testing@donotdelete.com",
+        "password": "hello123!@#$%^&*()",
+        "reenter-password": "hello123!@#$%^&*()",
+        "role": "user"
+    }
+
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.post("/create_account", json=custom_payload, headers=custom_headers)
+
+    assert response.status_code == 409
+
+def test_account_creation_success(client):
+    custom_payload = {
+        "email": "1fe1ad0ecfe1cdbb496ba5f0@mail.com",
+        "password": "hello123!@#$%^&*()",
+        "reenter-password": "hello123!@#$%^&*()",
+        "role": "user"
+    }
+
+    custom_headers = {
+        'Content-Type': 'application/json'
+    }
+
+    response = client.post("/create_account", json=custom_payload, headers=custom_headers)
+
+    assert response.status_code == 201
 
 def test_get_server_status(client):
     custom_headers = {

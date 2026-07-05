@@ -110,8 +110,6 @@ export class eventCard extends HTMLElement {
         };
     }
 }
-// customElements.define("event-card", eventCard);
-
 if (typeof customElements !== 'undefined') {
     customElements.define("event-card", eventCard);
 }

@@ -630,9 +630,9 @@ def next_step():
             
             # Save step index
             cache.set("step_index", step_index)
+            logging.info("Event progressed to next step by admin")
             return jsonify({"message": step_index}), 200
         
-        logging.info("Event progressed to next step by admin")
         return jsonify({"error": "There is no event being played right now"}), 400
     
     logging.warning("Unauthorised user attempted to progress to next step")
@@ -655,12 +655,12 @@ def prev_step():
             
             # Save step index
             cache.set("step_index", step_index)
+            logging.info("Event regressed to previous step by admin")
             return jsonify({"message": step_index}), 200
         
-        logging.info("Event regressed to previous step by admin")
         return jsonify({"error": "There is no event playing right now"}), 400
     
-    logging.warning("Unauthorised user attempted to progress to previous step")
+    logging.warning("Unauthorised user attempted to regress to previous step")
     return auth
 
 @app.route('/end_live_event', methods=['PUT'])
