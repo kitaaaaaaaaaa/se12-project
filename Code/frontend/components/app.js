@@ -208,5 +208,7 @@ export function logOut() {
     window.location.href = "/";
 }
 
-// Run this when the page loads
-updateHeaderDate();
+if (typeof customElements !== 'undefined') {
+    // Run this when the page loads
+    updateHeaderDate();
+}
