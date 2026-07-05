@@ -115,6 +115,8 @@ def execute_query(query, params=()):
     '''
     with sqlite3.connect(DATABASE) as conn:
         cursor = conn.cursor()
+        # cursor.execute("PRAGMA journal_mode = WAL;")
+        # cursor.execute("PRAGMA synchronous = NORMAL;")
         cursor.execute(query, params)
         conn.commit()
         return cursor
@@ -275,7 +277,6 @@ def login():
     data = request.get_json()
     email = sanitise(data.get('email'))
     password = sanitise(data.get('password'))
-    print(email)
 
     # Check if the account exists in the database
     existing_account = execute_query('SELECT * FROM users WHERE email = ?', (email,)).fetchall()

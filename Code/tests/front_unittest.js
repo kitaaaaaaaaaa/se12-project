@@ -1,21 +1,9 @@
 // Import testing functions
 import { test_failed, renderTest, assertEqual, assertTrue, assertFalse } from './front_test_funcs.js'
 
-// Code to test pasted here to avoid module import chaos
-
-// Function to turn an integer into a padded string
-function formatStepNumber(num) {
-    return num.toString().padStart(2, '0');
-}
-
-// Function to check if a date is valid
-export function isDateValid(date) {
-    const limit = new Date("9999-12-31");
-    const date_object = new Date(date);
-
-    // Returns false if invalid, returns true if valid
-    return date_object < limit;
-}
+// Import code to test
+import { formatStepNumber } from '../frontend/components/editStepCard.js'
+import { isDateValid } from '../frontend/homepage/homepage.js';
 
 console.log("------- Starting front end unit tests -------");
 // -------------------------------------------------------------
@@ -56,31 +44,31 @@ try {
         );
     });
 
-    renderTest('isDateInvalid - Valid Date', () => {
+    renderTest('isDateValid - Valid Date', () => {
         assertEqual(
-            isDateInvalid('2023-03-21'),
-            false
+            isDateValid('2023-03-21'),
+            true
         );
     });
 
-    renderTest('isDateInvalid - Invalid Date', () => {
+    renderTest('isDateValid - Invalid Date', () => {
         assertEqual(
             isDateInvalid('21023-04-20'),
-            true
-        );
-    });
-
-    renderTest('isDateInvalid - Misformatted valid date', () => {
-        assertEqual(
-            isDateInvalid('21/08/4023'),
             false
         );
     });
 
-    renderTest('isDateInvalid - Misformatted invalid date', () => {
+    renderTest('isDateValid - Misformatted valid date', () => {
         assertEqual(
-            isDateInvalid('21/08/24022'),
+            isDateValid('21/08/4023'),
             true
+        );
+    });
+
+    renderTest('isDateValid - Misformatted invalid date', () => {
+        assertEqual(
+            isDateValid('21/08/24022'),
+            false
         );
     });
 } catch (error) {

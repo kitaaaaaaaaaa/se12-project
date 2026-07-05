@@ -1,7 +1,7 @@
 // This contains the code for the first page that the user sees
 // The user will first see a login/signin page
 
-import { saveToken, clearErrors, showError, sendFormData, redirectToError, sendRequest } from './components/app.js';
+import { saveToken, clearErrors, showError, sendFormData, sendRequest } from './components/app.js';
 
 const signup_switch = document.getElementById("signup-switch-button");
 

@@ -562,3 +562,75 @@
 2026-07-04 14:36 - INFO -  * Restarting with stat
 2026-07-04 14:49 - WARNING -  * Debugger is active!
 2026-07-04 14:49 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 15:20 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.104:5000
+2026-07-04 15:20 - INFO - [33mPress CTRL+C to quit[0m
+2026-07-04 15:20 - INFO -  * Restarting with stat
+2026-07-04 15:21 - WARNING -  * Debugger is active!
+2026-07-04 15:21 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:07] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:07] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:12] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:12] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:13] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:13] "POST /login HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:13] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:13] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 15:21 - INFO -  * Restarting with stat
+2026-07-04 15:21 - WARNING -  * Debugger is active!
+2026-07-04 15:21 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:29] "OPTIONS /delete_event HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:29] "DELETE /delete_event HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:29] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:29] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:30] "OPTIONS /get_edit_event_data/20 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:31] "GET /get_edit_event_data/20 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:34] "OPTIONS /save_edit_event_data/20 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:36] "PUT /save_edit_event_data/20 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:36] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:36] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:38] "OPTIONS /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:38] "GET /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:40] "OPTIONS /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:43] "PUT /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:43] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:43] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:45] "OPTIONS /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:45] "GET /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:47] "OPTIONS /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:50] "PUT /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:50] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:21 - INFO - 127.0.0.1 - - [04/Jul/2026 15:21:51] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 15:22 - INFO -  * Restarting with stat
+2026-07-04 15:22 - WARNING -  * Debugger is active!
+2026-07-04 15:22 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:04] "OPTIONS /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:04] "GET /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:06] "OPTIONS /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:09] "PUT /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:10] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:10] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:15] "OPTIONS /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:15] "GET /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:16] "OPTIONS /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:20] "PUT /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:20] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:20] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 15:22 - INFO -  * Restarting with stat
+2026-07-04 15:22 - WARNING -  * Debugger is active!
+2026-07-04 15:22 - INFO -  * Debugger PIN: 515-795-941
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:29] "OPTIONS /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:29] "GET /get_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:30] "OPTIONS /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:33] "PUT /save_edit_event_data/22 HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:33] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-04 15:22 - INFO - 127.0.0.1 - - [04/Jul/2026 15:22:33] "GET /get_events HTTP/1.1" 200 -
+2026-07-04 15:23 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\Assessments\\HSC AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-04 15:23 - INFO -  * Restarting with stat
+2026-07-04 15:23 - WARNING -  * Debugger is active!
+2026-07-04 15:23 - INFO -  * Debugger PIN: 515-795-941
