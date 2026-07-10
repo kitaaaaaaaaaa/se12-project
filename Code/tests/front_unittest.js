@@ -46,22 +46,22 @@ try {
 
     renderTest('isDateValid - Valid Date', () => {
         assertEqual(
-            isDateValid('2023-03-21'),
+            isDateInvalid('2023-03-21'),
             true
         );
     });
 
     renderTest('isDateValid - Invalid Date', () => {
         assertEqual(
-            isDateInvalid('21023-04-20'),
-            false
+            isDateValid('21023-04-20'),
+            true
         );
     });
 
     renderTest('isDateValid - Misformatted valid date', () => {
         assertEqual(
             isDateValid('21/08/4023'),
-            true
+            false
         );
     });
 

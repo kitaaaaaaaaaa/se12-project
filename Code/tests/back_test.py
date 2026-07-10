@@ -31,7 +31,7 @@ def test_sanitise(text, expected):
 
 def test_login_success(client):
     custom_payload = {
-        "email": "testing@donotdelete.com",
+        "email": "something@mail.com",
         "password": "hello123!@#$%^&*()"
     }
 

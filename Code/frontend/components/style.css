@@ -860,6 +860,24 @@ aside span {
     padding: 1rem 16dvw 0 16dvw;
 }
 
+@media (max-width: 768px) {
+    #crew-main {
+        padding: 1rem 4dvw 0 4dvw;
+    }
+
+    #crew-main div.instruction {
+        font-size: 0.75rem;
+    }
+
+    #crew-main div.instruction span:last-of-type {
+        width: 27ch;
+    }
+
+    #crew-title {
+        display: none;
+    }
+}
+
 #crew-main div {
     width: 100%;
 }
