@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit run sheet</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script defer src="../libs/fontawesome.min.js"></script>
+    <script defer src="../libs/regular.min.js"></script>
+    <script defer src="../libs/solid.min.js"></script>
+</head>
+<body id="edit-body">
+    <header class="flex-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>CueSync</h1>
+        <button type="button" id="exit-edit">
+            <i class="fa-solid fa-angle-left"></i>
+            Save & Exit
+        </button>
+    </header>
+
+    <div class="edit-container grid-container">
+        <aside>
+        </aside>
+        <main id="edit-main">
+            <button type="button" class="pill" style="align-self: baseline;" id="disable-reload">
+                Disable reloading
+            </button>
+        </main>
+    </div>
+    <script type="module" src="../components/app.js" defer></script>
+    <script type="module" src="./edit.js" defer></script>
+</body>
+</html>

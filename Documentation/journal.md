@@ -72,7 +72,7 @@ I aimed to set up the structure of the documentation so that I do not have to wo
 Starting on the project itself by generating potential ideas and scenarios.
 
 ## 08/04/2026
-**Aims:** Brainstorm some ideas and scenarios using a mindmap, and with the help of Gemini to create a wide range of ideas.
+**Aims:** Brainstorm some ideas and scenarios using a mindmap.
 
 **Progress:**
 Created a set of GitLab commit conventions to adhere to, ensuring consistency and allowing the commit history to be more accessible. Every commit from now on will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/).
@@ -88,7 +88,7 @@ I also created my detailed scenario this week, taking inspiration from my own ex
 **Challenges and solutions:**
 Was signed into multiple accounts on VSCode, which lead to wrongly authored commits. This was fixed by removing unneccesary accounts and modifying commit history to indicate the correct author.
 
-Using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email) and the Gemini summary provided at the top of Google search pages, I used interactive rebasing to edit the author of the previous commits.
+I fixed this by using [this article](https://www.git-tower.com/learn/git/faq/change-author-name-email), which walked me through interactive rebasing to edit the author of the previous commits.
 
 **Reflection:**
 I successfully familiarsed myself with markdown this week, but I didn't think that brainstorming ideas would take so long. Next week, I have to keep my writing concise.
@@ -190,7 +190,6 @@ This week I want to finish my Quality Assurance document and ideally, finish the
 - Data dictionaries were hard to start without being able to visualise the database. I created database schema to aid in creation of data dictionaries, but it revealed problems in my planned database. To fix these problems, I made the schema online to make it easier to modify.
 ![Database schema drafted on a whiteboard](Assets/whiteboard_schema.png)
 - Completed storyboard using Figma, inspired by some Pinterest posts. Overhauled the UI/UX according to client feedback/my own testing. It was hard to read the previous UI in the dark.
-    - I also had some UX concerns that neither me or my client could figure out, neither did we have the knowledge to solve it. The crew member view was quite hard to quickly scan. I used Gemini to help me brainstorm ways to rearrange the UI. It revealed that I should put the jobs like "stage hands" on the left, because users scan quicker going left and then downwards.
 
 **Reflection:**
 The QA checklist seemed daunting at first, but I'm happy that I managed to finish it in the week. As of now, I am still on time with my GANTT chart, which quite frankly, is a miracle. I have been trying to get as much done as possible before exams hit and I might need to modify the GANTT chart in the future.
@@ -251,16 +250,17 @@ I also want to utilise proper branching strategies this week, setting it up so I
 **Progress:**
 - I watched some [YouTube tutorials](https://www.youtube.com/watch?v=-uyI0TjhXdk) and looked through some [StackOverflow articles](https://stackoverflow.com/questions/50404970/web-components-pass-data-to-and-from) in order to learn how to build web components - which allows for customised, reusable components that allow for consistent design. I implemented this into my project.
 - I also used a variety of W3Schools articles and MDN web documentation to help me design UI components based off of my storyboard. The discovery of CSS grids from my LearnerHours PWA has seriously been life changing - it offers a flexible and intuitive way to arrange content in grids.
-- Learnt and added automatic testing to project, which runs every time a commit is made to the main branch, but not the other branches.
+- Learnt and added automatic testing to project, which runs every time a commit is made to the main branch, but not the other branches. Testing for frontend was made using the help of this [article](https://alexwlchan.net/2023/testing-javascript-without-a-framework/), while the backend uses Pytest.
 
 **Challenges and solutions:**
-- I had a problem where the app could not read the properties of an undefined objects while working on the `getSTEPJSON()` function. I first searched this up on Google, which pointed me to a few StackOverflow articles which suggested that a variable was not assigned yet, but I was still confused. I then asked Gemini for some assistance on how to solve this issue, and it pointed out a scope error. I was using an ordinary function, which creates its own scope, but I should have used an arrow function. This allows me to still access objects using `this.` in JavaScript, which I needed for my function. I did not know that I had to do this, since I am new with web components.
+- I had a problem where the app could not read the properties of an undefined objects while working on a function to retrieve a step's data in a JSON format. I first searched this up on Google, which pointed me to a few StackOverflow articles which suggested that a variable was not assigned yet, but I was still confused. I then asked Gemini for some assistance on how to solve this issue, and it pointed out a scope error. I was using an ordinary function, which creates its own scope, but I should have used an arrow function. This allows me to still access objects using `this.` in JavaScript, which I needed for my function. I did not know that I had to do this, since I am new with web components. Once I fixed the scope error, it worked.
 - While making the UI components, I realised that allowing event admins to edit events while it is being played could be quite complicated to implement. To combat this, I tried brainstorming different approaches to structuring my backend. I ultimately decided to remove it from my functional requirements in order to increase the likelihood of success for my project.
 - I was wondering why my repository graph did not properly show my utilisation of branching, but after some of my own testing, I found out it was because I was working on branches in isolation with one another. For instance, I would commit on one branch, then commit on another branch, but never work on two branches at the same time, which is why my graph might not look how I expected. In researching the Git commands, I gained a better understanding of how git works, including how merging works, what merge commits and how the repository graph is built.
-- I did not know how to properly create a YAML file for GitLab - I learnt the syntax from a couple of articles. It would allow me to automatically run my tests upon every commit. I looked at some [Medium articles](https://medium.com/@morepravin1989/automatically-run-tests-using-github-actions-step-by-step-guide-for-beginners-with-example-51acdd6dd0ea), which were helpful, but wasn't specific to my project. Still needing help, I asked Gemini what to write in the YAML file and it told me to install jsdom, which would allow Gitlab to automatically run.
+- I did not know how to properly create a YAML file for GitLab - I learnt the syntax from a couple of articles and I knew I needed this to create pipelines since I had done it at a smaller scale before. It would allow me to automatically run my tests upon every commit. I looked at some [Medium articles](https://medium.com/@morepravin1989/automatically-run-tests-using-github-actions-step-by-step-guide-for-beginners-with-example-51acdd6dd0ea), which were helpful, but wasn't specific to my project. I kept getting errors that stemmed from my web components. Still needing help, I typed the error logs into Google and an article suggested that jsdom should be installed in the pipeline.
 
 **Reflection:**
 - This week I had some troubles with using version control effectively, since I couldn't visualise branches being merged in the terminal. This caused me some stress I'd like to avoid, so I will use the UI in VSCode in the future.
+- I need to be more careful and make sure to declare things in the right scope, using the right indentation and curly braces. Otherwise, this will cost me time in the future.
 
 **Aims for next week:**
 - Since I didn't start on the authentication system, I am to do that next week.
@@ -307,6 +307,82 @@ I also want to utilise proper branching strategies this week, setting it up so I
 
 **Aims for next week:**
 - Start the next phase of my project: implementing CRUD operations for run sheet steps
+
+## 01/06/2026
+Empty entry. No work was completed. Reflection on this period can be accessed [here](#15062026).
+
+## 08/06/2026
+Empty entry. No work was completed. Reflection on this period can be accessed [here](#15062026).
+
+## 15/06/2026
+**Aims:**
+- Start implementing CRUD (create, read, update, delete) operations for run sheet steps because it is the next phase of my project
+- I have no expectation to finish this feature this week because I expect that it will be the most time consuming feature
+
+**Progress:**
+- Created the UI for event admins editing an event but did not add functionality. Since I had already created UI components earlier, I just had to put them together.
+
+**Challenges and solutions:**
+- I realised that once you are editing an event, you can create steps, but not delete them. I wish I saw this problem in the Planning phase so that I could make it earlier and waste less time. I also realise that using WAgile allows me to adapt my Producing and Implementing phase as needed - using pure Waterfall would be utterly horrendous and lead to unfulfilled project requirement/quality assurance tests.
+- One glaring challenge is that my project is not running on schedule according to my GANTT chart. I know that I will not be able to catch up on this, judging from experience on previous projects. After some deliberation, I determined that I would try my best to get back on schedule.
+
+**Reflection:**
+- The past two weeks have been extremely busy with other assessments and events happening at the same time. No project work was done. Next time, I would still allocate a bit of time to project work during busy phases to avoid losing familiarity with the project.
+- I implemented this advice and allocated a bit of time to the project this week and I believe that it went well. Valuable progress was made, and it did not take too much time at all.
+
+**Aims for next week:**
+- Get back into the flow of the project and continue work on creating the page to edit run sheets
+
+## 22/06/2026
+**Aims:**
+- Work on editing run sheets and implementing CRUD operations. I would like to finish this if possible because I am currently behind according to my GANTT chart.
+
+**Progress:**
+- I finished the functionality for the edit page without too many issues. The logic was similar to the homepage, so there were no surprising challenges this time around.
+
+**Challenges and solutions:**
+- Last wekk I realised that I was missing a crucial part of the edit page. This was the delete button. Since users couldn't delete steps or instructions, editing events proved to be quite limited. To solve this, I added a delete button to the UI and added its functionality. Referring to my previous code has been the most helpful thing to do by far.
+
+**Reflection:**
+- This was quite a productive week and I finished this functionality sooner than I expected. I am still behind schedule according to my GANTT chart, but not as much as before.
+- If I were to do this project again, I would take more care in the planning phase so that I don't miss a crucial function. I might talk with clients more in order to ensure this.
+
+**Aims for next week:**
+- Finish producing and implementing
+
+## 29/06/2026
+**Aims:**
+- Finish producing and implementing in order to try and get back on track
+
+**Progress:**
+- Made a couple of UI changes to the edit page. The overview on the left side now stays there when the user scrolls down.
+- Created the event admin live dashboard. I also used my flowchart algorithms to help.
+- Created the crew member live dashboard using similar logic to the edit page and homepage. The design has been changed slightly in order to minimise the extra time spent on producing and implementing. I also used my flowchart algorithms to help.
+
+**Challenges and solutions:**
+- I anticipated that I needed to make the stopwatch on the event admin live dashboard using the JavaScript `Date()` object, but I wasn't exactly sure how to. I looked at some articles on how to achieve this, but they used other methods that were quite complex and didn't fit my needs. I stumbled upon some code in [this article](https://dev.to/chrislemus/stopwatch-using-javascript-accurate-and-easy-5ado). I modified it and used it in my project because it fit exactly what I was trying to do.
+- I wanted to use global variables in my backend because I needed to store the current step while an event is being played. I tried simply declaring a variable in the global scope, but this didn't work. After some research, some methods to achieve this were recommended to me. I decided to use caching with the help of this [documentation](https://flask-caching.readthedocs.io/en/latest/), because it was the simplest to implement.
+- After the core functionality was finished, I performed more system testing using simlated data with my client. I gave them a user account while I operated an administrator account. This returned a CORS error, like [before](#18052026). I went home and tried to debug this issue. After some experimentation I figured out that it was because the URLs of the backend and frontend kept changing. This is because it depends on the network I am connected to. I added config files to make it easier to set up the web app. Installation can be easily done by typing in the frontend and backend URLs.
+![](Assets/2026-07-03-17-21-21.png)
+
+**Reflection:**
+- Overall, this week was extremely productive because I've managed to finish a significant chunk of producing and implementing in a couple days. I didn't realise that I would end up reusing a lot of my previously produced logic and algorithms.
+- However, being off schedule according to my GANTT chart has been quite a disadvantage, since I am unable to contact teachers for my testing and evaluating phase. I will have to rely on senior crew members.
+
+**Aims for next week:**
+
+## 06/07/2026
+**Aims:**
+**Progress:**
+- researched quicker ways to perform cross browser testing. found katalon recorder. 
+- looked at ways to emuluate safari on windows machine for convieneice. found playwright. https://www.youtube.com/watch?v=pRpsi1Z5YY0
+
+**Challenges and solutions:**
+- bleach is a recently deprecated library. attempt to swtich to nh3. library too aggressive, many functions broke. switch back to bleach.
+**Reflection:**
+**Aims for next week:**
+
+
 
 ---
 ## DD/MM/YYYY

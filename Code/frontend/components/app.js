@@ -1,15 +1,16 @@
 // This file contains all the code for the main components, alongside any functions that may be required
 // or used across the web application.
 
-// Variables to change
-const backend_url = "http://127.0.0.1:5000"; //Change this to the local IP address of the host machine
+// Import config
+import config from '../config.json' with { type: 'json' };
+const backend_url = config.backend_url + ":" + config.backend_port;
 
 // Import web components
 import './eventCard.js';
 import './stepCard.js';
 import './editStepCard.js';
 import './dialog.js';
-import { createDialog } from './dialog.js';
+import { createDialog, createReloadDialog, createSessionExpDialog } from './dialog.js';
 
 // Function to show a loading screen
 export function showLoading() {
@@ -110,8 +111,10 @@ export async function sendFormData(form, route, method, logged_in) {
 }
 
 // Sends data from a form as a JSON object as seen on MDN Docs, returns parsed JSON
-export async function sendRequest(request, route, method, error_func) {
-    showLoading();
+export async function sendRequest(body, route, method, error_func, disableLoading) {
+    if (!disableLoading) {
+        showLoading();
+    }
 
     const url = backend_url + route;
 
@@ -133,7 +136,7 @@ export async function sendRequest(request, route, method, error_func) {
                     'Content-Type': 'application/json',
                     'Authorization': `Bearer ${getToken()}`
                 },
-                body: JSON.stringify(request)
+                body: JSON.stringify(body)
             });
         }
 
@@ -141,13 +144,30 @@ export async function sendRequest(request, route, method, error_func) {
 
         // Deal with errors in the response
         if ("error" in parsed_response || !response.ok) {
-            const error_dialog = createDialog("An error occurred", parsed_response.error);
-            error_dialog.showModal();
+            if (
+                parsed_response.error === "Your session has expired. You will be redirected to the sign in page." || 
+                parsed_response.error === "Your session is invalid. You will be redirected to the sign in page."
+            ) {
+                const exp_dialog = createSessionExpDialog("Session expired", parsed_response.error);
+                exp_dialog.showModal();
+            } else if (
+                parsed_response.error === "There is no event playing right now" ||
+                parsed_response.error === "There is no event being played right now. Ask your administrator for help."
+            ) {
+                const reload_dialog = createReloadDialog("An error occurred", parsed_response.error);
+                reload_dialog.showModal();
+            } else {
+                const error_dialog = createDialog("An error occurred", parsed_response.error);
+                error_dialog.showModal();
+            }
         }
 
         // If the response was successful
         if (response.ok) {
-            hideLoading();
+            if (!disableLoading) {
+                hideLoading();
+            }
+
             return parsed_response;
         }
     } catch (error) {
@@ -161,7 +181,9 @@ export async function sendRequest(request, route, method, error_func) {
         }
     }
 
-    hideLoading();
+    if (!disableLoading) {
+        hideLoading();
+    }
 }
 
 // Function to redirect the user to the error page
@@ -186,7 +208,7 @@ export function logOut() {
     window.location.href = "/";
 }
 
-// Run this when the page loads
-if (typeof window !== 'undefined') {
-    window.addEventListener('load', updateHeaderDate);
+if (typeof customElements !== 'undefined') {
+    // Run this when the page loads
+    updateHeaderDate();
 }

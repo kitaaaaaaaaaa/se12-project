@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator View</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script defer src="../libs/fontawesome.min.js"></script>
+    <script defer src="../libs/regular.min.js"></script>
+    <script defer src="../libs/solid.min.js"></script>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr" style="display: none;">Friday, 1 May 2026</span>
+        <label style="white-space: nowrap;">
+            <i class="fa-regular fa-user"></i>
+            Role:
+            <select id="crew-role">
+                <option value="all">All roles</option>
+                <option value="stage_hands">Stage Hands</option>
+                <option value="visuals">Visuals</option>
+                <option value="sound">Sound</option>
+                <option value="camera">Camera</option>
+                <option value="lighting">Lighting</option>
+            </select>
+        </label>
+        <h1 id="crew-title">Crew Dashboard</h1>
+        <button type="button" id="log-out">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            Log out
+        </button>
+    </header>
+    <main id="crew-main">
+        <div>
+            <strong>Current step</strong>
+            <hr>
+            <section id="current">
+            </section>
+        </div>
+        
+        <div>
+            <strong>Upcoming steps</strong>
+            <hr>
+            <section id="upcoming">                
+            </section>
+        </div>
+    </main>
+    <script type="module" src="../components/app.js" defer></script>
+    <script type="module" src="crew.js" defer></script>
+</body>
+</html>

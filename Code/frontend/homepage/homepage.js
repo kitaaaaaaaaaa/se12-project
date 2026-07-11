@@ -84,9 +84,9 @@ function initHomepage() {
         new_event_form.addEventListener('submit', async (event) => {
             event.preventDefault();
 
-            const name = document.querySelector("#new-event #name").value;
-            const date = document.querySelector("#new-event #date").value;
-            const location = document.querySelector("#new-event #location").value;
+            const name = DOMPurify.sanitize(document.querySelector("#new-event #name").value);
+            const date = DOMPurify.sanitize(document.querySelector("#new-event #date").value);
+            const location = DOMPurify.sanitize(document.querySelector("#new-event #location").value);
 
             // Track if the form is valid
             let isValid = true;
@@ -98,13 +98,20 @@ function initHomepage() {
             }
 
             // Validate date
-            if (isDateInvalid(date)) {
+            if (!isDateValid(date)) {
                 showError("date-error", "The date is too far in the future");
                 isValid = false;
             }
 
             if (date === "") {
                 showError("date-error", "Date cannot be blank");
+                isValid = false;
+            }
+
+            // Enforce YYYY-MM-DD format for Safari browsers
+            const datePattern = /\d{4}-\d{2}-\d{2}/;
+            if (!datePattern.test(date)) {
+                showError("date-error", "The date must be in YYYY-MM-DD format")
                 isValid = false;
             }
 
@@ -124,6 +131,12 @@ function initHomepage() {
                         dialog.close();
                         dialog.remove();
                         populateEvents();
+                        
+                        // Save event id in session storage
+                        saveEventId(response.event_id);
+                        
+                        // Redirect the user to edit page
+                        window.location.href = "/edit/edit.html";
                     }
 
                 } catch (error) {
@@ -138,14 +151,19 @@ function initHomepage() {
 }
 
 // Function to check if a date is valid
-export function isDateInvalid(date) {
+export function isDateValid(date) {
     const limit = new Date("9999-12-31");
     const date_object = new Date(date);
 
-    if (Number.isNaN(date_object.getTime())) {
-        return true
-    }
+    // Returns false if invalid, returns true if valid
+    return date_object < limit;
+}
 
-    // Returns true if invalid, returns false if valid
-    return date_object > limit;
+// Functions to save and retrieve temporary event id
+export function saveEventId(id) {
+    window.sessionStorage.setItem("event_id", id);
+}
+
+export function getEventId() {
+    return window.sessionStorage.getItem("event_id");
 }

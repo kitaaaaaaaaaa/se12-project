@@ -72,7 +72,7 @@ export function createReloadDialog(title, description) {
     return dialog_element;
 }
 
-// Creates a dialog box that forces the user to reload the page
+// Creates a dialog box for the creation of a new event
 export function createEventDialog() {
     // Close all existing dialogs
     closeAll();
@@ -171,11 +171,47 @@ export function createDeleteConfirmation(title, description) {
     return dialog_element;
 }
 
-function closeAll() {
+export function closeAll() {
     const dialogs = document.querySelectorAll('dialog');
 
     dialogs.forEach(dialog => {
         dialog.close();
         dialog.remove();
     });
+}
+
+// Creates a normal dialog box that alerts the user
+export function createSessionExpDialog(title, description) {
+    // Close all existing dialogs
+    closeAll();
+
+    const dialog_element = document.createElement('dialog');
+    
+    dialog_element.innerHTML = `
+        <h2>${title}</h2>
+        <p>${description}</p>
+
+        <div class="dialog-buttons">
+            <button type="button" class="dialog-close">
+                <i class="fa-regular fa-thumbs-up"></i>
+                Ok
+            </button>
+        </div>
+    `;
+    document.body.appendChild(dialog_element);
+
+    // When the close button is pressed, hide and delete the dialog box
+    const close_button = dialog_element.querySelector('.dialog-close');
+    close_button.addEventListener('click', () => {
+        dialog_element.close();
+        dialog_element.remove();
+        window.location.href = "/index.html"
+    });
+    
+    // When the dialog is closed by other means, delete the dialog box
+    dialog_element.addEventListener('close', () => {
+        dialog_element.remove();
+    });
+
+    return dialog_element;
 }

@@ -43,10 +43,30 @@ export class stepCard extends HTMLElement {
 
         // Insert an instruction for each one specified
         parsed_instructions.forEach(instruction => {
+            let job_string = "";
+
+            switch (String(instruction.job)) {
+                case "stage_hands":
+                    job_string = "Stage Hands";
+                    break;
+                case "visuals":
+                    job_string = "Visuals";
+                    break;
+                case "sound":
+                    job_string = "Sound";
+                    break;
+                case "camera":
+                    job_string = "Camera";
+                    break;
+                case "lighting":
+                    job_string = "Lighting";
+                    break;
+            }
+
             stepHTML += `
                 <div class="instruction flex-container">
                     <span class="figtree-bold">
-                        <i class="fa-regular fa-user"></i> ${instruction.job}
+                        <i class="fa-regular fa-user"></i> ${job_string}
                     </span>
                     <span>${instruction.command} ${instruction.detail}</span>
                 </div>
@@ -60,18 +80,18 @@ export class stepCard extends HTMLElement {
         this.innerHTML = stepHTML;
     }
 }
-
 if (typeof customElements !== 'undefined') {
     customElements.define("step-card", stepCard);
 }
 
 // Function to create a new step
-function createNewStep(stepjson) {
+export function createNewStep(stepjson) {
     // Use given step data that is split into attributes and instructions to create a new step
     const new_step = document.createElement("step-card");
     new_step.setAttribute("step-title", stepjson.attributes["step_title"]);
     new_step.setAttribute("step-performer", stepjson.attributes["step_performer"]);
     new_step.setAttribute("step-number", stepjson.attributes["step_number"]);
+    new_step.setAttribute("classes", stepjson.attributes["classes"]);
 
     const template = document.createElement("template");
     template.innerHTML = JSON.stringify({ instructions: stepjson.instructions });
