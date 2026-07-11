@@ -374,6 +374,9 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 ## 06/07/2026
 **Aims:**
 **Progress:**
+- researched quicker ways to perform cross browser testing. found katalon recorder. 
+- looked at ways to emuluate safari on windows machine for convieneice. found playwright. https://www.youtube.com/watch?v=pRpsi1Z5YY0
+
 **Challenges and solutions:**
 - bleach is a recently deprecated library. attempt to swtich to nh3. library too aggressive, many functions broke. switch back to bleach.
 **Reflection:**

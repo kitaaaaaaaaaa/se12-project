@@ -46,7 +46,7 @@ try {
 
     renderTest('isDateValid - Valid Date', () => {
         assertEqual(
-            isDateInvalid('2023-03-21'),
+            isDateValid('2023-03-21'),
             true
         );
     });
@@ -54,7 +54,7 @@ try {
     renderTest('isDateValid - Invalid Date', () => {
         assertEqual(
             isDateValid('21023-04-20'),
-            true
+            false
         );
     });
 

@@ -1,3 +1,9 @@
+/* Declare fonts */
+@font-face {
+    font-family: Figtree;
+    src: url(../libs/Figtree-VariableFont_wght.ttf);
+}
+
 /* CSS Resets */
 *, *::before, *::after {
     box-sizing: border-box;

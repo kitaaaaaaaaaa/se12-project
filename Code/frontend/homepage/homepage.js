@@ -108,6 +108,13 @@ function initHomepage() {
                 isValid = false;
             }
 
+            // Enforce YYYY-MM-DD format for Safari browsers
+            const datePattern = /\d{4}-\d{2}-\d{2}/;
+            if (!datePattern.test(date)) {
+                showError("date-error", "The date must be in YYYY-MM-DD format")
+                isValid = false;
+            }
+
             // Validate location
             if (location === "") {
                 showError("location-error", "Location cannot be blank");

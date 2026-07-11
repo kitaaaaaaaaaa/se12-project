@@ -206,8 +206,8 @@ def get_event_from_database(event_id, classes):
             i_text = instruction[2]
 
             try:
-                i_command = i_text.split(maxsplit=1)[0]
-                i_detail = i_text.split(maxsplit=1)[1]
+                i_command = i_text.split(" ", maxsplit=1)[0]
+                i_detail = i_text.split(" ", maxsplit=1)[1]
             except IndexError:
                 logging.error("Index error occurred when processing instruction. Possible empty instruction.")
                 i_command = ""
@@ -350,7 +350,16 @@ def create_event():
         # Check if the date is valid before entering into the database
         # Invalid dates will throw errors later on.
         if str(date) > "9999-12-31":
+            logging.info(f"Event {name} could not be created because date is too far in the future. Date given: {date}")
             return jsonify({'error', 'Event could not be created because the date is too far in the future'}), 500
+        
+        # Attempt to convert the date into a date object and return an error if it cannot be
+        # Validates if the given date is in the correct format
+        try:
+            datetime.strptime(date, '%Y-%m-%d').date()
+        except ValueError:
+            logging.info(f"Event {name} could not be created because the date is not in YYYY-MM-DD format. Date given: {date}")
+            return jsonify({'error', 'Event could not be created because the date is not in YYYY-MM-DD format'}), 500
 
         try:
             # Create a new event record
@@ -424,8 +433,8 @@ def get_edit_event_data(event_id):
                 i_text = instruction[2]
 
                 try:
-                    i_command = i_text.split(maxsplit=1)[0]
-                    i_detail = i_text.split(maxsplit=1)[1]
+                    i_command = i_text.split(" ", maxsplit=1)[0]
+                    i_detail = i_text.split(" ", maxsplit=1)[1]
                 except IndexError:
                     logging.error("Index error occurred when processing instruction in get_edit_event_data. Possible empty instruction.")
                     i_command = ""
