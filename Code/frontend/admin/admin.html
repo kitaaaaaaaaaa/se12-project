@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator View</title>
+    <link rel="shortcut icon" href="../assets/favicon.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="../components/style.css">
+    
+    <!-- Import icons -->
+    <script defer src="../libs/fontawesome.min.js"></script>
+    <script defer src="../libs/regular.min.js"></script>
+    <script defer src="../libs/solid.min.js"></script>
+</head>
+<body>
+    <header class="flex-container">
+        <span class="secondary-text-clr">Friday, 1 May 2026</span>
+        <h1>Administrator View</h1>
+        <button type="button" class="red-button" id="end-event">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            End Event
+        </button>
+    </header>
+    <main id="admin-main">
+        <div>
+            <strong>Current step</strong>
+            <hr>
+            <section id="current">
+            </section>
+
+            <strong>Upcoming steps</strong>
+            <hr>
+            <section id="upcoming">                
+            </section>
+        </div>
+        <div id="admin-right">
+            <div>
+                <h1 id="stopwatch">00:00:00</h1>
+                <p>elapsed</p>
+            </div>
+            
+            <div>
+                <button type="button" class="blue-button" id="prev-step">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    Previous Step
+                </button>
+
+                <button type="button" class="green-button" id="next-step">
+                    <i class="fa-solid fa-chevron-right"></i>
+                    Next Step
+                </button>
+            </div>
+        </div>
+    </main>
+    <script type="module" src="../components/app.js" defer></script>
+    <script type="module" src="admin.js" defer></script>
+</body>
+</html>

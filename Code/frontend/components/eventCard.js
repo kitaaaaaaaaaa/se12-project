@@ -5,7 +5,7 @@
 
 import { sendRequest } from "./app.js";
 import { createDeleteConfirmation } from "./dialog.js";
-import { populateEvents, resetFilter } from "../homepage/homepage.js";
+import { populateEvents, resetFilter, saveEventId } from "../homepage/homepage.js";
 
 // Create a web component for an event card
 export class eventCard extends HTMLElement {
@@ -49,10 +49,27 @@ export class eventCard extends HTMLElement {
         const edit_button = this.querySelector(".edit-button");
         const del_button = this.querySelector(".del-button");
 
+        play_button.addEventListener("click", () => {
+            // Save event id in session storage
+            const event_id = this.getAttribute("event-id");
+            saveEventId(event_id);
+
+            // Redirect the user to the admin live view page
+            window.location.href = "/admin/admin.html";
+        });
+
+        edit_button.addEventListener("click", () => {
+            // Save event id in session storage
+            const event_id = this.getAttribute("event-id");
+            saveEventId(event_id);
+
+            // Redirect the user to the edit page
+            window.location.href = "/edit/edit.html";
+        });
+
         del_button.addEventListener("click", () => {
             // Add a confirmation box
             const event_data = this.getEventData();
-            console.log(event_data);
 
             const confirm = createDeleteConfirmation("Are you sure?", `Would you like to delete '${event_data.event_name}'?`);
             confirm.showModal();
@@ -70,14 +87,11 @@ export class eventCard extends HTMLElement {
                         populateEvents();
                     }
                 } catch (error) {
-                    console.log(error);
                     // Catch unforeseen errors
                     // Errors are already handled in app.js
                 }
             });
             
-            
-
         });
     }
 
@@ -96,7 +110,6 @@ export class eventCard extends HTMLElement {
         };
     }
 }
-
 if (typeof customElements !== 'undefined') {
     customElements.define("event-card", eventCard);
 }

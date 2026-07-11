@@ -6,14 +6,12 @@
     <title>QueSync</title>
     <link rel="shortcut icon" href="./assets/favicon.svg" type="image/x-icon">
 
-    <!-- Import fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="components/style.css">
+    <link rel="stylesheet" href="./components/style.css">
     
     <!-- Import icons -->
-    <script src="https://kit.fontawesome.com/bb061b2ebb.js" crossorigin="anonymous"></script>
+    <script defer src="./libs/fontawesome.min.js"></script>
+    <script defer src="./libs/regular.min.js"></script>
+    <script defer src="./libs/solid.min.js"></script>
 </head>
 <body>
     <header class="flex-container">
@@ -57,13 +55,10 @@
                 </fieldset>
             </form>
         </section>
-        <section>
-            <button type="button" class="blue-button" id="test-button">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                Make a request to test route
-            </button>
-        </section>
+
+        <span id="connection-display">🟡 Connecting...</span>
     </main>
+    <script src="libs/purify.min.js" defer></script>
     <script type="module" src="components/app.js" defer></script>
     <script type="module" src="index.js" defer></script>
 </body>
