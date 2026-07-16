@@ -1,59 +1,4 @@
 # Project Journal
-This will summmarise what you have done in relation to the project, and in particular the problems you encountered and how you dealt with them.
-
-With each entry, also include:
-- [ ] Date
-- [ ] Any communications you had with others concerning the project
-- [ ] Any other thoughts or ideas that you had concerning the project
-- [ ] Screenshots
-
-**1. Aims**
-
-- Goals for the week. Specific tasks, features or research topics.
-
-Example: 
-*“This week I aim to complete user authentication and set up the database schema.”*
-
-- Add justification for why these tasks matter. Include a link to your project requirements or next steps if possible.
-
-Example: 
-*“Authentication is essential before I can personalise the dashboard.”*
-
-**2. Progress**
-
-Describe what you actually did, focusing on thinking, not just doing:
-- Key tasks completed
-- Code or design decisions made
-- New concepts learned. (Include Evidence i.e. screenshots or snippets)
-
-**3. Challenges and Solutions**
-
-Describe problems, bugs, or blockers you faced. Explain how you diagnosed the issue (debugging, console logs, reading errors)
-
-List resources used to help solve the problem:
-- Online Resources (GitHub, StackOverflow, YouTube etc..)
-- Course Notes
-- ChatGPT Assistance 
-- Collaboration with Peers or Teacher Assistance
-Summarise the final solution and why you chose it.
-
-**4. Reflection**
-- What went well this week?
-- What didn’t go well?
-- What would you do differently next time?
-- What skills or knowledge improved?
-
-Example:
-*“I underestimated how long building authentication would take. Next week I will break tasks into smaller items and estimate time more realistically.”*
-
- **5. Aims for Next Week** 
-
-Briefly end each entry by listing:
-- Priorities for the next stage of development
-- Parts that need more follow-up
-
-Example:
-*“Next week I will be focussing on the Quality Assurance Document and adding lazy loading to my project.”*
 
 ## 22/03/2026
 **Aims:**
@@ -321,6 +266,7 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 
 **Progress:**
 - Created the UI for event admins editing an event but did not add functionality. Since I had already created UI components earlier, I just had to put them together.
+- Ensured that I made a commit to GitLab in order to save any progress, before it gets lost
 
 **Challenges and solutions:**
 - I realised that once you are editing an event, you can create steps, but not delete them. I wish I saw this problem in the Planning phase so that I could make it earlier and waste less time. I also realise that using WAgile allows me to adapt my Producing and Implementing phase as needed - using pure Waterfall would be utterly horrendous and lead to unfulfilled project requirement/quality assurance tests.
@@ -370,10 +316,11 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 - However, being off schedule according to my GANTT chart has been quite a disadvantage, since I am unable to contact teachers for my testing and evaluating phase. I will have to rely on senior crew members.
 
 **Aims for next week:**
+- Finalise producing and implementing and start testing and evaluating
 
 ## 06/07/2026
 **Aims:**
-- Finalise the producing and implementing phase and polish any bugs or issues
+- Finalise the producing and implementing phase and polish any bugs or issues. This should be done immediately in order to finish the project on time.
 - Start the testing and evaluating phase with the test plan and report
 
 **Progress:**
@@ -382,7 +329,7 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 
 **Challenges and solutions:**
 - I wanted to find quicker ways to perform cross browser testing in order to save some time. I researched some tools and found Katalon Recorder, which could record my actions in one browser and play it back in another browser. I ended up not using this because it was easier to manually perform tests. 
-- I found out that the Python Bleach is a recently deprecated library. I looked at some recent articles and the official Bleach documentation and looked for an alternative. I attempted to switch to nh3, which was the main and only good alternative. This library was too aggressive in input sanitisation, causing many functions to break. Needing to save time, I switched back to Bleach, even if it is deprecated.
+- I found out that the Python Bleach is a recently deprecated library. I looked at some recent articles and the official Bleach documentation and looked for an alternative. I attempted to switch to nh3, which was the main and only good alternative. This library was too aggressive in input sanitisation, causing many functions to break. Needing to save time, I switched back to Bleach, even if it is deprecated. I used previous versions of my project, accessible in GitLab, to reinstate the code I had previously.
 
 **Reflection:**
 - This week went quite well considering that I had other homework to do as well. Obviously, I'd like to try and finish this project as soon as possible, but there was good progress made this week.
@@ -392,10 +339,11 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 
 ## 13/07/2026
 **Aims:**
-- Finish test plan and report
-- Finish software evaluation
-- Gather formal feedback from client
-- Draft presentation contents and talking points
+- The following needs to be completed in order to finish the project:
+    - Finish test plan and report
+    - Finish software evaluation
+    - Gather formal feedback from client
+    - Draft presentation contents and talking points
 
 **Progress:**
 - Finished the following:
@@ -404,6 +352,7 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
     - Gathered feedback from clients
 - Made modifications to the website where necessrary:
     - Changed colours in order to improve colour contrast and web accessibility
+- Made a large commit to the repository with most documentation finalised
 
 **Challenges and solutions:**
 - There were no challenges this week since it was all documentation.
@@ -416,7 +365,7 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
     - This project has ultimately taught me a lot about CI/CD and its applications in an actual project, whereas previously, this concept was quite confusing
 
 **Aims for next week:**
-- Finish the project
+- Finish the project 
 
 
 ---
