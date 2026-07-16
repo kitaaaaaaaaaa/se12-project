@@ -373,15 +373,50 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 
 ## 06/07/2026
 **Aims:**
+- Finalise the producing and implementing phase and polish any bugs or issues
+- Start the testing and evaluating phase with the test plan and report
+
 **Progress:**
-- researched quicker ways to perform cross browser testing. found katalon recorder. 
-- looked at ways to emuluate safari on windows machine for convieneice. found playwright. https://www.youtube.com/watch?v=pRpsi1Z5YY0
+- I researched ways to emuluate Safari on a windows machine for convenience. I found Microsoft Playwright and used [this video](https://www.youtube.com/watch?v=pRpsi1Z5YY0) to help me set it up.
+- Started the test plan and report and performed cross browser testing
 
 **Challenges and solutions:**
-- bleach is a recently deprecated library. attempt to swtich to nh3. library too aggressive, many functions broke. switch back to bleach.
-**Reflection:**
-**Aims for next week:**
+- I wanted to find quicker ways to perform cross browser testing in order to save some time. I researched some tools and found Katalon Recorder, which could record my actions in one browser and play it back in another browser. I ended up not using this because it was easier to manually perform tests. 
+- I found out that the Python Bleach is a recently deprecated library. I looked at some recent articles and the official Bleach documentation and looked for an alternative. I attempted to switch to nh3, which was the main and only good alternative. This library was too aggressive in input sanitisation, causing many functions to break. Needing to save time, I switched back to Bleach, even if it is deprecated.
 
+**Reflection:**
+- This week went quite well considering that I had other homework to do as well. Obviously, I'd like to try and finish this project as soon as possible, but there was good progress made this week.
+
+**Aims for next week:**
+- Finish the rest of the project and start on presentation
+
+## 13/07/2026
+**Aims:**
+- Finish test plan and report
+- Finish software evaluation
+- Gather formal feedback from client
+- Draft presentation contents and talking points
+
+**Progress:**
+- Finished the following:
+    - Test plan and report
+    - Software evaluation
+    - Gathered feedback from clients
+- Made modifications to the website where necessrary:
+    - Changed colours in order to improve colour contrast and web accessibility
+
+**Challenges and solutions:**
+- There were no challenges this week since it was all documentation.
+
+**Reflection:**
+- This week also went well considering my impending Trials. I had hoped to finish the project this week, but it was not possible because I tried to balance my workload.
+- As the project comes to a close, I have a few thoughts:
+    - It would have benefited to choose a smaller idea that could be executed quickly and easily
+    - I should not have neglected the project for 2-3 weeks during my exam period
+    - This project has ultimately taught me a lot about CI/CD and its applications in an actual project, whereas previously, this concept was quite confusing
+
+**Aims for next week:**
+- Finish the project
 
 
 ---

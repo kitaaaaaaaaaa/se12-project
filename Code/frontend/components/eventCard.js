@@ -29,15 +29,15 @@ export class eventCard extends HTMLElement {
                         </span>
                     </div>
                     <div class="event-actions">
-                        <button type="button" class="play-button">
+                        <button type="button" class="play-button" title="Play event">
                             <i class="fa-solid fa-play" style="color: #d4f6a8;"></i>
                         </button>
 
-                        <button type="button" class="edit-button">
+                        <button type="button" class="edit-button" title="Edit event">
                             <i class="fa-solid fa-pencil"></i>
                         </button>
 
-                        <button type="button" class="del-button">
+                        <button type="button" class="del-button" title="Delete event">
                             <i class="fa-regular fa-trash-can"></i>
                         </button>
                     </div>

@@ -9,7 +9,6 @@ from flask_limiter.util import get_remote_address
 from flask_cors import CORS
 from flask_caching import Cache
 from werkzeug.security import generate_password_hash, check_password_hash
-# from . import config
 import json
 
 # Declare the base directory for later use
@@ -115,8 +114,8 @@ def execute_query(query, params=()):
     '''
     with sqlite3.connect(DATABASE) as conn:
         cursor = conn.cursor()
-        # cursor.execute("PRAGMA journal_mode = WAL;")
-        # cursor.execute("PRAGMA synchronous = NORMAL;")
+        cursor.execute("PRAGMA journal_mode = WAL;")
+        cursor.execute("PRAGMA synchronous = NORMAL;")
         cursor.execute(query, params)
         conn.commit()
         return cursor

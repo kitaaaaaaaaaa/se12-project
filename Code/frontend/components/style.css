@@ -22,7 +22,7 @@ button {
 :root {
     /* App colours */
     --text: #fff;
-    --secondary-text: #a9afc3;
+    --secondary-text: #b1b7cc;
     --background: #252525;
 
     --primary-purple: #5a2e83;
@@ -34,7 +34,7 @@ button {
     --dark-card: #323232;
 
     --red: #ba4646;
-    --green: #24941a;
+    --green: #208516;
     --blue: #2b58a9;
 }
 
@@ -743,7 +743,7 @@ edit-step-card {
 }
 
 .step-number {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.4);
     font-size: 3.5rem;
 }
 
@@ -867,20 +867,25 @@ aside span {
 }
 
 @media (max-width: 768px) {
-    #crew-main {
+    #crew-main, #admin-main {
         padding: 1rem 4dvw 0 4dvw;
     }
 
-    #crew-main div.instruction {
+    #crew-main div.instruction, #admin-main div.instruction {
         font-size: 0.75rem;
     }
 
-    #crew-main div.instruction span:last-of-type {
+    #crew-main div.instruction span:last-of-type, #admin-main div.instruction span:last-of-type {
         width: 27ch;
     }
 
     #crew-title {
         display: none;
+    }
+
+    #admin-right div:last-of-type {
+        display: flex;
+        gap: 0.5rem;
     }
 }
 
