@@ -352,8 +352,10 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
     - Gathered feedback from clients
 - Made modifications to the website where necessrary:
     - Changed colours in order to improve colour contrast and web accessibility
-- Made a quick mockup photo of the app and updated the README.md file
 - Made a large commit to the repository with most documentation finalised
+- Made a quick mockup photo of the app and updated the README.md file
+
+![](Assets/2026-07-16-22-33-34.png)
 
 **Challenges and solutions:**
 - There were no challenges this week since it was all documentation.
