@@ -383,6 +383,7 @@ def delete_event():
     if auth is True:
         try:
             execute_query("DELETE FROM events WHERE event_id = ?", (event_id,))
+            execute_query("DELETE FROM steps WHERE event_id = ?", (event_id,))
             logging.info("Event deleted successfully")
             return jsonify({'message': 'Event deleted successfully'}), 200
         except Exception as e:
