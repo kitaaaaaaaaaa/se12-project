@@ -1,6 +1,6 @@
 // This contains the code for the event admin's homepage
 
-import { sendRequest, createNewEvent, logOut, sendFormData, showError } from '../components/app.js';
+import { sendRequest, createNewEvent, logOut, sendFormData, showError, clearErrors } from '../components/app.js';
 import { createReloadDialog, createEventDialog } from '../components/dialog.js';
 
 export async function populateEvents(filter) {
@@ -82,6 +82,7 @@ function initHomepage() {
         const new_event_form = document.getElementById("new-event");
 
         new_event_form.addEventListener('submit', async (event) => {
+            clearErrors();
             event.preventDefault();
 
             const name = DOMPurify.sanitize(document.querySelector("#new-event #name").value);
@@ -97,23 +98,25 @@ function initHomepage() {
                 isValid = false;
             }
 
-            // Validate date
-            if (!isDateValid(date)) {
-                showError("date-error", "The date is too far in the future");
-                isValid = false;
-            }
-
-            if (date === "") {
-                showError("date-error", "Date cannot be blank");
-                isValid = false;
-            }
-
             // Enforce YYYY-MM-DD format for Safari browsers
             const datePattern = /\d{4}-\d{2}-\d{2}/;
             if (!datePattern.test(date)) {
                 showError("date-error", "The date must be in YYYY-MM-DD format")
                 isValid = false;
             }
+
+            // Validate date
+            if (!isDateValid(date)) {
+                showError("date-error", "The date is too far in the future");
+                isValid = false;
+            }
+
+            // Check if the date is blank
+            if (date === "") {
+                showError("date-error", "Date cannot be blank");
+                isValid = false;
+            }
+
 
             // Validate location
             if (location === "") {

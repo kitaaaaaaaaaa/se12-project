@@ -1,1 +1,3 @@
 eslint.config.js
+.venv
+.pytest_cache
