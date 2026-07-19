@@ -12306,3 +12306,16 @@
 2026-07-19 14:18 - INFO - 127.0.0.1 - - [19/Jul/2026 14:18:19] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
 2026-07-19 14:18 - INFO - 127.0.0.1 - - [19/Jul/2026 14:18:19] "OPTIONS /get_events HTTP/1.1" 200 -
 2026-07-19 14:18 - INFO - 127.0.0.1 - - [19/Jul/2026 14:18:19] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:14 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.110:5000
+2026-07-19 21:14 - INFO - [33mPress CTRL+C to quit[0m
+2026-07-19 21:14 - INFO -  * Restarting with stat
+2026-07-19 21:14 - WARNING -  * Debugger is active!
+2026-07-19 21:14 - INFO -  * Debugger PIN: 841-877-453
+2026-07-19 21:14 - INFO - 127.0.0.1 - - [19/Jul/2026 21:14:10] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:14 - INFO - 127.0.0.1 - - [19/Jul/2026 21:14:10] "[35m[1mGET /get_events HTTP/1.1[0m" 500 -
+2026-07-19 21:14 - INFO - 127.0.0.1 - - [19/Jul/2026 21:14:11] "[35m[1mGET /get_events HTTP/1.1[0m" 500 -
+2026-07-19 21:15 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\AT3\\se12-project\\Code\\backend\\app.py', reloading
+2026-07-19 21:15 - INFO -  * Restarting with stat

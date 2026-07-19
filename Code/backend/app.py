@@ -144,7 +144,13 @@ def authorise(req, needed_access):
         # Check if the JWT token is valid
         decoded = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
         user_id = decoded['user_id']
-        access_level = execute_query('SELECT role_id FROM users WHERE user_id = ?', (user_id,)).fetchall()[0][0]
+
+        # Check if the user exists in the database and get their access level
+        try:
+            access_level = execute_query('SELECT role_id FROM users WHERE user_id = ?', (user_id,)).fetchall()[0][0]
+        except IndexError:
+            logging.warning('A user has tried to perform an action, but user does not exist in database')
+            return jsonify({'error': 'You need to sign in to perform this action.'}), 401
         
         # Check if the user has the required access level
         if access_level == needed_access:
