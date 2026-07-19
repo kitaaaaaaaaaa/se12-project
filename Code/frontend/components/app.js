@@ -186,14 +186,6 @@ export async function sendRequest(body, route, method, error_func, disableLoadin
     }
 }
 
-// Function to redirect the user to the error page
-export function redirectToError(error) {
-    const encoded_msg = encodeURIComponent(error);
-
-    // URLs are automatically encoded, so XSS cannot be performed here
-    window.location.href = `/error.html?err=${encoded_msg}`;
-}
-
 // Functions to save and retrieve tokens from session storage
 export function saveToken(token) {
     window.sessionStorage.setItem("token", token);
