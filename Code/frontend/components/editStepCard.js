@@ -208,6 +208,25 @@ export class editStepCard extends HTMLElement {
         // Add functionality to the delete step button
         const delete_step = this.querySelector(".delete-step");
         delete_step.addEventListener('click', () => {
+            // Decrement the step numbers of all subsequent steps
+            let next_card = this.nextElementSibling;
+            let num_to_increment = parseInt(this.getAttribute('step-number') - 1);
+            
+            while (next_card && (next_card.matches('edit-step-card'))) {
+                num_to_increment += 1;
+                
+                // Set the new step number attribute
+                const new_num = formatStepNumber(num_to_increment);
+                next_card.setAttribute('step-number', new_num);
+
+                // Update the step number UI
+                const step_num_element = next_card.querySelector('.step-number');
+                step_num_element.textContent = new_num;
+                
+                // Go to the next card
+                next_card = next_card.nextElementSibling;
+            }
+
             this.remove();
         });
 
