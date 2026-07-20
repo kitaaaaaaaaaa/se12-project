@@ -3,7 +3,7 @@
 <br>
 
 ## Description
-**Digital Backstage/Audio Crew Run Sheet**
+**CueSync - Digital Backstage/Audio Crew Run Sheet**
 
 ![](./Documentation/Assets/mockup.png)
 

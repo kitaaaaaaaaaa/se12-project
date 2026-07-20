@@ -370,11 +370,25 @@ Empty entry. No work was completed. Reflection on this period can be accessed [h
 **Aims for next week:**
 - Finish the project 
 
-
----
-## DD/MM/YYYY
+## 20/07/2026
 **Aims:**
+- Finish the project because it is due this Friday
+- Book interview with teacher
+
 **Progress:**
+- Booked an interview slot
+- Drafted and finished the presentation video
+- Used my other device to fix a last minute bug, so I had to commit from another computer (thus collaborating with myself)
+
+![](Assets/2026-07-20-13-21-03.png)
+
 **Challenges and solutions:**
+- I discovered a last minute bug when I was recording for my video. When I deleted a step, the subsequent steps would have the wrong number. For instance, if I had steps 1, 2, 3, 4 and deleted step 2, the steps would be 1, 3, 4. I already had code to update the step numbers if a step was added, but not if it was deleted. I copied the code I wrote from before and made some minor tweaks to fit it to the problem. This solved it.
+
 **Reflection:**
+- This week went well, but I do think I spent too long on the presentation. It ate into my time for other work. If I were to do this project again, I would definitely try and spend less time on trivial elements.
+- Despite this, I can definitely tell that my video editing skills have improved from making this presentation for my project. It is much quicker for me to do things and I have learnt new editing techniques.
+- Also, watching back my presentation, I think that I did not explain the "editing run sheets" feature enough, but the video must be max 4 minutes so I cannot add anything.
+
 **Aims for next week:**
+- None!
