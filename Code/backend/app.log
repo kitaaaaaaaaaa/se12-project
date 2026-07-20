@@ -12319,3 +12319,82 @@
 2026-07-19 21:14 - INFO - 127.0.0.1 - - [19/Jul/2026 21:14:11] "[35m[1mGET /get_events HTTP/1.1[0m" 500 -
 2026-07-19 21:15 - INFO -  * Detected change in 'c:\\Users\\alexa\\Documents\\SWE SDEHS\\AT3\\se12-project\\Code\\backend\\app.py', reloading
 2026-07-19 21:15 - INFO -  * Restarting with stat
+2026-07-19 21:16 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.110:5000
+2026-07-19 21:16 - INFO - [33mPress CTRL+C to quit[0m
+2026-07-19 21:16 - INFO -  * Restarting with stat
+2026-07-19 21:16 - WARNING -  * Debugger is active!
+2026-07-19 21:16 - INFO -  * Debugger PIN: 841-877-453
+2026-07-19 21:16 - INFO - 127.0.0.1 - - [19/Jul/2026 21:16:51] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:16 - WARNING - A user has tried to perform an action, but user does not exist in database
+2026-07-19 21:16 - WARNING - Unauthorised user has attempted to retrieve all events
+2026-07-19 21:16 - INFO - 127.0.0.1 - - [19/Jul/2026 21:16:51] "[31m[1mGET /get_events HTTP/1.1[0m" 401 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:00] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:00] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:05] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:05] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:10] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:10] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:15] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:15] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:20] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-19 21:17 - WARNING - Login not permitted. Invalid credentials for - amandarin@gmail.com
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:20] "[31m[1mPOST /login HTTP/1.1[0m" 401 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:20] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:20] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:26] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:26] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:31] "OPTIONS /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:31] "GET /get_server_status HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:32] "OPTIONS /login HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:32] "POST /login HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:32] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:32] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:58] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:17 - INFO - 127.0.0.1 - - [19/Jul/2026 21:17:58] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:01] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:01] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:01] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:01] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:04] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:04] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:26] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:27] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:27] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:18 - INFO - 127.0.0.1 - - [19/Jul/2026 21:18:27] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:19] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:19] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:19] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:19] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:24] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:24] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:25] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:25] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:30] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:30] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:30] "OPTIONS /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:30] "GET /get_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:38] "OPTIONS /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:38] "PUT /save_edit_event_data/16 HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:38] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:19 - INFO - 127.0.0.1 - - [19/Jul/2026 21:19:38] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:00] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:00] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:03] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:06] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:06] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "OPTIONS /create_event HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "[35m[1mPOST /create_event HTTP/1.1[0m" 201 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "OPTIONS /get_edit_event_data/32 HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:33] "GET /get_edit_event_data/32 HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:35] "OPTIONS /save_edit_event_data/32 HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:35] "PUT /save_edit_event_data/32 HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:35] "GET /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:40] "OPTIONS /delete_event HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:40] "DELETE /delete_event HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:40] "OPTIONS /get_events HTTP/1.1" 200 -
+2026-07-19 21:46 - INFO - 127.0.0.1 - - [19/Jul/2026 21:46:40] "GET /get_events HTTP/1.1" 200 -
