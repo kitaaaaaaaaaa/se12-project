@@ -1,4 +1,4 @@
 {
-    "backend_url": "http://127.0.0.1",
+    "backend_url": "http://10.88.100.185",
     "backend_port": "5000"
 }
